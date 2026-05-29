@@ -47,8 +47,8 @@ La page doit donner l’impression d’un produit :
 
 ### PME camerounaises
 
-* 5 à 200 employés
-* sans département RH structuré
+* 5 à 150 employés
+* sans département RH structuré 
 * gestion RH souvent faite via Excel ou WhatsApp
 
 ### Profils cibles
@@ -421,6 +421,8 @@ Inclure :
 ---
 
 # UX / UI INSTRUCTIONS
+
+inspire toi de landing-page.md
 
 ## Expérience utilisateur
 
