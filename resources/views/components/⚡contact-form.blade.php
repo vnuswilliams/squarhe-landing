@@ -57,11 +57,11 @@ new class extends Component
 
         $this->reset('companyName', 'fullName', 'email', 'phone', 'employeesCount', 'message', 'consent');
 
-        $this->successMessage = 'Merci, votre demande a bien ete envoyee. Nous vous recontacterons rapidement.';
+        $this->successMessage = 'Merci, votre demande a bien été envoyée. Nous vous recontacterons rapidement.';
 
         Flux::toast(
             text: $this->successMessage,
-            heading: 'Demande envoyee',
+            heading: 'Demande envoyée',
             variant: 'success',
         );
     }
@@ -89,13 +89,13 @@ new class extends Component
         </flux:field>
 
         <flux:field>
-            <flux:label>Telephone WhatsApp</flux:label>
+            <flux:label>Téléphone WhatsApp</flux:label>
             <flux:input wire:model="phone" icon="phone" />
             <flux:error name="phone" />
         </flux:field>
 
         <flux:field class="sm:col-span-2">
-            <flux:label>Nombre d employes</flux:label>
+            <flux:label>Nombre d employés</flux:label>
             <flux:input type="number" min="1" wire:model="employeesCount" icon="users" />
             <flux:error name="employeesCount" />
         </flux:field>

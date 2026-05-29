@@ -5,6 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{{ $title }} - Squarhe</title>
 
+        <link rel="icon" href="/favicon.ico" sizes="any">
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
         @fonts
         @fluxAppearance
 
@@ -13,9 +16,7 @@
         @endif
 
         <style>
-            html {
-                scroll-behavior: smooth;
-            }
+
 
             .legal-content h1 {
                 font-size: 2rem;
@@ -87,12 +88,15 @@
         </style>
     </head>
     <body class="bg-slate-50 text-slate-950 antialiased dark:bg-slate-950 dark:text-white">
-        <flux:toast position="top right" />
 
         <header class="border-b border-slate-200 bg-white/90 backdrop-blur dark:border-white/10 dark:bg-slate-950/90">
             <nav class="mx-auto flex max-w-5xl items-center justify-between px-5 py-4 lg:px-8">
                 <a href="{{ route('home') }}" wire:navigate class="flex items-center gap-3">
-                    <span class="grid size-9 place-items-center rounded-lg bg-slate-950 text-sm font-black text-white dark:bg-white dark:text-slate-950">SQ</span>
+                    <span class="grid size-9 place-items-center rounded-lg bg-slate-950 text-sm font-black text-white dark:bg-white dark:text-slate-950">
+
+                                <x-app-logo-icon class="size-5" />
+                        
+                    </span>
                     <span class="text-lg font-black">Squarhe</span>
                 </a>
 
@@ -103,7 +107,7 @@
         <main class="mx-auto max-w-5xl px-5 py-12 lg:px-8">
             <div class="mb-8 flex items-center gap-3 text-sm font-bold text-blue-700 dark:text-blue-300">
                 <flux:icon.document-text class="size-5" />
-                Document legal
+                Document légal
             </div>
 
             <article class="legal-content rounded-lg border border-slate-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-slate-900 sm:p-8">

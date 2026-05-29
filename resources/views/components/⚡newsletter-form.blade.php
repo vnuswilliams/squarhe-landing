@@ -35,7 +35,7 @@ new class extends Component
 
         $this->reset('email', 'consent');
 
-        $this->successMessage = 'Inscription confirmee. Vous recevrez les prochaines ressources Squarhe.';
+        $this->successMessage = 'Inscription confirmée. Vous recevrez les prochaines ressources Squarhe.';
 
         Flux::toast(
             text: $this->successMessage,
@@ -60,7 +60,7 @@ new class extends Component
     </flux:field>
 
     <flux:field class="mt-5">
-        <flux:checkbox wire:model="consent" required label="J accepte de recevoir les contenus Squarhe. Aucun spam, desinscription possible a tout moment." />
+        <flux:checkbox wire:model="consent" required label="J accepte de recevoir les contenus Squarhe. Aucun spam, désinscription possible a tout moment." />
         <flux:error name="newsletterConsent" />
     </flux:field>
 </form>

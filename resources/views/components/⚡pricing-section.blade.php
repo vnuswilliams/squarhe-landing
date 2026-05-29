@@ -18,14 +18,14 @@ new class extends Component
         return [
             [
                 'name' => 'Starter',
-                'tagline' => 'L essentiel pour gerer sa paie',
+                'tagline' => 'L essentiel pour gérer sa paie',
                 'basePrice' => 14900,
                 'baseEmployees' => 5,
                 'stepPrice' => 2500,
                 'maxEmployees' => 20,
-                'setupFee' => 'Gratuit',
+                'setupFee' => 'Négociable',
                 'support' => 'Email - 72h',
-                'features' => ['Paie CNPS / IRPP', 'Bulletins PDF', 'Avances sur salaire', 'Conges', 'Documents RH - 3 modeles'],
+                'features' => ['Paie CNPS / IRPP', 'Bulletins PDF', 'Avancés sur salaire', 'Congés', 'Documents RH - 3 modèles'],
             ],
             [
                 'name' => 'Croissance',
@@ -35,7 +35,7 @@ new class extends Component
                 'baseEmployees' => 20,
                 'stepPrice' => 3500,
                 'maxEmployees' => 50,
-                'setupFee' => '35 000 FCFA',
+                'setupFee' => 'Négociable',
                 'support' => 'WhatsApp - 48h',
                 'features' => ['Tout Starter', 'Espace collaborateur complet', 'Documents RH illimites', 'Tableaux de bord RH', 'Exports Excel basiques'],
             ],
@@ -46,9 +46,9 @@ new class extends Component
                 'baseEmployees' => 50,
                 'stepPrice' => 5000,
                 'maxEmployees' => 150,
-                'setupFee' => '75 000 FCFA',
+                'setupFee' => 'Négociable',
                 'support' => 'Prioritaire - 4h',
-                'features' => ['Tout Croissance', 'Multi-sites', 'Rapports RH avances', 'Roles utilisateurs', 'API / integrations', 'Gestionnaire dedie'],
+                'features' => ['Tout Croissance', 'Multi-sites', 'Rapports RH avancés', 'Roles utilisateurs', 'API / integrations', 'Gestionnaire dédié'],
             ],
         ];
     }
@@ -56,19 +56,19 @@ new class extends Component
     public function comparisonRows(): array
     {
         return [
-            ['label' => 'Popularite', 'values' => ['-', 'La plus populaire', '-']],
+            ['label' => 'Popularité', 'values' => ['-', 'La plus populaire', '-']],
             ['label' => 'Prix de base / mois', 'values' => ['14 900 FCFA', '34 900 FCFA', '64 900 FCFA']],
-            ['label' => 'Employes inclus', 'values' => ['5', '20', '50']],
-            ['label' => 'Plafond employes', 'values' => ['20', '50', '150']],
-            ['label' => 'Supplement / 5 employes', 'values' => ['+2 500 FCFA', '+3 500 FCFA', '+5 000 FCFA']],
-            ['label' => 'Setup fee', 'values' => ['Gratuit', '35 000 FCFA', '75 000 FCFA']],
+            ['label' => 'Employés inclus', 'values' => ['5', '20', '50']],
+            ['label' => 'Plafond employés', 'values' => ['20', '50', '150']],
+            ['label' => 'Supplément / 5 employés', 'values' => ['+2 500 FCFA', '+3 500 FCFA', '+5 000 FCFA']],
+            ['label' => 'Setup fee', 'values' => ['Négociable', 'Négociable', 'Négociable']],
             ['label' => 'Espace collaborateur', 'values' => ['Lecture seule', 'Complet', 'Complet']],
-            ['label' => 'Documents RH', 'values' => ['3 modeles', 'Illimites', 'Illimites']],
+            ['label' => 'Documents RH', 'values' => ['3 modèles', 'Illimités', 'Illimités']],
             ['label' => 'Tableaux de bord RH', 'values' => ['Non inclus', 'Inclus', 'Inclus']],
-            ['label' => 'Export Excel / rapports', 'values' => ['Non inclus', 'Basiques', 'Avances']],
+            ['label' => 'Export Excel / rapports', 'values' => ['Non inclus', 'Basiques', 'Avancés']],
             ['label' => 'Multi-sites / API', 'values' => ['Non inclus', 'Non inclus', 'Inclus']],
             ['label' => 'Support', 'values' => ['Email - 72h', 'WhatsApp - 48h', 'Prioritaire - 4h']],
-            ['label' => 'Formation', 'values' => ['Non incluse', '1h en ligne', '1 journee sur site']],
+            ['label' => 'Formation', 'values' => ['Non incluse', '1h en ligne', '1 journée sur site']],
         ];
     }
 
@@ -101,15 +101,15 @@ new class extends Component
                     Payez seulement pour ce dont vous avez besoin, sans engagement.
                 </h2>
                 <p class="mt-4 text-lg leading-8 text-slate-600 dark:text-slate-300">
-                    Choisissez une tranche adaptee a votre equipe. Si votre effectif grandit, la simulation ajuste le prix et masque les offres qui ne conviennent plus.
+                    Choisissez une tranche adaptée à votre équipe. Si votre effectif grandit, la simulation ajuste le prix et masque les offres qui ne conviennent plus.
                 </p>
             </div>
 
             <div class="rounded-lg border border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-[#172033]">
                 <flux:field>
-                    <flux:label>Nombre d employes a simuler</flux:label>
+                    <flux:label>Nombre d employés à simuler</flux:label>
                     <flux:input type="number" min="5" max="150" step="5" wire:model.live.debounce.300ms="employees" icon="users" />
-                    <flux:description>La simulation s incremente de 5 en 5. Exemple : 25 employes rend Starter indisponible et ajuste Croissance.</flux:description>
+                    <flux:description>La simulation s incrémente de 5 en 5. Exemple : 25 employés rend Starter indisponible et ajuste Croissance.</flux:description>
                 </flux:field>
             </div>
         </div>
@@ -130,23 +130,23 @@ new class extends Component
                             </div>
                             <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-300">{{ $plan['tagline'] }}</p>
                         </div>
-                        @if ($eligible)
+                            @if ($eligible)
                             <flux:badge color="emerald">Disponible</flux:badge>
-                        @else
+                            @else
                             <flux:badge color="zinc">Max {{ $plan['maxEmployees'] }}</flux:badge>
-                        @endif
+                            @endif
                     </div>
 
                     <div class="mt-6">
                         <p class="text-sm font-bold text-slate-500 dark:text-slate-400">Prix mensuel simule</p>
                         <p class="mt-2 text-3xl font-black text-slate-950 dark:text-[#f2f6fb]">{{ $eligible ? $this->formatPrice($this->priceFor($plan)) : 'Non disponible' }}</p>
-                        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Base {{ $plan['baseEmployees'] }} employes, plafond {{ $plan['maxEmployees'] }}.</p>
+                        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Base {{ $plan['baseEmployees'] }} employés, plafond {{ $plan['maxEmployees'] }}.</p>
                     </div>
 
                     <div class="mt-6 grid gap-3 text-sm">
                         <div class="flex items-center gap-2 text-slate-600 dark:text-slate-300">
                             <flux:icon.plus-circle class="size-5 text-blue-600 dark:text-blue-300" />
-                            + {{ $this->formatPrice($plan['stepPrice']) }} / tranche de 5 employes
+                            + {{ $this->formatPrice($plan['stepPrice']) }} / tranche de 5 employés
                         </div>
                         <div class="flex items-center gap-2 text-slate-600 dark:text-slate-300">
                             <flux:icon.wrench-screwdriver class="size-5 text-blue-600 dark:text-blue-300" />
@@ -168,7 +168,7 @@ new class extends Component
                     </ul>
 
                     <flux:button href="#contact" variant="{{ $eligible ? 'primary' : 'ghost' }}" icon="chat-bubble-left-right" class="mt-6 w-full justify-center" :disabled="! $eligible">
-                        {{ $eligible ? 'Demander cette offre' : 'Choisir une offre superieure' }}
+                        {{ $eligible ? 'Demander cette offre' : 'Choisir une offre supérieure' }}
                     </flux:button>
                 </article>
             @endforeach
@@ -178,10 +178,10 @@ new class extends Component
             <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
                 <div>
                     <p class="text-sm font-black uppercase text-emerald-700 dark:text-emerald-300">Comparatif</p>
-                    <h3 class="mt-2 text-2xl font-black text-slate-950 dark:text-[#f2f6fb]">Les differences cles entre les offres</h3>
+                    <h3 class="mt-2 text-2xl font-black text-slate-950 dark:text-[#f2f6fb]">Les différences clés entre les offres</h3>
                 </div>
                 <p class="max-w-xl text-sm leading-6 text-slate-600 dark:text-slate-300">
-                    Base sur la grille tarifaire : Starter pour demarrer, Croissance pour structurer, Business pour piloter plusieurs besoins RH.
+                    Base sur la grille tarifaire : Starter pour démarrer, Croissance pour structurer, Business pour piloter plusieurs besoins RH.
                 </p>
             </div>
 
@@ -190,7 +190,7 @@ new class extends Component
                     <table class="w-full min-w-[760px] text-left text-sm">
                         <thead class="bg-slate-950 text-white dark:bg-white dark:text-slate-950">
                             <tr>
-                                <th scope="col" class="w-[28%] px-5 py-4 font-black">Critere</th>
+                                <th scope="col" class="w-[28%] px-5 py-4 font-black">Critère</th>
                                 @foreach ($this->plans() as $plan)
                                     <th scope="col" class="px-5 py-4 font-black">{{ $plan['name'] }}</th>
                                 @endforeach
@@ -201,8 +201,8 @@ new class extends Component
                                 <tr wire:key="comparison-{{ $rowIndex }}" class="bg-white dark:bg-[#172033]">
                                     <th scope="row" class="px-5 py-4 font-black text-slate-950 dark:text-[#f2f6fb]">{{ $row['label'] }}</th>
                                     @foreach ($row['values'] as $value)
-                                        @php($includedValues = ['Inclus', 'Complet', 'Illimites', 'Basiques', 'Avances', 'La plus populaire'])
-                                        @php($limitedValues = ['Lecture seule', '3 modeles'])
+                                        @php($includedValues = ['Inclus', 'Complet', 'Illimités', 'Basiques', 'Avancés', 'La plus populaire'])
+                                        @php($limitedValues = ['Lecture seule', '3 modèles'])
                                         @php($isUnavailable = in_array($value, ['Non inclus', 'Non incluse', '-'], true))
                                         @php($isIncluded = in_array($value, $includedValues, true) || str_starts_with($value, '1h') || str_starts_with($value, '1 journee'))
                                         @php($isLimited = in_array($value, $limitedValues, true))
