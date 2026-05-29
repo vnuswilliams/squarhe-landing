@@ -60,6 +60,45 @@
             .dark main p {
                 color: #c4cfdd;
             }
+
+            .testimonial-rail {
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            .testimonial-rail::-webkit-scrollbar {
+                display: none;
+            }
+
+            .testimonial-marquee {
+                animation: none;
+            }
+
+            @media (min-width: 768px) {
+                .testimonial-marquee {
+                    animation: testimonial-scroll 55s linear infinite;
+                }
+
+                .testimonial-rail:hover .testimonial-marquee {
+                    animation-play-state: paused;
+                }
+            }
+
+            @keyframes testimonial-scroll {
+                from {
+                    transform: translateX(0);
+                }
+
+                to {
+                    transform: translateX(-50%);
+                }
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                .testimonial-marquee {
+                    animation: none;
+                }
+            }
         </style>
     </head>
     <body class="bg-[#f8fafc] font-sans text-slate-950 antialiased dark:bg-[#101827] dark:text-[#e6edf7]">
@@ -90,6 +129,65 @@
                     'read_time' => '8 min',
                 ],
             ];
+
+            $testimonials = [
+                ['name' => 'Ariane M.', 'role' => 'Directrice administrative', 'quote' => 'Squarhe nous donne une vision claire de la paie avant validation. Les equipes gagnent du temps sans perdre le controle.'],
+                ['name' => 'Patrick N.', 'role' => 'Fondateur PME services', 'quote' => 'La plateforme a transforme nos fins de mois. Les variables sont suivies, les oublis diminuent et les bulletins partent plus vite.'],
+                ['name' => 'Nadia E.', 'role' => 'Responsable RH', 'quote' => 'J aime la simplicite de Squarhe. Les collaborateurs comprennent leurs espaces et les managers suivent les demandes sans relance.'],
+                ['name' => 'Brice T.', 'role' => 'Gerant commerce', 'quote' => 'On a remplace les fichiers disperses par une base fiable. Les controles sont plus rapides et les decisions plus sereines.'],
+                ['name' => 'Mireille K.', 'role' => 'Office manager', 'quote' => 'Squarhe nous aide a rester organises meme avec une petite equipe RH. Tout est lisible et accessible au bon moment.'],
+                ['name' => 'Samuel F.', 'role' => 'CEO agence digitale', 'quote' => 'La vision produit est excellente : automatiser la paie tout en gardant l humain au centre des validations importantes.'],
+                ['name' => 'Clarisse B.', 'role' => 'Comptable', 'quote' => 'Les impacts en temps reel sur la paie sont rassurants. Je vois tout de suite ce qui change et pourquoi.'],
+                ['name' => 'Eric D.', 'role' => 'DG industrie legere', 'quote' => 'Squarhe apporte une discipline RH qui manquait a notre croissance. C est simple, structure et tres concret.'],
+                ['name' => 'Joelle S.', 'role' => 'Chargee administration', 'quote' => 'Les documents RH sont enfin centralises. Nous retrouvons les contrats et bulletins sans fouiller dans plusieurs dossiers.'],
+                ['name' => 'Thierry A.', 'role' => 'Dirigeant startup', 'quote' => 'Le logiciel nous evite les allers-retours inutiles. Les collaborateurs soumettent les infos et nous validons plus vite.'],
+                ['name' => 'Estelle Y.', 'role' => 'Responsable operations', 'quote' => 'J apprecie la clarte des tableaux de bord. On comprend les effectifs, les absences et la masse salariale en quelques minutes.'],
+                ['name' => 'Kevin O.', 'role' => 'Entrepreneur', 'quote' => 'Squarhe rend la paie moins stressante. Les processus sont guides et les erreurs deviennent beaucoup plus faciles a detecter.'],
+                ['name' => 'Solange P.', 'role' => 'Assistante RH', 'quote' => 'La prise en main est rapide. Meme sans etre experte en paie, je sais quoi faire et dans quel ordre.'],
+                ['name' => 'Marc L.', 'role' => 'DAF', 'quote' => 'La conformite est mieux suivie et les mises a jour rassurent la direction. C est un vrai gain de fiabilite.'],
+                ['name' => 'Linda C.', 'role' => 'Manager equipe terrain', 'quote' => 'Les demandes d absences ne se perdent plus. Les validations sont plus propres et tout le monde voit le statut.'],
+                ['name' => 'Oscar W.', 'role' => 'Fondateur cabinet conseil', 'quote' => 'Squarhe comprend les realites locales. Ce n est pas un outil generique plaque sur nos contraintes.'],
+                ['name' => 'Grace H.', 'role' => 'RH multi-sites', 'quote' => 'La centralisation des donnees collaborateurs nous donne une base unique, plus propre et beaucoup plus exploitable.'],
+                ['name' => 'Yves R.', 'role' => 'Responsable paie', 'quote' => 'Je garde le controle metier, mais Squarhe automatise les taches repetitives. C est exactement ce qu on attendait.'],
+                ['name' => 'Diane V.', 'role' => 'Coordinatrice PME', 'quote' => 'Le support est disponible et les explications sont claires. On se sent accompagne, pas laisse seul face au logiciel.'],
+                ['name' => 'Hermann G.', 'role' => 'Directeur general', 'quote' => 'La promesse est tenue : moins d Excel, moins de stress et plus de temps pour accompagner les equipes.'],
+            ];
+
+            $comparison = [
+                'squarhe' => [
+                    'title' => 'Avec Squarhe',
+                    'items' => [
+                        'Paie automatisee : impact en temps reel des variables.',
+                        'Fiabilite : autonomie et suivi continu des donnees.',
+                        'Conformite : 100% garantie via mises a jour auto.',
+                        'Tarifs : abonnement sans engagement, aucun surcout.',
+                        'Support : assistance 24h/24.',
+                        'Espace collaborateur : inclus et securise.',
+                    ],
+                ],
+                'expert' => [
+                    'title' => 'Avec un expert RH',
+                    'items' => [
+                        'Paie manuelle : collecte manuelle, allers-retours.',
+                        'Fiabilite : risques d erreurs, acces restreint.',
+                        'Conformite : potentiels retards de mise a jour.',
+                        'Tarifs : abonnement annuel eleve, moins flexible.',
+                        'Support : interlocuteur souvent deborde.',
+                        'Espace collaborateur : non disponible.',
+                    ],
+                ],
+            ];
+
+            $faqs = [
+                ['question' => 'Ai-je besoin d avoir des connaissances particulieres en paie ?', 'answer' => 'Il n est pas necessaire d avoir des competences en paie. C est justement un des avantages de Squarhe : notre logiciel est simple et intuitif.'],
+                ['question' => 'Combien coute Squarhe ?', 'answer' => 'Tout depend de la taille de votre entreprise. Consultez notre page tarifs pour plus de details.'],
+                ['question' => 'Des frais supplementaires sont-ils a prevoir ?', 'answer' => 'Non, nous ne facturons pas de frais supplementaires pour les procedures courantes comme les bulletins, contrats et documents RH habituels.'],
+                ['question' => 'Beneficierai-je d un accompagnement dedie ?', 'answer' => 'Oui, nos experts vous accompagnent tout au long de votre experience avec Squarhe.'],
+                ['question' => 'Pourquoi avoir un logiciel de paie ?', 'answer' => 'Pour gagner du temps, eviter les erreurs et rester conforme a la reglementation en constante evolution.'],
+                ['question' => 'Squarhe couvre-t-il tous les secteurs d activite ?', 'answer' => 'Certaines conventions comme le BTP ou l agriculture ne sont pas encore integrees, mais vous pouvez modifier et ajouter vos propres bases de calculs.'],
+                ['question' => 'Comment utiliser ce logiciel ?', 'answer' => 'Squarhe est un SaaS accessible partout. Vous avez un espace administrateur et vos employes ont leur propre espace.'],
+                ['question' => 'Quand changer de logiciel de paie ?', 'answer' => 'Quand vous voulez ! Idealement en fin de mois ou d exercice pour faciliter la migration.'],
+            ];
         @endphp
 
         <div class="min-h-screen overflow-hidden">
@@ -105,7 +203,9 @@
                     <div class="hidden items-center gap-7 text-sm font-semibold text-slate-600 dark:text-slate-300 md:flex">
                         <a class="transition hover:text-slate-950 dark:hover:text-white" href="#solution">Solution</a>
                         <a class="transition hover:text-slate-950 dark:hover:text-white" href="#offres">Nos offres</a>
-                        <a class="transition hover:text-slate-950 dark:hover:text-white" href="#securite">Securite</a>
+                        <a class="transition hover:text-slate-950 dark:hover:text-white" href="#avis">Avis</a>
+                        <a class="transition hover:text-slate-950 dark:hover:text-white" href="#comparaison">Comparatif</a>
+                        <a class="transition hover:text-slate-950 dark:hover:text-white" href="#faq">FAQ</a>
                         <a class="transition hover:text-slate-950 dark:hover:text-white" href="#articles">Blog</a>
                         <a class="transition hover:text-slate-950 dark:hover:text-white" href="#newsletter">Newsletter</a>
                     </div>
@@ -312,6 +412,97 @@
                                     <h3 class="font-black">{{ $title }}</h3>
                                     <p class="mt-2 leading-7 text-slate-300">{{ $text }}</p>
                                 </article>
+                            @endforeach
+                        </div>
+                    </div>
+                </section>
+
+                <section id="avis" class="border-y border-slate-200 bg-white py-12 dark:border-white/10 dark:bg-[#101827] sm:py-16">
+                    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+                        <div class="flex flex-col justify-between gap-4 lg:flex-row lg:items-end">
+                            <div class="max-w-3xl">
+                                <p class="text-sm font-black uppercase text-emerald-700">Ils avancent avec Squarhe</p>
+                                <h2 class="mt-3 text-2xl font-black leading-tight text-slate-950 sm:text-4xl">Une vision RH plus claire, portee par ceux qui gerent la paie au quotidien.</h2>
+                            </div>
+                            <p class="max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg sm:leading-8">Sur mobile, faites glisser les avis. Sur ordinateur, survolez un avis pour mettre le defilement en pause, retrouver les couleurs et lire le temoignage tranquillement.</p>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-rail mt-8 overflow-x-auto pb-4 md:mt-10 md:overflow-hidden md:pb-0">
+                        <div class="testimonial-marquee flex w-max snap-x snap-mandatory gap-4 px-5 md:gap-5 lg:px-8">
+                            @foreach (array_merge($testimonials, $testimonials) as $index => $testimonial)
+                                <article class="group w-[82vw] max-w-sm shrink-0 snap-center rounded-lg border border-slate-200 bg-white p-4 opacity-100 transition duration-300 hover:-translate-y-1 hover:shadow-xl md:w-80 md:bg-slate-50/70 md:p-5 md:opacity-55 md:grayscale md:hover:bg-white md:hover:opacity-100 md:hover:grayscale-0 dark:border-white/10 dark:bg-[#172033] dark:md:bg-[#172033]/70 dark:hover:bg-[#1d2a40] @if ($index >= count($testimonials)) hidden md:block @endif">
+                                    <div class="flex items-center gap-1 text-amber-300 transition group-hover:text-amber-400" aria-label="5 etoiles">
+                                        @for ($star = 0; $star < 5; $star++)
+                                            <flux:icon.star class="size-4 fill-current" />
+                                        @endfor
+                                    </div>
+                                    <p class="mt-4 min-h-32 text-sm leading-7 text-slate-600 transition group-hover:text-slate-800 dark:text-slate-300 dark:group-hover:text-slate-100">“{{ $testimonial['quote'] }}”</p>
+                                    <div class="mt-5 border-t border-slate-200 pt-4 dark:border-white/10">
+                                        <p class="font-black text-slate-950 dark:text-[#e6edf7]">{{ $testimonial['name'] }}</p>
+                                        <p class="mt-1 text-sm font-semibold text-blue-700 dark:text-blue-300">{{ $testimonial['role'] }}</p>
+                                    </div>
+                                </article>
+                            @endforeach
+                        </div>
+                    </div>
+                </section>
+
+                <section id="comparaison" class="mx-auto max-w-7xl px-5 py-12 sm:py-16 lg:px-8">
+                    <div class="mx-auto max-w-4xl text-left sm:text-center">
+                        <p class="text-sm font-black uppercase text-blue-700">Squarhe ou expert RH</p>
+                        <h2 class="mt-3 text-2xl font-black leading-tight text-slate-950 sm:text-4xl">Squarhe ou expert RH : qui fait quoi ?</h2>
+                        <p class="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg sm:leading-8">Un bon logiciel n est pas celui qui remplace l humain, mais celui qui lui donne le temps d en etre un.</p>
+                    </div>
+
+                    <div class="mt-8 grid gap-4 sm:mt-10 lg:grid-cols-2 lg:gap-5">
+                        <article class="rounded-lg border border-emerald-200 bg-emerald-50 p-4 shadow-sm dark:border-emerald-400/20 dark:bg-emerald-400/10 sm:p-6">
+                            <div class="mb-5 flex items-center gap-3 sm:mb-6">
+                                <span class="grid size-9 shrink-0 place-items-center rounded-lg bg-emerald-600 text-white sm:size-10"><flux:icon.check class="size-5" /></span>
+                                <h3 class="text-xl font-black text-slate-950 dark:text-[#e6edf7] sm:text-2xl">{{ $comparison['squarhe']['title'] }}</h3>
+                            </div>
+                            <ul class="space-y-3 sm:space-y-4">
+                                @foreach ($comparison['squarhe']['items'] as $item)
+                                    <li class="flex gap-3 rounded-lg bg-white/80 p-3 text-sm text-slate-700 dark:bg-white/5 dark:text-slate-200 sm:p-4 sm:text-base">
+                                        <span class="mt-2 size-2 shrink-0 rounded-full bg-emerald-600"></span>
+                                        <span class="leading-7">{{ $item }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </article>
+
+                        <article class="rounded-lg border border-rose-200 bg-rose-50 p-4 shadow-sm dark:border-rose-400/20 dark:bg-rose-400/10 sm:p-6">
+                            <div class="mb-5 flex items-center gap-3 sm:mb-6">
+                                <span class="grid size-9 shrink-0 place-items-center rounded-lg bg-rose-600 text-white sm:size-10"><flux:icon.x-mark class="size-5" /></span>
+                                <h3 class="text-xl font-black text-slate-950 dark:text-[#e6edf7] sm:text-2xl">{{ $comparison['expert']['title'] }}</h3>
+                            </div>
+                            <ul class="space-y-3 sm:space-y-4">
+                                @foreach ($comparison['expert']['items'] as $item)
+                                    <li class="flex gap-3 rounded-lg bg-white/80 p-3 text-sm text-slate-700 dark:bg-white/5 dark:text-slate-200 sm:p-4 sm:text-base">
+                                        <span class="mt-2 size-2 shrink-0 rounded-full bg-rose-600"></span>
+                                        <span class="leading-7">{{ $item }}</span>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </article>
+                    </div>
+                </section>
+
+                <section id="faq" class="border-y border-slate-200 bg-white dark:border-white/10 dark:bg-[#101827]">
+                    <div class="mx-auto max-w-4xl px-5 py-12 sm:py-16 lg:px-8">
+                        <div class="text-left sm:text-center">
+                            <p class="text-sm font-black uppercase text-emerald-700">Foire aux questions</p>
+                            <h2 class="mt-3 text-2xl font-black leading-tight text-slate-950 sm:text-4xl">Les reponses aux questions avant de passer a Squarhe.</h2>
+                        </div>
+                        <div class="mt-8 space-y-3 sm:mt-10">
+                            @foreach ($faqs as $index => $faq)
+                                <details class="group rounded-lg border border-slate-200 bg-slate-50 p-4 open:bg-white open:shadow-lg dark:border-white/10 dark:bg-[#172033] dark:open:bg-[#1d2a40] sm:p-5" @if ($index === 0) open @endif>
+                                    <summary class="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 font-black text-slate-950 dark:text-[#e6edf7] sm:gap-5">
+                                        <span>{{ $faq['question'] }}</span>
+                                        <span class="grid size-8 shrink-0 place-items-center rounded-lg bg-slate-200 text-slate-700 transition group-open:rotate-45 dark:bg-white/10 dark:text-slate-200"><flux:icon.plus class="size-4" /></span>
+                                    </summary>
+                                    <p class="mt-4 leading-8 text-slate-600 dark:text-slate-300">{{ $faq['answer'] }}</p>
+                                </details>
                             @endforeach
                         </div>
                     </div>
