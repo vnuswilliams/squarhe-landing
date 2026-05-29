@@ -227,6 +227,16 @@
                 </section>
 
                 <section class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+                    <div class="mb-10 max-w-3xl">
+                        <p class="text-sm font-black uppercase text-amber-600 dark:text-amber-300">Vos blocages du quotidien</p>
+                        <h2 class="mt-3 text-3xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-4xl">
+                            Si votre gestion RH ressemble a ca, vous n'êtes pas seul.
+                        </h2>
+                        <p class="mt-4 text-lg leading-8 text-slate-600 dark:text-slate-300">
+                            Beaucoup de PME avancent avec des outils eparpilles, des validations urgentes et des documents difficiles a retrouver. Squarhe part de ces problemes concrets pour remettre de l ordre sans ajouter de complexite.
+                        </p>
+                    </div>
+
                     <div class="grid gap-5 lg:grid-cols-4">
                         @foreach ([
                             ['Excel partout', 'Variables de paie dispersees et corrections de derniere minute.'],
