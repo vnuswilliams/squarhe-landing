@@ -60,3 +60,41 @@ html {
         transition: none;
     }
 }
+.dark main h1,
+            .dark main h2,
+            .dark main h3 { color: #e6edf7; }
+            .dark main p { color: #c4cfdd; }
+
+            /* Testimonial scroll */
+            .testimonial-rail {
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+            .testimonial-rail::-webkit-scrollbar { display: none; }
+            .testimonial-marquee { animation: none; }
+            @media (min-width: 768px) {
+                .testimonial-marquee { animation: testimonial-scroll 60s linear infinite; }
+                .testimonial-rail:hover .testimonial-marquee { animation-play-state: paused; }
+            }
+            @keyframes testimonial-scroll {
+                from { transform: translateX(0); }
+                to { transform: translateX(-50%); }
+            }
+            @media (prefers-reduced-motion: reduce) {
+                .testimonial-marquee { animation: none; }
+            }
+
+            /* Hero badge pulse */
+            @keyframes badge-pulse {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.6; }
+            }
+            .badge-live { animation: badge-pulse 2s ease-in-out infinite; }
+
+            /* Stat counter cards */
+            .stat-card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+            .stat-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+
+            /* Problem cards hover */
+            .problem-card { transition: all 0.25s ease; }
+            .problem-card:hover { border-color: #f59e0b; transform: translateY(-2px); }

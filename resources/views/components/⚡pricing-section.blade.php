@@ -92,7 +92,7 @@ new class extends Component
 };
 ?>
 
-<section id="offres" class="border-y border-slate-200 bg-white dark:border-white/10 dark:bg-[#101827]" data-scroll-reveal-scope>
+<section id="offres" class="border-y border-slate-200 bg-white dark:border-white/10 dark:bg-[#101827]" >
     <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
         <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
             <div>

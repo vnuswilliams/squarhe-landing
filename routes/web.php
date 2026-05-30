@@ -18,3 +18,11 @@ Route::get('/conditions-generales-vente', function () {
         'markdown' => Str::markdown(file_get_contents(base_path('cgv.md'))),
     ]);
 })->name('legal.cgv');
+
+
+Route::get('/conditions-generales-cookies', function () {
+    return view('legal.show', [
+        'title' => 'Conditions generales de cookies',
+        'markdown' => Str::markdown(file_get_contents(base_path('cookies.md'))),
+    ]);
+})->name('legal.cookies');
