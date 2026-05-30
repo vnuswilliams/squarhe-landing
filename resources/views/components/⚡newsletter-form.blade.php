@@ -1,20 +1,35 @@
 <?php
 
+use App\Mail\NewsletterSubscriptionSuccessful;
 use App\Models\NewsletterSubscription;
 use Flux\Flux;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
+use Spatie\Honeypot\Http\Livewire\Concerns\HoneypotData;
+use Spatie\Honeypot\Http\Livewire\Concerns\UsesSpamProtection;
 
 new class extends Component
 {
+    use UsesSpamProtection;
+
     public string $email = '';
 
     public bool $consent = false;
 
     public ?string $successMessage = null;
 
+    public HoneypotData $extraFields;
+
+    public function mount(): void
+    {
+        $this->extraFields = new HoneypotData();
+    }
+
     public function subscribe(): void
     {
+        $this->protectAgainstSpam();
+
         $this->successMessage = null;
 
         $validated = Validator::make([
@@ -25,13 +40,15 @@ new class extends Component
             'newsletterConsent' => ['accepted'],
         ])->validate();
 
-        NewsletterSubscription::updateOrCreate(
+        $subscription = NewsletterSubscription::updateOrCreate(
             ['email' => $validated['newsletterEmail']],
             [
                 'consent' => true,
                 'subscribed_at' => now(),
             ],
         );
+
+        Mail::to($subscription->email)->send(new NewsletterSubscriptionSuccessful($subscription));
 
         $this->reset('email', 'consent');
 
@@ -47,6 +64,8 @@ new class extends Component
 ?>
 
 <form wire:submit="subscribe" class="rounded-lg border border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-[#172033] sm:p-6">
+    <x-honeypot livewire-model="extraFields" />
+
     <flux:field>
         <flux:label>Email professionnel</flux:label>
         <div class="flex flex-col gap-3 sm:flex-row">

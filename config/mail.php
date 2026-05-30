@@ -101,6 +101,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Contact Form Recipient
+    |--------------------------------------------------------------------------
+    |
+    | This address receives notifications when a visitor submits the contact
+    | form from the landing page.
+    |
+    */
+
+    'contact_recipient' => env('MAIL_CONTACT_RECIPIENT', 'payongvenus@icloud.com'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Global "From" Address
     |--------------------------------------------------------------------------
     |
