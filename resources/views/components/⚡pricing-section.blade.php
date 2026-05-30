@@ -92,7 +92,7 @@ new class extends Component
 };
 ?>
 
-<section id="offres" class="border-y border-slate-200 bg-white dark:border-white/10 dark:bg-[#101827]">
+<section id="offres" class="border-y border-slate-200 bg-white dark:border-white/10 dark:bg-[#101827]" data-scroll-reveal-scope>
     <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
         <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
             <div>
@@ -187,7 +187,7 @@ new class extends Component
 
             <div class="mt-6 overflow-hidden rounded-lg border border-slate-200 bg-white dark:border-white/10 dark:bg-[#172033]">
                 <div class="overflow-x-auto">
-                    <table class="w-full min-w-[760px] text-left text-sm">
+                    <table class="pricing-comparison-table w-full min-w-[760px] text-left text-sm">
                         <thead class="bg-slate-950 text-white dark:bg-white dark:text-slate-950">
                             <tr>
                                 <th scope="col" class="w-[28%] px-5 py-4 font-black">Critere</th>
