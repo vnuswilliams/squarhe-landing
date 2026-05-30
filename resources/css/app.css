@@ -14,3 +14,58 @@
 html {
                 scroll-behavior: smooth;
             }
+
+
+
+            [x-cloak] {
+                display: none !important;
+            }
+
+            .dark main h1,
+            .dark main h2,
+            .dark main h3 {
+                color: #e6edf7;
+            }
+
+            .dark main p {
+                color: #c4cfdd;
+            }
+
+            .testimonial-rail {
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            .testimonial-rail::-webkit-scrollbar {
+                display: none;
+            }
+
+            .testimonial-marquee {
+                animation: none;
+            }
+
+            @media (min-width: 768px) {
+                .testimonial-marquee {
+                    animation: testimonial-scroll 55s linear infinite;
+                }
+
+                .testimonial-rail:hover .testimonial-marquee {
+                    animation-play-state: paused;
+                }
+            }
+
+            @keyframes testimonial-scroll {
+                from {
+                    transform: translateX(0);
+                }
+
+                to {
+                    transform: translateX(-50%);
+                }
+            }
+
+            @media (prefers-reduced-motion: reduce) {
+                .testimonial-marquee {
+                    animation: none;
+                }
+            }
