@@ -54,7 +54,7 @@ new class extends Component
             'companyName' => ['required', 'string', 'max:120'],
             'fullName' => ['required', 'string', 'max:120'],
             'email' => ['required', 'email:rfc', 'max:160'],
-            'phone' => ['nullable', 'string', 'max:40'],
+            'phone' => ['nullable', 'string', 'max:9'],
             'employeesCount' => ['nullable', 'integer', 'min:5', 'max:10000'],
             'message' => ['nullable', 'string', 'max:1200'],
             'consent' => ['accepted'],
