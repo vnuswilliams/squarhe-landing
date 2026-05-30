@@ -1,12 +1,18 @@
 <?php
 
+use App\Mail\NewContactLeadReceived;
 use App\Models\ContactLead;
 use Flux\Flux;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Livewire\Component;
+use Spatie\Honeypot\Http\Livewire\Concerns\HoneypotData;
+use Spatie\Honeypot\Http\Livewire\Concerns\UsesSpamProtection;
 
 new class extends Component
 {
+    use UsesSpamProtection;
+
     public string $companyName = '';
 
     public string $fullName = '';
@@ -23,8 +29,17 @@ new class extends Component
 
     public ?string $successMessage = null;
 
+    public HoneypotData $extraFields;
+
+    public function mount(): void
+    {
+        $this->extraFields = new HoneypotData();
+    }
+
     public function storeContact(): void
     {
+        $this->protectAgainstSpam();
+
         $this->successMessage = null;
 
         $validated = Validator::make([
@@ -45,7 +60,7 @@ new class extends Component
             'consent' => ['accepted'],
         ])->validate();
 
-        ContactLead::create([
+        $lead = ContactLead::create([
             'company_name' => $validated['companyName'],
             'full_name' => $validated['fullName'],
             'email' => $validated['email'],
@@ -54,6 +69,8 @@ new class extends Component
             'message' => $validated['message'] ?: null,
             'consent' => true,
         ]);
+
+        Mail::to(config('mail.contact_recipient'))->send(new NewContactLeadReceived($lead));
 
         $this->reset('companyName', 'fullName', 'email', 'phone', 'employeesCount', 'message', 'consent');
 
@@ -69,6 +86,8 @@ new class extends Component
 ?>
 
 <form wire:submit="storeContact" class="rounded-lg border border-slate-200 bg-white p-5 shadow-xl shadow-slate-950/5 dark:border-white/10 dark:bg-[#172033] sm:p-6">
+    <x-honeypot livewire-model="extraFields" />
+
     <div class="grid gap-4 sm:grid-cols-2">
         <flux:field>
             <flux:label>Entreprise</flux:label>
