@@ -20,7 +20,7 @@ const markRevealElements = (scope) => {
     });
 
     scope.querySelectorAll('[data-scroll-reveal]').forEach((element, index) => {
-        element.style.setProperty('--scroll-reveal-delay', `${Math.min(index % 8, 7) * 35}ms`);
+        element.style.setProperty('--scroll-reveal-delay', `${Math.min(index % 8, 7) * 25}ms`);
     });
 };
 

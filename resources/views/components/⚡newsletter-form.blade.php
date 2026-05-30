@@ -35,7 +35,7 @@ new class extends Component
 
         $this->reset('email', 'consent');
 
-        $this->successMessage = 'Inscription confirmee. Vous recevrez les prochaines ressources Squarhe.';
+        $this->successMessage = 'Inscription confirmée. Vous recevrez les prochaines ressources Squarhe.';
 
         Flux::toast(
             text: $this->successMessage,

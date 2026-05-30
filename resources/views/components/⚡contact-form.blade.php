@@ -40,7 +40,7 @@ new class extends Component
             'fullName' => ['required', 'string', 'max:120'],
             'email' => ['required', 'email:rfc', 'max:160'],
             'phone' => ['nullable', 'string', 'max:40'],
-            'employeesCount' => ['nullable', 'integer', 'min:1', 'max:10000'],
+            'employeesCount' => ['nullable', 'integer', 'min:5', 'max:10000'],
             'message' => ['nullable', 'string', 'max:1200'],
             'consent' => ['accepted'],
         ])->validate();
@@ -57,11 +57,11 @@ new class extends Component
 
         $this->reset('companyName', 'fullName', 'email', 'phone', 'employeesCount', 'message', 'consent');
 
-        $this->successMessage = 'Merci, votre demande a bien ete envoyee. Nous vous recontacterons rapidement.';
+        $this->successMessage = 'Merci, votre demande a bien été envoyée. Nous vous recontacterons rapidement.';
 
         Flux::toast(
             text: $this->successMessage,
-            heading: 'Demande envoyee',
+            heading: 'Demande envoyée',
             variant: 'success',
         );
     }
@@ -96,7 +96,7 @@ new class extends Component
 
         <flux:field class="sm:col-span-2">
             <flux:label>Nombre d employes</flux:label>
-            <flux:input type="number" min="1" wire:model="employeesCount" icon="users" />
+            <flux:input type="number" min="5" max="10000" wire:model="employeesCount" icon="users" />
             <flux:error name="employeesCount" />
         </flux:field>
 
