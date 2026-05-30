@@ -216,7 +216,7 @@
                 </nav>
             </header>
 
-            <main id="top">
+            <main id="top" data-scroll-reveal-scope>
                 <section class="border-b border-slate-200 bg-white dark:border-white/10 dark:bg-[#101827]">
                     <div class="mx-auto grid max-w-7xl gap-12 px-5 pb-16 pt-12 lg:grid-cols-[1fr_0.92fr] lg:px-8 lg:pb-20 lg:pt-18">
                         <div class="flex flex-col justify-center">
