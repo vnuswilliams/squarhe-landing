@@ -6,7 +6,7 @@
             $seoTitle = 'Squarhe Paie automatisée pour PME camerounaises';
             $seoDescription = 'Fini Excel et WhatsApp pour gérer votre paie. Squarhe calcule, génère vos bulletins et suit la CNPS en moins de 10 minutes par mois. Conçu pour les PME au Cameroun.';
             $seoUrl = url('/');
-            $seoImage = asset('apple-touch-icon.png');
+            $seoImage = asset('images\app-preview.png');
         @endphp
 
         <meta charset="utf-8">
@@ -82,7 +82,7 @@
                 ['name' => 'Hermann G.', 'role' => 'Directeur Général', 'location' => 'Douala', 'sector' => 'Formation professionnelle', 'result' => 'Moins d\'Excel, moins de stress. Plus de temps pour développer l\'entreprise.', 'quote' => 'La promesse est tenue : moins d\'Excel, moins de stress et plus de temps pour accompagner les équipes.'],
             ];
 
-           
+
             // ─── FAQ ─────────────────────────────────────────────────────
             $faqs = [
                 ['question' => 'Ai-je besoin de connaissances en paie pour utiliser Squarhe ?', 'answer' => 'Non. Squarhe est conçu pour les dirigeants et gestionnaires qui ne sont pas experts en paie. L\'interface vous guide étape par étape : vous saisissez les variables, Squarhe calcule, vous validez. Notre équipe vous accompagne à la prise en main la plupart de nos clients sont opérationnels en moins d\'une journée.'],
@@ -237,7 +237,7 @@
                     </span>
                     <span
                         class="font-black tracking-normal text-slate-950 dark:text-[#e6edf7] transition-all duration-300"
-                        :class="scrolled ? 'text-base hidden' : 'text-lg'"
+                        :class="scrolled ? 'text-base ' : 'text-lg'"
                     >Squarhe</span>
                 </a>
 
@@ -402,21 +402,21 @@
                 {{-- ═══════════════════════════════════════════════════
                      PROBLÈMES miroir de la réalité vécue
                 ═══════════════════════════════════════════════════ --}}
-               <section class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+              <section class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
 
     <div class="mb-10 max-w-2xl">
         <span class="inline-block rounded-full bg-amber-100 px-3 py-1 text-sm font-semibold text-amber-700 dark:bg-amber-400/20 dark:text-amber-300">
             Vous vous reconnaissez ?
         </span>
         <h2 class="mt-4 text-3xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-4xl">
-            Ce que vivent la plupart des PME avant Squarhe.
+            Ce que vivent la plupart des PME.
         </h2>
     </div>
 
     <div class="grid gap-4 sm:grid-cols-2">
 
         {{-- Card 1 — Variables WhatsApp --}}
-        <article class="flex items-center gap-5 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-[#172033]">
+        <article class="flex flex-col gap-4 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:gap-5 dark:border-white/10 dark:bg-[#172033]">
             <div class="min-w-0 flex-1">
                 <p class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Collecte des variables</p>
                 <h3 class="mt-2 text-base font-black leading-snug text-slate-950 dark:text-[#e6edf7]">
@@ -428,7 +428,7 @@
             </div>
 
             {{-- Mock WhatsApp --}}
-            <div class="w-44 shrink-0 space-y-1.5 rounded-xl border border-slate-200/80 bg-slate-50 p-2.5 dark:border-white/10 dark:bg-[#1d2a40]">
+            <div class="w-full space-y-1.5 rounded-xl border border-slate-200/80 bg-slate-50 p-2.5 sm:w-44 sm:shrink-0 dark:border-white/10 dark:bg-[#1d2a40]">
                 <div class="flex justify-end">
                     <span class="rounded-lg rounded-tr-none bg-emerald-500 px-2 py-1 text-[10px] font-medium text-white">Mballa = 420 000</span>
                 </div>
@@ -446,7 +446,7 @@
         </article>
 
         {{-- Card 2 — Traçabilité --}}
-        <article class="flex items-center gap-5 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-[#172033]">
+        <article class="flex flex-col gap-4 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:gap-5 dark:border-white/10 dark:bg-[#172033]">
             <div class="min-w-0 flex-1">
                 <p class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Traçabilité</p>
                 <h3 class="mt-2 text-base font-black leading-snug text-slate-950 dark:text-[#e6edf7]">
@@ -458,7 +458,7 @@
             </div>
 
             {{-- Mock tableau --}}
-            <div class="w-44 shrink-0 overflow-hidden rounded-xl border border-slate-200/80 dark:border-white/10">
+            <div class="w-full overflow-hidden rounded-xl border border-slate-200/80 sm:w-44 sm:shrink-0 dark:border-white/10">
                 <div class="grid grid-cols-2 bg-slate-100 px-2 py-1.5 text-[9px] font-bold text-slate-500 dark:bg-white/10">
                     <span>Employé</span><span>Statut</span>
                 </div>
@@ -477,7 +477,7 @@
         </article>
 
         {{-- Card 3 — CNPS --}}
-        <article class="flex items-center gap-5 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-[#172033]">
+        <article class="flex flex-col gap-4 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:gap-5 dark:border-white/10 dark:bg-[#172033]">
             <div class="min-w-0 flex-1">
                 <p class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Conformité CNPS</p>
                 <h3 class="mt-2 text-base font-black leading-snug text-slate-950 dark:text-[#e6edf7]">
@@ -489,7 +489,7 @@
             </div>
 
             {{-- Mock alertes --}}
-            <div class="w-44 shrink-0 space-y-1.5">
+            <div class="w-full space-y-1.5 sm:w-44 sm:shrink-0">
                 <div class="rounded-lg border border-rose-200 bg-rose-50 px-2.5 py-2 dark:border-rose-400/20 dark:bg-rose-400/10">
                     <p class="text-[10px] font-black text-rose-700 dark:text-rose-300">⚠️ Déclaration avril</p>
                     <p class="text-[9px] text-rose-500 dark:text-rose-400">4 salariés manquants</p>
@@ -506,7 +506,7 @@
         </article>
 
         {{-- Card 4 — Documents perdus --}}
-        <article class="flex items-center gap-5 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-white/10 dark:bg-[#172033]">
+        <article class="flex flex-col gap-4 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:gap-5 dark:border-white/10 dark:bg-[#172033]">
             <div class="min-w-0 flex-1">
                 <p class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Gestion documentaire</p>
                 <h3 class="mt-2 text-base font-black leading-snug text-slate-950 dark:text-[#e6edf7]">
@@ -518,7 +518,7 @@
             </div>
 
             {{-- Mock explorateur --}}
-            <div class="w-44 shrink-0 space-y-1 rounded-xl border border-slate-200/80 bg-slate-50 p-2.5 dark:border-white/10 dark:bg-[#1d2a40]">
+            <div class="w-full space-y-1 rounded-xl border border-slate-200/80 bg-slate-50 p-2.5 sm:w-44 sm:shrink-0 dark:border-white/10 dark:bg-[#1d2a40]">
                 @foreach ([
                     ['📁', 'RH 2023 ancien', ''],
                     ['📁', 'RH FINAL v2 copie', 'text-rose-500 font-bold'],
@@ -544,7 +544,7 @@
                     <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
                         <div class="max-w-3xl">
                             <p class="text-sm font-black uppercase text-blue-700">Ce que Squarhe change</p>
-                            <h2 class="mt-3 text-3xl font-black leading-tight text-slate-950 sm:text-4xl">Votre prochaine paie peut partir sans stress. Voici comment.</h2>
+                            <h2 class="mt-3 text-3xl font-black leading-tight text-slate-950 sm:text-4xl">Votre prochaine paie sans stress. Voici comment.</h2>
                             <p class="mt-4 text-lg leading-8 text-slate-600">Squarhe couvre les processus essentiels paie, documents, congés, conformité sans complexité, sans service RH dédié.</p>
                         </div>
                         <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
@@ -567,9 +567,16 @@
                 </section>
 
                 {{-- ═══════════════════════════════════════════════════
+                     TARIFS
+                ═══════════════════════════════════════════════════ --}}
+                <livewire:pricing-section />
+
+
+                {{-- ═══════════════════════════════════════════════════
                      COMMENT ÇA MARCHE section manquante ajoutée
                 ═══════════════════════════════════════════════════ --}}
-                <section class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+                <section class="bg-white">
+                    <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8 ">
                     <div class="mb-12 max-w-2xl">
                         <p class="text-sm font-black uppercase text-blue-700">En pratique</p>
                         <h2 class="mt-3 text-3xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-4xl">De votre Excel à Squarhe en 3 étapes.</h2>
@@ -593,13 +600,8 @@
                             </div>
                         @endforeach
                     </div>
+                    </div>
                 </section>
-
-                {{-- ═══════════════════════════════════════════════════
-                     TARIFS
-                ═══════════════════════════════════════════════════ --}}
-                <livewire:pricing-section />
-
                 {{-- ═══════════════════════════════════════════════════
                      FONCTIONNALITÉS CLÉS
                 ═══════════════════════════════════════════════════ --}}
@@ -613,24 +615,24 @@
                         </flux:button>
                     </div>
                    <div class="grid gap-4 sm:grid-cols-2">
-    @foreach ([
-        ['title' => 'Documents RH centralisés', 'text' => 'Contrats, bulletins, attestations et pièces employés archivés proprement. Retrouvés en 10 secondes.'],
-        ['title' => 'Paie automatisée', 'text' => 'Calcul des salaires avec absences, primes, avances et frais. Zéro formule Excel à maintenir.'],
-        ['title' => 'Gestion des congés', 'text' => 'Demandes, validations et soldes accessibles sans feuille Excel. Tout le monde voit le même état.'],
-        ['title' => 'Onboarding employé', 'text' => 'Informations personnelles, pièces jointes et contrat intégrés en quelques clics. Dossier complet dès le premier jour.'],
-    ] as $item)
-        <div class="rounded-lg border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-[#172033]">
+                        @foreach ([
+                            ['title' => 'Documents RH centralisés', 'text' => 'Contrats, bulletins, attestations et pièces employés archivés proprement. Retrouvés en 10 secondes.'],
+                            ['title' => 'Paie automatisée', 'text' => 'Calcul des salaires avec absences, primes, avances et frais. Zéro formule Excel à maintenir.'],
+                            ['title' => 'Gestion des congés', 'text' => 'Demandes, validations et soldes accessibles sans feuille Excel. Tout le monde voit le même état.'],
+                            ['title' => 'Onboarding employé', 'text' => 'Informations personnelles, pièces jointes et contrat intégrés en quelques clics. Dossier complet dès le premier jour.'],
+                        ] as $item)
+                            <div class="rounded-lg border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-[#172033]">
 
-            <h3 class="font-black text-slate-950 dark:text-[#e6edf7]">
-                {{ $item['title'] }}
-            </h3>
+                                <h3 class="font-black text-slate-950 dark:text-[#e6edf7]">
+                                    {{ $item['title'] }}
+                                </h3>
 
-            <p class="mt-2 leading-7 text-slate-600 dark:text-slate-300">
-                {{ $item['text'] }}
-            </p>
-        </div>
-    @endforeach
-</div>
+                                <p class="mt-2 leading-7 text-slate-600 dark:text-slate-300">
+                                    {{ $item['text'] }}
+                                </p>
+                            </div>
+                        @endforeach
+                    </div>
                 </section>
 
                 {{-- ═══════════════════════════════════════════════════
@@ -644,25 +646,25 @@
                             <p class="mt-4 text-lg leading-8 text-slate-300">Squarhe est pensé pour protéger les informations sensibles, organiser les accès et garder une trace claire de chaque action.</p>
                         </div>
                       <div class="grid gap-4 sm:grid-cols-2">
-    @foreach ([
-        ['title' => 'Accès contrôlés par rôle', 'text' => 'Administrateur, gestionnaire, employé chacun voit uniquement ce qui le concerne. Aucune donnée confidentielle exposée.'],
-        ['title' => 'Sauvegardes automatiques', 'text' => 'Vos données sont sauvegardées automatiquement. Vous ne perdez jamais un document ou un historique.'],
-        ['title' => 'Traçabilité complète', 'text' => 'Chaque modification de variable, chaque validation de paie est enregistrée. Vous savez qui a fait quoi et quand.'],
-        ['title' => 'Archivage sécurisé', 'text' => 'Bulletins, contrats et justificatifs conservés dans un espace structuré, accessible à tout moment.'],
-    ] as $item)
-        <article class="rounded-lg border border-white/10 bg-white/5 p-5">
-            <flux:icon.shield-check class="mb-4 size-6 text-emerald-300" />
+                        @foreach ([
+                            ['title' => 'Accès contrôlés par rôle', 'text' => 'Administrateur, gestionnaire, employé chacun voit uniquement ce qui le concerne. Aucune donnée confidentielle exposée.'],
+                            ['title' => 'Sauvegardes automatiques', 'text' => 'Vos données sont sauvegardées automatiquement. Vous ne perdez jamais un document ou un historique.'],
+                            ['title' => 'Traçabilité complète', 'text' => 'Chaque modification de variable, chaque validation de paie est enregistrée. Vous savez qui a fait quoi et quand.'],
+                            ['title' => 'Archivage sécurisé', 'text' => 'Bulletins, contrats et justificatifs conservés dans un espace structuré, accessible à tout moment.'],
+                        ] as $item)
+                            <article class="rounded-lg border border-white/10 bg-white/5 p-5">
+                                <flux:icon.shield-check class="mb-4 size-6 text-emerald-300" />
 
-            <h3 class="font-black">
-                {{ $item['title'] }}
-            </h3>
+                                <h3 class="font-black">
+                                    {{ $item['title'] }}
+                                </h3>
 
-            <p class="mt-2 leading-7 text-slate-300">
-                {{ $item['text'] }}
-            </p>
-        </article>
-    @endforeach
-</div>
+                                <p class="mt-2 leading-7 text-slate-300">
+                                    {{ $item['text'] }}
+                                </p>
+                            </article>
+                        @endforeach
+                    </div>
                     </div>
                 </section>
 
@@ -711,137 +713,137 @@
                 ═══════════════════════════════════════════════════ --}}
                 <section id="comparaison" class="mx-auto max-w-7xl px-5 py-12 sm:py-16 lg:px-8">
 
-    <div class="mx-auto max-w-3xl text-left sm:text-center">
-        <p class="text-sm font-black uppercase text-blue-700 dark:text-blue-300">Pourquoi pas un logiciel générique ?</p>
-        <h2 class="mt-3 text-2xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-4xl">
-            Ce qui change quand le logiciel est conçu pour vous.
-        </h2>
-        <p class="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg sm:leading-8">
-            Les logiciels RH occidentaux existent depuis des décennies. Mais ils n'ont pas été pensés pour la CNPS, le Code du travail camerounais, ni pour les PME de 5 à 150 personnes.
-        </p>
-    </div>
-
-    {{-- ── Tableau comparatif ── --}}
-    <div class="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#172033]">
-
-        {{-- Header colonnes --}}
-        <div class="grid grid-cols-[1fr_1fr_1fr] border-b border-slate-200 dark:border-white/10">
-            <div class="border-r border-slate-200 px-5 py-4 dark:border-white/10">
-                <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Critère</p>
-            </div>
-            <div class="border-r border-slate-200 bg-rose-50 px-5 py-4 dark:border-white/10 dark:bg-rose-400/10">
-                <p class="text-xs font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400">Logiciel générique</p>
-                <p class="mt-0.5 text-[11px] text-rose-500/70 dark:text-rose-400/60">SAP, Sage, Odoo, Paie+…</p>
-            </div>
-            <div class="bg-emerald-50 px-5 py-4 dark:bg-emerald-400/10">
-                <div class="flex items-center gap-2">
-                    <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300">Squarhe</p>
-                    <span class="rounded-full bg-emerald-600 px-2 py-0.5 text-[10px] font-black text-white">Cameroun</span>
-                </div>
-                <p class="mt-0.5 text-[11px] text-emerald-600/70 dark:text-emerald-400/60">Conçu pour vous, dès le premier jour</p>
-            </div>
-        </div>
-
-        {{-- Lignes --}}
-        @php
-        $rows = [
-            [
-                'label' => 'Calculs CNPS & IRPP',
-                'generic' => ['text' => 'À configurer manuellement — taux, tranches, plafonds à saisir soi-même. Risque d\'erreur à chaque mise à jour réglementaire.', 'bad' => true],
-                'squarhe' => ['text' => 'Intégrés nativement. Mis à jour automatiquement à chaque changement réglementaire.', 'bad' => false],
-            ],
-            [
-                'label' => 'Conformité droit du travail',
-                'generic' => ['text' => 'Basé sur le droit français ou américain. Nécessite des paramétrages longs pour approcher le Code du travail camerounais — sans garantie.', 'bad' => true],
-                'squarhe' => ['text' => 'Construit sur le Code du travail camerounais : ancienneté, préavis, indemnités, congés légaux.', 'bad' => false],
-            ],
-            [
-                'label' => 'Heures supp & congés',
-                'generic' => ['text' => 'Module souvent absent ou mal adapté. La majorité des PME gèrent ça en parallèle sur Excel — deux outils, deux sources d\'erreurs.', 'bad' => true],
-                'squarhe' => ['text' => 'Suivi des congés et absences intégré dans le même outil. Les validations alimentent directement le calcul de paie.', 'bad' => false],
-            ],
-            [
-                'label' => 'Coût & maintenance',
-                'generic' => ['text' => 'Licences annuelles, modules payants séparément, consultants nécessaires pour les mises à jour. Factures imprévisibles.', 'bad' => true],
-                'squarhe' => ['text' => 'Abonnement mensuel transparent, sans engagement. Mises à jour incluses, aucun coût caché.', 'bad' => false],
-            ],
-            [
-                'label' => 'Devise & format',
-                'generic' => ['text' => 'Affichage en euros ou dollars, formats de dates et de nombres non adaptés. Exports difficiles à lire pour vos équipes.', 'bad' => true],
-                'squarhe' => ['text' => 'Tout en FCFA, formats camerounais, bulletins conformes aux usages locaux.', 'bad' => false],
-            ],
-            [
-                'label' => 'Prise en main',
-                'generic' => ['text' => 'Formations payantes de plusieurs jours. Interface pensée pour des experts RH ou des consultants. Non adapté aux petites équipes.', 'bad' => true],
-                'squarhe' => ['text' => 'Opérationnel en moins d\'une journée. Interface guidée, aucune expertise RH requise.', 'bad' => false],
-            ],
-            [
-                'label' => 'Support local',
-                'generic' => ['text' => 'Support basé en Europe ou en Asie. Décalage horaire, incompréhension des contraintes locales, tickets qui traînent.', 'bad' => true],
-                'squarhe' => ['text' => 'Équipe camerounaise, disponible sur WhatsApp. Réponse sous 48h par des gens qui connaissent votre contexte.', 'bad' => false],
-            ],
-            [
-                'label' => 'Espace collaborateur',
-                'generic' => ['text' => 'Module optionnel, souvent payant. Rarement adapté aux usages mobiles des employés camerounais.', 'bad' => true],
-                'squarhe' => ['text' => 'Inclus dans chaque offre. Chaque employé accède à ses bulletins, soldes de congés et documents depuis son téléphone.', 'bad' => false],
-            ],
-        ];
-        @endphp
-
-        @foreach ($rows as $i => $row)
-            <div class="grid grid-cols-[1fr_1fr_1fr] border-b border-slate-100 last:border-0 dark:border-white/5 {{ $i % 2 !== 0 ? 'bg-slate-50/50 dark:bg-white/[0.015]' : '' }}">
-
-                {{-- Critère --}}
-                <div class="border-r border-slate-100 px-5 py-4 dark:border-white/5">
-                    <p class="text-sm font-black text-slate-950 dark:text-[#e6edf7]">{{ $row['label'] }}</p>
-                </div>
-
-                {{-- Logiciel générique --}}
-                <div class="border-r border-slate-100 px-5 py-4 dark:border-white/5">
-                    <div class="flex items-start gap-2">
-                        <span class="mt-0.5 shrink-0">
-                            <svg class="size-4 text-rose-500" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd"/>
-                            </svg>
-                        </span>
-                        <p class="text-xs leading-6 text-slate-500 dark:text-slate-400">{{ $row['generic']['text'] }}</p>
+                    <div class="mx-auto max-w-3xl text-left sm:text-center">
+                        <p class="text-sm font-black uppercase text-blue-700 dark:text-blue-300">Pourquoi pas un logiciel générique ?</p>
+                        <h2 class="mt-3 text-2xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-4xl">
+                            Ce qui change quand le logiciel est conçu pour vous.
+                        </h2>
+                        <p class="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg sm:leading-8">
+                            Les logiciels RH occidentaux existent depuis des décennies. Mais ils n'ont pas été pensés pour la CNPS, le Code du travail camerounais, ni pour les PME de 5 à 150 personnes.
+                        </p>
                     </div>
-                </div>
 
-                {{-- Squarhe --}}
-                <div class="px-5 py-4">
-                    <div class="flex items-start gap-2">
-                        <span class="mt-0.5 shrink-0">
-                            <svg class="size-4 text-emerald-600 dark:text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/>
-                            </svg>
-                        </span>
-                        <p class="text-xs leading-6 text-slate-700 dark:text-slate-200">{{ $row['squarhe']['text'] }}</p>
+                    {{-- ── Tableau comparatif ── --}}
+                    <div class="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#172033]">
+
+                        {{-- Header colonnes --}}
+                        <div class="grid grid-cols-[1fr_1fr_1fr] border-b border-slate-200 dark:border-white/10">
+                            <div class="border-r border-slate-200 px-5 py-4 dark:border-white/10">
+                                <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Critère</p>
+                            </div>
+                            <div class="border-r border-slate-200 bg-rose-50 px-5 py-4 dark:border-white/10 dark:bg-rose-400/10">
+                                <p class="text-xs font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400">Logiciel générique</p>
+                                <p class="mt-0.5 text-[11px] text-rose-500/70 dark:text-rose-400/60">SAP, Sage, Odoo, Paie+…</p>
+                            </div>
+                            <div class="bg-emerald-50 px-5 py-4 dark:bg-emerald-400/10">
+                                <div class="flex items-center gap-2">
+                                    <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300">Squarhe</p>
+                                    <span class="rounded-full bg-emerald-600 px-2 py-0.5 text-[10px] font-black text-white">Cameroun</span>
+                                </div>
+                                <p class="mt-0.5 text-[11px] text-emerald-600/70 dark:text-emerald-400/60">Conçu pour vous, dès le premier jour</p>
+                            </div>
+                        </div>
+
+                        {{-- Lignes --}}
+                        @php
+                        $rows = [
+                            [
+                                'label' => 'Calculs CNPS & IRPP',
+                                'generic' => ['text' => 'À configurer manuellement — taux, tranches, plafonds à saisir soi-même. Risque d\'erreur à chaque mise à jour réglementaire.', 'bad' => true],
+                                'squarhe' => ['text' => 'Intégrés nativement. Mis à jour automatiquement à chaque changement réglementaire.', 'bad' => false],
+                            ],
+                            [
+                                'label' => 'Conformité droit du travail',
+                                'generic' => ['text' => 'Basé sur le droit français ou américain. Nécessite des paramétrages longs pour approcher le Code du travail camerounais — sans garantie.', 'bad' => true],
+                                'squarhe' => ['text' => 'Construit sur le Code du travail camerounais : ancienneté, préavis, indemnités, congés légaux.', 'bad' => false],
+                            ],
+                            [
+                                'label' => 'Heures supp & congés',
+                                'generic' => ['text' => 'Module souvent absent ou mal adapté. La majorité des PME gèrent ça en parallèle sur Excel — deux outils, deux sources d\'erreurs.', 'bad' => true],
+                                'squarhe' => ['text' => 'Suivi des congés et absences intégré dans le même outil. Les validations alimentent directement le calcul de paie.', 'bad' => false],
+                            ],
+                            [
+                                'label' => 'Coût & maintenance',
+                                'generic' => ['text' => 'Licences annuelles, modules payants séparément, consultants nécessaires pour les mises à jour. Factures imprévisibles.', 'bad' => true],
+                                'squarhe' => ['text' => 'Abonnement mensuel transparent, sans engagement. Mises à jour incluses, aucun coût caché.', 'bad' => false],
+                            ],
+                            [
+                                'label' => 'Devise & format',
+                                'generic' => ['text' => 'Affichage en euros ou dollars, formats de dates et de nombres non adaptés. Exports difficiles à lire pour vos équipes.', 'bad' => true],
+                                'squarhe' => ['text' => 'Tout en FCFA, formats camerounais, bulletins conformes aux usages locaux.', 'bad' => false],
+                            ],
+                            [
+                                'label' => 'Prise en main',
+                                'generic' => ['text' => 'Formations payantes de plusieurs jours. Interface pensée pour des experts RH ou des consultants. Non adapté aux petites équipes.', 'bad' => true],
+                                'squarhe' => ['text' => 'Opérationnel en moins d\'une journée. Interface guidée, aucune expertise RH requise.', 'bad' => false],
+                            ],
+                            [
+                                'label' => 'Support local',
+                                'generic' => ['text' => 'Support basé en Europe ou en Asie. Décalage horaire, incompréhension des contraintes locales, tickets qui traînent.', 'bad' => true],
+                                'squarhe' => ['text' => 'Équipe camerounaise, disponible sur WhatsApp. Réponse sous 48h par des gens qui connaissent votre contexte.', 'bad' => false],
+                            ],
+                            [
+                                'label' => 'Espace collaborateur',
+                                'generic' => ['text' => 'Module optionnel, souvent payant. Rarement adapté aux usages mobiles des employés camerounais.', 'bad' => true],
+                                'squarhe' => ['text' => 'Inclus dans chaque offre. Chaque employé accède à ses bulletins, soldes de congés et documents depuis son téléphone.', 'bad' => false],
+                            ],
+                        ];
+                        @endphp
+
+                        @foreach ($rows as $i => $row)
+                            <div class="grid grid-cols-[1fr_1fr_1fr] border-b border-slate-100 last:border-0 dark:border-white/5 {{ $i % 2 !== 0 ? 'bg-slate-50/50 dark:bg-white/[0.015]' : '' }}">
+
+                                {{-- Critère --}}
+                                <div class="border-r border-slate-100 px-5 py-4 dark:border-white/5">
+                                    <p class="text-sm font-black text-slate-950 dark:text-[#e6edf7]">{{ $row['label'] }}</p>
+                                </div>
+
+                                {{-- Logiciel générique --}}
+                                <div class="border-r border-slate-100 px-5 py-4 dark:border-white/5">
+                                    <div class="flex items-start gap-2">
+                                        <span class="mt-0.5 shrink-0">
+                                            <svg class="size-4 text-rose-500" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd"/>
+                                            </svg>
+                                        </span>
+                                        <p class="text-xs leading-6 text-slate-500 dark:text-slate-400">{{ $row['generic']['text'] }}</p>
+                                    </div>
+                                </div>
+
+                                {{-- Squarhe --}}
+                                <div class="px-5 py-4">
+                                    <div class="flex items-start gap-2">
+                                        <span class="mt-0.5 shrink-0">
+                                            <svg class="size-4 text-emerald-600 dark:text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/>
+                                            </svg>
+                                        </span>
+                                        <p class="text-xs leading-6 text-slate-700 dark:text-slate-200">{{ $row['squarhe']['text'] }}</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        @endforeach
                     </div>
-                </div>
 
-            </div>
-        @endforeach
-    </div>
+                    {{-- ── Ancrage tarifaire ── --}}
+                    <div class="mt-6 rounded-xl border border-blue-200 bg-blue-50 p-5 dark:border-blue-400/20 dark:bg-blue-400/10 sm:p-6">
+                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                            <div>
+                                <p class="font-black text-slate-950 dark:text-white">
+                                    💡 Un redressement CNPS ou fiscale peut coûter entre 150 000 et des millions de Francs CFA.
+                                </p>
+                                <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
+                                    Squarhe vous évite d'en arriver là à partir de <strong class="text-slate-900 dark:text-white">14 900 FCFA/mois</strong>. Vous gardez le contrôle, il gère l'essentiel.
+                                </p>
+                            </div>
+                            <flux:button href="#offres" variant="primary" icon="calculator" class="shrink-0">
+                                Simuler mon tarif
+                            </flux:button>
+                        </div>
+                    </div>
 
-    {{-- ── Ancrage tarifaire ── --}}
-    <div class="mt-6 rounded-xl border border-blue-200 bg-blue-50 p-5 dark:border-blue-400/20 dark:bg-blue-400/10 sm:p-6">
-        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <div>
-                <p class="font-black text-slate-950 dark:text-white">
-                    💡 Un gestionnaire RH coûte entre 150 000 et 300 000 FCFA/mois.
-                </p>
-                <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                    Squarhe automatise son travail répétitif à partir de <strong class="text-slate-900 dark:text-white">14 900 FCFA/mois</strong>. Vous gardez le contrôle, il gère l'essentiel.
-                </p>
-            </div>
-            <flux:button href="#offres" variant="primary" icon="calculator" class="shrink-0">
-                Simuler mon tarif
-            </flux:button>
-        </div>
-    </div>
-
-</section>
+                </section>
                 {{-- ═══════════════════════════════════════════════════
                      FAQ Réponses enrichies
                 ═══════════════════════════════════════════════════ --}}
@@ -883,24 +885,24 @@
                             <p class="mt-4 text-lg leading-8 text-slate-600 dark:text-slate-300">La plupart des logiciels RH vendus en Afrique sont des outils occidentaux mal adaptés. Squarhe part de vos contraintes réelles.</p>
                         </div>
                        <div class="grid gap-4 lg:grid-cols-3">
-    @foreach ([
-        ['title' => 'CNPS, IRPP, Code du travail camerounais', 'text' => 'Les règles locales sont intégrées nativement, pas configurées à la main par vos soins. Elles sont mises à jour automatiquement.'],
-        ['title' => 'Interface pensée pour les non-experts', 'text' => 'Vous n\'avez pas besoin d\'un diplôme en RH pour utiliser Squarhe. Les parcours sont courts, clairs et guidés.'],
-        ['title' => 'Tarifs accessibles aux PME de 5 à 150 personnes', 'text' => 'Pas d\'abonnement annuel imposé, pas de module caché. Vous payez pour votre effectif réel, mois par mois.'],
-    ] as $item)
-        <div class="rounded-lg border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-[#172033]">
-            <flux:icon.map-pin class="mb-3 size-5 text-blue-600 dark:text-blue-300" />
+                            @foreach ([
+                                ['title' => 'CNPS, IRPP, Code du travail camerounais', 'text' => 'Les règles locales sont intégrées nativement, pas configurées à la main par vos soins. Elles sont mises à jour automatiquement.'],
+                                ['title' => 'Interface pensée pour les non-experts', 'text' => 'Vous n\'avez pas besoin d\'un diplôme en RH pour utiliser Squarhe. Les parcours sont courts, clairs et guidés.'],
+                                ['title' => 'Tarifs accessibles aux PME de 5 à 150 personnes', 'text' => 'Pas d\'abonnement annuel imposé, pas de module caché. Vous payez pour votre effectif réel, mois par mois.'],
+                            ] as $item)
+                                <div class="rounded-lg border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-[#172033]">
+                                    <flux:icon.map-pin class="mb-3 size-5 text-blue-600 dark:text-blue-300" />
 
-            <h3 class="font-black text-slate-950 dark:text-[#e6edf7]">
-                {{ $item['title'] }}
-            </h3>
+                                    <h3 class="font-black text-slate-950 dark:text-[#e6edf7]">
+                                        {{ $item['title'] }}
+                                    </h3>
 
-            <p class="mt-2 leading-7 text-slate-600 dark:text-slate-300">
-                {{ $item['text'] }}
-            </p>
-        </div>
-    @endforeach
-</div>
+                                    <p class="mt-2 leading-7 text-slate-600 dark:text-slate-300">
+                                        {{ $item['text'] }}
+                                    </p>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                 </section>
 
@@ -944,37 +946,35 @@
                 <section id="contact" class="mx-auto grid max-w-7xl gap-8 px-5 py-16 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
                     <div>
                         <p class="text-sm font-black uppercase text-blue-700">Parlons de votre PME</p>
-                        <h2 class="mt-3 text-3xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-4xl">Votre prochaine paie peut partir sans stress.</h2>
-                        <p class="mt-4 text-lg leading-8 text-slate-600 dark:text-slate-300">Dites-nous combien vous avez d'employés et ce qui vous prend le plus de temps. Nous vous montrons comment Squarhe résout ça en moins de 30 minutes.</p>
+                        <h2 class="mt-3 text-2xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-2xl">
+                            Dites-nous ce qui vous prend le plus de temps. Nous vous montrons comment Squarhe résout ça.
+                        </h2>
 
                       <div class="mt-8 space-y-4">
-    @foreach ([
-        ['icon' => 'clock', 'title' => 'Réponse sous 24h', 'text' => 'Un membre de notre équipe vous contacte directement sur WhatsApp ou par email.'],
-        ['icon' => 'check', 'title' => 'Démo personnalisée gratuite', 'text' => 'On configure Squarhe avec vos vraies données, pas une démo générique.'],
-        ['icon' => 'shield-check', 'title' => 'Sans engagement', 'text' => 'Vous décidez après la démo. Aucune carte de crédit requise pour commencer.'],
-    ] as $item)
-        <div class="flex gap-4 rounded-lg border border-slate-200 bg-white p-4 dark:border-white/10 dark:bg-[#172033]">
+                            @foreach ([
+                                ['icon' => 'clock', 'title' => 'Réponse sous 24h', 'text' => 'Un membre de notre équipe vous contacte directement sur WhatsApp ou par email.'],
+                                ['icon' => 'check', 'title' => 'Démo personnalisée gratuite', 'text' => 'On configure Squarhe avec vos vraies données, pas une démo générique.'],
+                                ['icon' => 'shield-check', 'title' => 'Sans engagement', 'text' => 'Vous décidez après la démo. Aucune carte de crédit requise pour commencer.'],
+                                ['icon' => 'envelope', 'title' => 'contact@squarhe.com', 'text' => 'Contact direct.'],
+                            ] as $item)
+                                <div class="flex items-center gap-4 rounded-lg border border-slate-200 bg-white p-4 dark:border-white/10 dark:bg-[#172033]">
 
-            <div class="grid size-10 shrink-0 place-items-center rounded-lg bg-blue-100 dark:bg-blue-400/10">
-                <flux:icon :name="$item['icon']" class="size-5 text-blue-600 dark:text-blue-300" />
-            </div>
+                                    <div class="grid size-10 shrink-0 place-items-center rounded-lg bg-blue-100 dark:bg-blue-400/10">
+                                        <flux:icon :name="$item['icon']" class="size-5 text-blue-600 dark:text-blue-300" />
+                                    </div>
 
-            <div>
-                <p class="font-black text-slate-950 dark:text-white">
-                    {{ $item['title'] }}
-                </p>
+                                    <div>
+                                        <p class="font-black text-slate-950 dark:text-white">
+                                            {{ $item['title'] }}
+                                        </p>
 
-                <p class="mt-0.5 text-sm text-slate-600 dark:text-slate-300">
-                    {{ $item['text'] }}
-                </p>
-            </div>
+                                        <p class="mt-0.5 text-sm text-slate-600 dark:text-slate-300">
+                                            {{ $item['text'] }}
+                                        </p>
+                                    </div>
 
-        </div>
-    @endforeach
-</div>
-                        <div class="mt-6 rounded-lg border border-slate-200 bg-white p-4 dark:border-white/10 dark:bg-[#172033]">
-                            <p class="text-sm font-bold text-slate-500">Contact direct</p>
-                            <p class="mt-1 font-black text-slate-950 dark:text-white">contact@squarhe.com</p>
+                                </div>
+                            @endforeach
                         </div>
                     </div>
 
@@ -984,10 +984,10 @@
                 {{-- ═══════════════════════════════════════════════════
                      CTA FINAL avant newsletter
                 ═══════════════════════════════════════════════════ --}}
-                <section class="bg-slate-950 text-white">
+                <section class="bg-slate-100">
                     <div class="mx-auto max-w-7xl px-5 py-16 text-center lg:px-8">
                         <h2 class="text-3xl font-black sm:text-4xl">Prêt à boucler votre paie en moins de 10 minutes ?</h2>
-                        <p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-slate-300">Rejoignez les PME de Douala, Yaoundé, Bafoussam et Kribi qui ont remplacé Excel par une solution fiable et locale.</p>
+                        <p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-slate-800">Rejoignez les PME de Douala, Yaoundé, Bafoussam et Kribi qui ont remplacé Excel par une solution fiable et locale.</p>
                         <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                             <flux:button href="#contact" variant="primary" icon="calendar-days" class="text-base">
                                 Demander ma démo gratuite
@@ -1005,10 +1005,9 @@
                 ═══════════════════════════════════════════════════ --}}
                 <section id="newsletter" class="border-y border-slate-200 bg-white dark:border-white/10 dark:bg-[#101827]">
                     <div class="mx-auto grid max-w-7xl gap-8 px-5 py-16 lg:grid-cols-[1fr_1fr] lg:px-8">
-                        <div>
-                            <p class="text-sm font-black uppercase text-emerald-700">Conseils RH gratuits</p>
-                            <h2 class="mt-3 text-3xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-4xl">Un conseil RH camerounais par mois, directement dans votre boîte mail.</h2>
-                            <p class="mt-4 text-lg leading-8 text-slate-600 dark:text-slate-300">Paie, congés, CNPS, contrats des ressources concrètes pour gérer votre équipe sans être expert. Sans spam, désinscription en 1 clic.</p>
+                        <div class="flex flex-col items-center justify-center text-left md:text-right">
+                            <p class="text-sm font-black uppercase text-emerald-700 self-start md:self-end">Conseils RH gratuits</p>
+                            <h2 class="mt-3 text-3xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-3xl">Un conseil RH camerounais par mois, directement dans votre boîte mail.</h2>
                         </div>
                         <livewire:newsletter-form />
                     </div>
@@ -1019,148 +1018,152 @@
                  FOOTER
             ═══════════════════════════════════════════════════ --}}
            {{-- ═══════════════════════════════════════════════════
-     FOOTER — style LobeHub
-═══════════════════════════════════════════════════ --}}
-<footer class="border-t border-slate-200 bg-white dark:border-white/10 dark:bg-[#101827]">
-    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+                FOOTER — style LobeHub
+            ═══════════════════════════════════════════════════ --}}
+            <footer class="border-t border-slate-200 bg-white dark:border-white/10 dark:bg-[#101827]">
+                <div class="mx-auto max-w-7xl px-5 lg:px-8">
 
-        {{-- ── Colonnes de liens ── --}}
-        <div class="grid grid-cols-2 gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4">
+                    {{-- ── Colonnes de liens ── --}}
+                    <div class="grid grid-cols-2 gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4">
 
-            {{-- Produit --}}
-            <div>
-                <p class="text-sm font-black text-slate-950 dark:text-white">Produit</p>
-                <ul class="mt-4 space-y-3">
-                    @foreach ([
-                        ['label' => 'Tarifs',        'href' => '#offres'],
-                        ['label' => 'Solution',      'href' => '#solution'],
-                        ['label' => 'Fonctionnalités','href' => '#solution'],
-                        ['label' => 'Sécurité',      'href' => '#securite'],
-                    ] as $link)
-                        <li>
-                            <a href="{{ $link['href'] }}" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
-                                {{ $link['label'] }}
+                        {{-- Produit --}}
+                        <div>
+                            <p class="text-sm font-black text-slate-950 dark:text-white">Produit</p>
+                            <ul class="mt-4 space-y-3">
+                                @foreach ([
+                                    ['label' => 'Tarifs',        'href' => '#offres'],
+                                    ['label' => 'Solution',      'href' => '#solution'],
+                                    ['label' => 'Fonctionnalités','href' => '#solution'],
+                                    ['label' => 'Sécurité',      'href' => '#securite'],
+                                ] as $link)
+                                    <li>
+                                        <a href="{{ $link['href'] }}" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
+                                            {{ $link['label'] }}
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        {{-- Ressources --}}
+                        <div>
+                            <p class="text-sm font-black text-slate-950 dark:text-white">Ressources</p>
+                            <ul class="mt-4 space-y-3">
+                                @foreach ([
+                                    ['label' => 'Blog RH',       'href' => '#articles'],
+                                    ['label' => 'FAQ',            'href' => '#faq'],
+                                    ['label' => 'Témoignages',    'href' => '#avis'],
+                                    ['label' => 'Guide migration','href' => '#contact'],
+                                ] as $link)
+                                    <li>
+                                        <a href="{{ $link['href'] }}" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
+                                            {{ $link['label'] }}
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        {{-- Légal --}}
+                        <div>
+                            <p class="text-sm font-black text-slate-950 dark:text-white">Légal</p>
+                            <ul class="mt-4 space-y-3">
+                                @foreach ([
+                                    ['label' => 'CGU',               'route' => 'legal.cgu'],
+                                    ['label' => 'CGV',               'route' => 'legal.cgv'],
+                                    ['label' => 'Code du travail','route' => 'legal.travail'],
+                                    ['label' => 'Politique de cookies','route' => 'legal.cookies'],
+                                ] as $link)
+                                    <li>
+                                        <a href="{{ route($link['route']) }}" wire:navigate class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
+                                            {{ $link['label'] }}
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        {{-- Contact --}}
+                        <div>
+                            <p class="text-sm font-black text-slate-950 dark:text-white">Contact</p>
+                            <ul class="mt-4 space-y-3">
+                                <li>
+                                    <a href="#contact" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
+                                        Demander une démo
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mailto:contact@squarhe.com" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
+                                        contact@squarhe.com
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#newsletter" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
+                                        Newsletter RH
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    {{-- ── Barre inférieure : logo + copyright + réseaux ── --}}
+                    <div class="border-t border-slate-200 py-6 dark:border-white/10">
+
+                        {{-- Ligne logo + statut --}}
+                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+
+                            {{-- Logo --}}
+                            <a href="#top" class="flex items-center gap-3">
+                                <span class="grid size-8 place-items-center rounded-lg bg-slate-950 text-white dark:bg-white dark:text-slate-950">
+                                    <x-app-logo-icon class="size-4" />
+                                </span>
+                                <span class="text-base font-black text-slate-950 dark:text-white">Squarhe</span>
                             </a>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
 
-            {{-- Ressources --}}
-            <div>
-                <p class="text-sm font-black text-slate-950 dark:text-white">Ressources</p>
-                <ul class="mt-4 space-y-3">
-                    @foreach ([
-                        ['label' => 'Blog RH',       'href' => '#articles'],
-                        ['label' => 'FAQ',            'href' => '#faq'],
-                        ['label' => 'Témoignages',    'href' => '#avis'],
-                        ['label' => 'Guide migration','href' => '#contact'],
-                    ] as $link)
-                        <li>
-                            <a href="{{ $link['href'] }}" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
-                                {{ $link['label'] }}
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
+                            {{-- Statut opérationnel --}}
+                            <div class="">
+                            <div class="flex items-center gap-2">
+                                <span class="size-2 rounded-full bg-emerald-500"></span>
+                                <span class="text-sm font-semibold text-slate-500 dark:text-slate-400">Tous les services sont opérationnels</span>
+                                <livewire:site-preferences />
+                            </div>
+                            </div>
 
-            {{-- Légal --}}
-            <div>
-                <p class="text-sm font-black text-slate-950 dark:text-white">Légal</p>
-                <ul class="mt-4 space-y-3">
-                    @foreach ([
-                        ['label' => 'CGU',               'route' => 'legal.cgu'],
-                        ['label' => 'CGV',               'route' => 'legal.cgv'],
-                        ['label' => 'Code du travail','route' => 'legal.travail'],
-                        ['label' => 'Politique de cookies','route' => 'legal.cookies'],
-                    ] as $link)
-                        <li>
-                            <a href="{{ route($link['route']) }}" wire:navigate class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
-                                {{ $link['label'] }}
-                            </a>
-                        </li>
-                    @endforeach
-                </ul>
-            </div>
+                        </div>
 
-            {{-- Contact --}}
-            <div>
-                <p class="text-sm font-black text-slate-950 dark:text-white">Contact</p>
-                <ul class="mt-4 space-y-3">
-                    <li>
-                        <a href="#contact" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
-                            Demander une démo
-                        </a>
-                    </li>
-                    <li>
-                        <a href="mailto:contact@squarhe.com" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
-                            contact@squarhe.com
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#newsletter" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
-                            Newsletter RH
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+                        {{-- Ligne copyright + réseaux sociaux --}}
+                        <div class="mt-5 flex flex-col gap-4 border-t border-slate-200/70 pt-5 dark:border-white/10 sm:flex-row sm:items-center sm:justify-between">
 
-        {{-- ── Barre inférieure : logo + copyright + réseaux ── --}}
-        <div class="border-t border-slate-200 py-6 dark:border-white/10">
+                            <p class="text-sm text-slate-400 dark:text-slate-500">
+                                © {{ date('Y') }} Squarhe. Tous droits réservés. Conçu pour les PME camerounaises.
+                            </p>
 
-            {{-- Ligne logo + statut --}}
-            <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                            {{-- Icônes réseaux sociaux --}}
+                            <div class="flex items-center gap-4">
+                                {{-- LinkedIn --}}
+                                <a href="https://www.linkedin.com/company/squarhe" aria-label="Squarhe sur LinkedIn" class="text-slate-400 transition hover:text-slate-950 dark:hover:text-white">
+                                    <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                        <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57A1.46 1.46 0 0 1 14.38 12.11A1.46 1.46 0 0 1 15.84 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88A1.68 1.68 0 0 0 6.88 5.2A1.68 1.68 0 0 0 5.2 6.88A1.68 1.68 0 0 0 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
+                                    </svg>
+                                </a>
+                                {{-- X / Twitter--}}
+                                <a href="https://youtube.com/@squarhe?si=1l9db4ZVM2HCUPxT" aria-label="Squarhe sur X" class="text-slate-400 transition hover:text-slate-950 dark:hover:text-white">
+                                <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                </svg>
+                                </a>
+                                {{-- WhatsApp --}}
+                                <a href="https://wa.me/237659005679" aria-label="Squarhe sur WhatsApp" class="text-slate-400 transition hover:text-slate-950 dark:hover:text-white">
+                                    <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
 
-                {{-- Logo --}}
-                <a href="#top" class="flex items-center gap-3">
-                    <span class="grid size-8 place-items-center rounded-lg bg-slate-950 text-white dark:bg-white dark:text-slate-950">
-                        <x-app-logo-icon class="size-4" />
-                    </span>
-                    <span class="text-base font-black text-slate-950 dark:text-white">Squarhe</span>
-                </a>
-
-                {{-- Statut opérationnel --}}
-                <div class="flex items-center gap-2">
-                    <span class="size-2 rounded-full bg-emerald-500"></span>
-                    <span class="text-sm font-semibold text-slate-500 dark:text-slate-400">Tous les services sont opérationnels</span>
                 </div>
-            </div>
-
-            {{-- Ligne copyright + réseaux sociaux --}}
-            <div class="mt-5 flex flex-col gap-4 border-t border-slate-200/70 pt-5 dark:border-white/10 sm:flex-row sm:items-center sm:justify-between">
-
-                <p class="text-sm text-slate-400 dark:text-slate-500">
-                    © {{ date('Y') }} Squarhe. Tous droits réservés. — Conçu pour les PME camerounaises.
-                </p>
-
-                {{-- Icônes réseaux sociaux --}}
-                <div class="flex items-center gap-4">
-                    {{-- LinkedIn --}}
-                    <a href="https://www.linkedin.com/company/squarhe" aria-label="Squarhe sur LinkedIn" class="text-slate-400 transition hover:text-slate-950 dark:hover:text-white">
-                        <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                            <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57A1.46 1.46 0 0 1 14.38 12.11A1.46 1.46 0 0 1 15.84 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88A1.68 1.68 0 0 0 6.88 5.2A1.68 1.68 0 0 0 5.2 6.88A1.68 1.68 0 0 0 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
-                        </svg>
-                    </a>
-                    {{-- X / Twitter--}}
-                    <a href="https://youtube.com/@squarhe?si=1l9db4ZVM2HCUPxT" aria-label="Squarhe sur X" class="text-slate-400 transition hover:text-slate-950 dark:hover:text-white">
-                       <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-    </svg>
-                    </a>
-                    {{-- WhatsApp --}}
-                    <a href="https://wa.me/237659005679" aria-label="Squarhe sur WhatsApp" class="text-slate-400 transition hover:text-slate-950 dark:hover:text-white">
-                        <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</footer>
+            </footer>
         </div>
 
         @fluxScripts

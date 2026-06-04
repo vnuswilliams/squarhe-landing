@@ -15,7 +15,7 @@ new class extends Component
 
     public string $email = '';
 
-    public bool $consent = false;
+    public bool $consent = true;
 
     public ?string $successMessage = null;
 
@@ -63,7 +63,7 @@ new class extends Component
 };
 ?>
 
-<form wire:submit="subscribe" class="rounded-lg border border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-[#172033] sm:p-6">
+<form wire:submit="subscribe" class="my-auto rounded-lg border border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-[#172033] sm:p-6">
     <x-honeypot livewire-model="extraFields" />
 
     <flux:field>

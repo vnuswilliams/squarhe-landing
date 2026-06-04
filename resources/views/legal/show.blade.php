@@ -143,11 +143,11 @@
         <nav class="flex flex-1 flex-col px-5 py-8" aria-label="Navigation mobile">
             <ul class="space-y-1">
                 @foreach ([
-                    ['label' => 'Solution',   'href' => '#solution', 'icon' => 'check-badge'],
-                    ['label' => 'Tarifs',     'href' => '#offres',   'icon' => 'calculator'],
-                    ['label' => 'Avis',       'href' => '#avis',     'icon' => 'star'],
-                    ['label' => 'FAQ',        'href' => '#faq',      'icon' => 'question-mark-circle'],
-                    ['label' => 'Blog',       'href' => '#articles', 'icon' => 'document-text'],
+                    ['label' => 'Solution',   'href' => '/#solution', 'icon' => 'check-badge'],
+                    ['label' => 'Tarifs',     'href' => '/#offres',   'icon' => 'calculator'],
+                    ['label' => 'Avis',       'href' => '/#avis',     'icon' => 'star'],
+                    ['label' => 'FAQ',        'href' => '/#faq',      'icon' => 'question-mark-circle'],
+                    ['label' => 'Blog',       'href' => '/#articles', 'icon' => 'document-text'],
                 ] as $link)
                     <li>
                         <a
@@ -285,11 +285,149 @@
                 {!! $markdown !!}
             </article>
         </main>
+ {{-- ═══════════════════════════════════════════════════
+                FOOTER — style LobeHub
+            ═══════════════════════════════════════════════════ --}}
+            <footer class="border-t border-slate-200 bg-white dark:border-white/10 dark:bg-[#101827]">
+                <div class="mx-auto max-w-7xl px-5 lg:px-8">
 
-        <footer class="border-t border-slate-200 px-5 py-8 text-center text-sm text-slate-500 dark:border-white/10 dark:text-slate-400">
-            © {{ date('Y') }} Squarhe.
-        </footer>
+                    {{-- ── Colonnes de liens ── --}}
+                    <div class="grid grid-cols-2 gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4">
 
+                        {{-- Produit --}}
+                        <div>
+                            <p class="text-sm font-black text-slate-950 dark:text-white">Produit</p>
+                            <ul class="mt-4 space-y-3">
+                                @foreach ([
+                                    ['label' => 'Tarifs',        'href' => '#offres'],
+                                    ['label' => 'Solution',      'href' => '#solution'],
+                                    ['label' => 'Fonctionnalités','href' => '#solution'],
+                                    ['label' => 'Sécurité',      'href' => '#securite'],
+                                ] as $link)
+                                    <li>
+                                        <a href="{{ $link['href'] }}" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
+                                            {{ $link['label'] }}
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        {{-- Ressources --}}
+                        <div>
+                            <p class="text-sm font-black text-slate-950 dark:text-white">Ressources</p>
+                            <ul class="mt-4 space-y-3">
+                                @foreach ([
+                                    ['label' => 'Blog RH',       'href' => '#articles'],
+                                    ['label' => 'FAQ',            'href' => '#faq'],
+                                    ['label' => 'Témoignages',    'href' => '#avis'],
+                                    ['label' => 'Guide migration','href' => '#contact'],
+                                ] as $link)
+                                    <li>
+                                        <a href="{{ $link['href'] }}" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
+                                            {{ $link['label'] }}
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        {{-- Légal --}}
+                        <div>
+                            <p class="text-sm font-black text-slate-950 dark:text-white">Légal</p>
+                            <ul class="mt-4 space-y-3">
+                                @foreach ([
+                                    ['label' => 'CGU',               'route' => 'legal.cgu'],
+                                    ['label' => 'CGV',               'route' => 'legal.cgv'],
+                                    ['label' => 'Code du travail','route' => 'legal.travail'],
+                                    ['label' => 'Politique de cookies','route' => 'legal.cookies'],
+                                ] as $link)
+                                    <li>
+                                        <a href="{{ route($link['route']) }}" wire:navigate class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
+                                            {{ $link['label'] }}
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                        {{-- Contact --}}
+                        <div>
+                            <p class="text-sm font-black text-slate-950 dark:text-white">Contact</p>
+                            <ul class="mt-4 space-y-3">
+                                <li>
+                                    <a href="#contact" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
+                                        Demander une démo
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="mailto:contact@squarhe.com" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
+                                        contact@squarhe.com
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#newsletter" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
+                                        Newsletter RH
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    {{-- ── Barre inférieure : logo + copyright + réseaux ── --}}
+                    <div class="border-t border-slate-200 py-6 dark:border-white/10">
+
+                        {{-- Ligne logo + statut --}}
+                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+
+                            {{-- Logo --}}
+                            <a href="#top" class="flex items-center gap-3">
+                                <span class="grid size-8 place-items-center rounded-lg bg-slate-950 text-white dark:bg-white dark:text-slate-950">
+                                    <x-app-logo-icon class="size-4" />
+                                </span>
+                                <span class="text-base font-black text-slate-950 dark:text-white">Squarhe</span>
+                            </a>
+
+                            {{-- Statut opérationnel --}}
+                            <div class="flex items-center gap-2">
+                                <span class="size-2 rounded-full bg-emerald-500"></span>
+                                <span class="text-sm font-semibold text-slate-500 dark:text-slate-400">Tous les services sont opérationnels</span>
+                            </div>
+                        </div>
+
+                        {{-- Ligne copyright + réseaux sociaux --}}
+                        <div class="mt-5 flex flex-col gap-4 border-t border-slate-200/70 pt-5 dark:border-white/10 sm:flex-row sm:items-center sm:justify-between">
+
+                            <p class="text-sm text-slate-400 dark:text-slate-500">
+                                © {{ date('Y') }} Squarhe. Tous droits réservés. — Conçu pour les PME camerounaises.
+                            </p>
+
+                            {{-- Icônes réseaux sociaux --}}
+                            <div class="flex items-center gap-4">
+                                {{-- LinkedIn --}}
+                                <a href="https://www.linkedin.com/company/squarhe" aria-label="Squarhe sur LinkedIn" class="text-slate-400 transition hover:text-slate-950 dark:hover:text-white">
+                                    <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                        <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57A1.46 1.46 0 0 1 14.38 12.11A1.46 1.46 0 0 1 15.84 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88A1.68 1.68 0 0 0 6.88 5.2A1.68 1.68 0 0 0 5.2 6.88A1.68 1.68 0 0 0 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
+                                    </svg>
+                                </a>
+                                {{-- X / Twitter--}}
+                                <a href="https://youtube.com/@squarhe?si=1l9db4ZVM2HCUPxT" aria-label="Squarhe sur X" class="text-slate-400 transition hover:text-slate-950 dark:hover:text-white">
+                                <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+                                </a>
+                                {{-- WhatsApp --}}
+                                <a href="https://wa.me/237659005679" aria-label="Squarhe sur WhatsApp" class="text-slate-400 transition hover:text-slate-950 dark:hover:text-white">
+                                    <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </footer>
         @fluxScripts
     </body>
 </html>

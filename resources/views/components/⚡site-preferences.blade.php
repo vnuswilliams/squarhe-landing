@@ -28,14 +28,13 @@ new class extends Component
         }
     }"
 >
-    <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-end">
+    <div class="flex items-center gap-4">
         <flux:field>
             <flux:label>Mode sombre</flux:label>
             <flux:switch x-model="$flux.dark" />
         </flux:field>
 
         <flux:field>
-            <flux:label>Langue</flux:label>
             <flux:select x-model="language" x-on:change="setLanguage($event.target.value)" class="min-w-32">
                 <flux:select.option value="fr">Français</flux:select.option>
                 <flux:select.option value="en">English</flux:select.option>

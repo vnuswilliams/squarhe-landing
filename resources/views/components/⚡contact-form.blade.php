@@ -85,37 +85,37 @@ new class extends Component
 };
 ?>
 
-<form wire:submit="storeContact" class="rounded-lg border border-slate-200 bg-white p-5 shadow-xl shadow-slate-950/5 dark:border-white/10 dark:bg-[#172033] sm:p-6">
+<form wire:submit="storeContact" class="rounded-lg border border-slate-200 bg-white p-5 shadow-xl shadow-slate-950/5 dark:border-white/10 dark:bg-[#172033] sm:p-6 my-auto">
     <x-honeypot livewire-model="extraFields" />
 
     <div class="grid gap-4 sm:grid-cols-2">
         <flux:field>
             <flux:label>Entreprise</flux:label>
-            <flux:input wire:model="companyName" icon="building-office" required />
+            <flux:input wire:model="companyName" icon="building-office" required placeholder="Squarhe" />
             <flux:error name="companyName" />
         </flux:field>
 
         <flux:field>
             <flux:label>Nom complet</flux:label>
-            <flux:input wire:model="fullName" icon="user" required />
+            <flux:input wire:model="fullName" icon="user" required placeholder="Payong venus williams" />
             <flux:error name="fullName" />
         </flux:field>
 
         <flux:field>
             <flux:label>Adresse email</flux:label>
-            <flux:input type="email" wire:model="email" icon="envelope" required />
+            <flux:input type="email" wire:model="email" icon="envelope" required placeholder="contact@squarhe.com" />
             <flux:error name="email" />
         </flux:field>
 
         <flux:field>
             <flux:label>Téléphone WhatsApp</flux:label>
-            <flux:input wire:model="phone" icon="phone" />
+            <flux:input wire:model="phone" icon="phone" placeholder="659005679"/>
             <flux:error name="phone" />
         </flux:field>
 
         <flux:field class="sm:col-span-2">
             <flux:label>Nombre d'employés</flux:label>
-            <flux:input type="number" min="5" max="10000" wire:model="employeesCount" icon="users" />
+            <flux:input type="number" min="5" max="10000" wire:model="employeesCount" icon="users" placeholder="25" />
             <flux:error name="employeesCount" />
         </flux:field>
 

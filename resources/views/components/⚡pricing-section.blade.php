@@ -100,17 +100,7 @@ new class extends Component
                 <h2 class="mt-3 text-3xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-4xl">
                     Payez seulement pour ce dont vous avez besoin, sans engagement.
                 </h2>
-                <p class="mt-4 text-lg leading-8 text-slate-600 dark:text-slate-300">
-                    Choisissez une tranche adaptée à votre équipe. Si votre effectif grandit, la simulation ajuste le prix et masque les offres qui ne conviennent plus.
-                </p>
-            </div>
 
-            <div class="rounded-lg border border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-[#172033]">
-                <flux:field>
-                    <flux:label>Nombre d'employés à simuler</flux:label>
-                    <flux:input type="number" min="5" max="150" step="5" wire:model.live.debounce.300ms="employees" icon="users" />
-                    <flux:description>La simulation s'incrémente de 5 en 5. Exemple : 25 employés rend Starter indisponible et ajuste Croissance.</flux:description>
-                </flux:field>
             </div>
         </div>
 
@@ -145,9 +135,14 @@ new class extends Component
                 </div>
             </div>
         </div>
-
+  <div class="rounded-lg border my-6 border-slate-100 bg-slate-50 p-5 dark:border-white/10 dark:bg-[#172033]">
+                <flux:field>
+                    <flux:input label="Nombre d'employés à simuler" type="number" min="5" max="150" step="5" wire:model.live.debounce.300ms="employees" icon="users" />
+                    <flux:description>La simulation s'incrémente de 5 en 5. Exemple : 25 employés rend Starter indisponible et ajuste Croissance.</flux:description>
+                </flux:field>
+            </div>
         {{-- ── Cards des offres ── --}}
-        <div class="mt-6 grid gap-5 lg:grid-cols-3">
+        <div class=" grid gap-5 lg:grid-cols-3">
             @foreach ($this->plans() as $plan)
                 @php($eligible = $this->isEligible($plan))
                 @php($isPopular = $plan['popular'] ?? false)
