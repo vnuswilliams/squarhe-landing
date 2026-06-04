@@ -9,7 +9,6 @@ new class extends Component
     public function updatedEmployees(mixed $value): void
     {
         $employees = max(5, min(150, (int) $value));
-
         $this->employees = (int) (round($employees / 5) * 5);
     }
 
@@ -18,37 +17,37 @@ new class extends Component
         return [
             [
                 'name' => 'Starter',
-                'tagline' => 'L essentiel pour gerer sa paie',
+                'tagline' => 'L\'essentiel pour gérer sa paie',
                 'basePrice' => 14900,
                 'baseEmployees' => 5,
                 'stepPrice' => 2500,
                 'maxEmployees' => 20,
                 'setupFee' => 'Gratuit',
                 'support' => 'Email - 72h',
-                'features' => ['Paie CNPS / IRPP', 'Bulletins PDF', 'Avances sur salaire', 'Conges', 'Documents RH - 3 modeles'],
+                'features' => ['Paie CNPS / IRPP', 'Bulletins PDF', 'Avances sur salaire', 'Congés', 'Documents RH - 3 modèles'],
             ],
             [
                 'name' => 'Croissance',
-                'tagline' => 'Paie + RH pour structurer son equipe',
+                'tagline' => 'Paie + RH pour structurer son équipe',
                 'popular' => true,
                 'basePrice' => 34900,
                 'baseEmployees' => 20,
                 'stepPrice' => 3500,
                 'maxEmployees' => 50,
-                'setupFee' => '35 000 FCFA',
+                'setupFee' => 'Sur devis',
                 'support' => 'WhatsApp - 48h',
-                'features' => ['Tout Starter', 'Espace collaborateur complet', 'Documents RH illimites', 'Tableaux de bord RH', 'Exports Excel basiques'],
+                'features' => ['Tout Starter', 'Espace collaborateur complet', 'Documents RH illimités', 'Tableaux de bord RH', 'Exports Excel basiques'],
             ],
             [
                 'name' => 'Business',
-                'tagline' => 'Pilotage et integration pour PME structurees',
+                'tagline' => 'Pilotage et intégration pour PME structurées',
                 'basePrice' => 64900,
                 'baseEmployees' => 50,
                 'stepPrice' => 5000,
                 'maxEmployees' => 150,
-                'setupFee' => '75 000 FCFA',
+                'setupFee' => 'Sur devis',
                 'support' => 'Prioritaire - 4h',
-                'features' => ['Tout Croissance', 'Multi-sites', 'Rapports RH avances', 'Roles utilisateurs', 'API / integrations', 'Gestionnaire dedie'],
+                'features' => ['Tout Croissance', 'Multi-sites', 'Rapports RH avancés', 'Rôles utilisateurs', 'API / intégrations', 'Gestionnaire dédié'],
             ],
         ];
     }
@@ -56,19 +55,19 @@ new class extends Component
     public function comparisonRows(): array
     {
         return [
-            ['label' => 'Popularite', 'values' => ['-', 'La plus populaire', '-']],
+            ['label' => 'Popularité', 'values' => ['-', 'La plus populaire', '-']],
             ['label' => 'Prix de base / mois', 'values' => ['14 900 FCFA', '34 900 FCFA', '64 900 FCFA']],
-            ['label' => 'Employes inclus', 'values' => ['5', '20', '50']],
-            ['label' => 'Plafond employes', 'values' => ['20', '50', '150']],
-            ['label' => 'Supplement / 5 employes', 'values' => ['+2 500 FCFA', '+3 500 FCFA', '+5 000 FCFA']],
-            ['label' => 'Setup fee', 'values' => ['Gratuit', '35 000 FCFA', '75 000 FCFA']],
+            ['label' => 'Employés inclus', 'values' => ['5', '20', '50']],
+            ['label' => 'Plafond employés', 'values' => ['20', '50', '150']],
+            ['label' => 'Supplément / 5 employés', 'values' => ['+2 500 FCFA', '+3 500 FCFA', '+5 000 FCFA']],
+            ['label' => 'Migration / onboarding', 'values' => ['Gratuit', 'Sur devis', 'Sur devis']],
             ['label' => 'Espace collaborateur', 'values' => ['Lecture seule', 'Complet', 'Complet']],
-            ['label' => 'Documents RH', 'values' => ['3 modeles', 'Illimites', 'Illimites']],
+            ['label' => 'Documents RH', 'values' => ['3 modèles', 'Illimités', 'Illimités']],
             ['label' => 'Tableaux de bord RH', 'values' => ['Non inclus', 'Inclus', 'Inclus']],
-            ['label' => 'Export Excel / rapports', 'values' => ['Non inclus', 'Basiques', 'Avances']],
+            ['label' => 'Export Excel / rapports', 'values' => ['Non inclus', 'Basiques', 'Avancés']],
             ['label' => 'Multi-sites / API', 'values' => ['Non inclus', 'Non inclus', 'Inclus']],
             ['label' => 'Support', 'values' => ['Email - 72h', 'WhatsApp - 48h', 'Prioritaire - 4h']],
-            ['label' => 'Formation', 'values' => ['Non incluse', '1h en ligne', '1 journee sur site']],
+            ['label' => 'Formation', 'values' => ['Non incluse', '1h en ligne', '1 journée sur site']],
         ];
     }
 
@@ -76,7 +75,6 @@ new class extends Component
     {
         $extraEmployees = max(0, $this->employees - $plan['baseEmployees']);
         $steps = (int) ceil($extraEmployees / 5);
-
         return $plan['basePrice'] + ($steps * $plan['stepPrice']);
     }
 
@@ -92,8 +90,10 @@ new class extends Component
 };
 ?>
 
-<section id="offres" class="border-y border-slate-200 bg-white dark:border-white/10 dark:bg-[#101827]" >
+<section id="offres" class="border-y border-slate-200 bg-white dark:border-white/10 dark:bg-[#101827]">
     <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+
+        {{-- ── En-tête section + simulateur ── --}}
         <div class="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-end">
             <div>
                 <p class="text-sm font-black uppercase text-blue-700 dark:text-blue-300">Nos offres</p>
@@ -101,20 +101,53 @@ new class extends Component
                     Payez seulement pour ce dont vous avez besoin, sans engagement.
                 </h2>
                 <p class="mt-4 text-lg leading-8 text-slate-600 dark:text-slate-300">
-                    Choisissez une tranche adaptee a votre equipe. Si votre effectif grandit, la simulation ajuste le prix et masque les offres qui ne conviennent plus.
+                    Choisissez une tranche adaptée à votre équipe. Si votre effectif grandit, la simulation ajuste le prix et masque les offres qui ne conviennent plus.
                 </p>
             </div>
 
             <div class="rounded-lg border border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-[#172033]">
                 <flux:field>
-                    <flux:label>Nombre d employes a simuler</flux:label>
+                    <flux:label>Nombre d'employés à simuler</flux:label>
                     <flux:input type="number" min="5" max="150" step="5" wire:model.live.debounce.300ms="employees" icon="users" />
-                    <flux:description>La simulation s incremente de 5 en 5. Exemple : 25 employes rend Starter indisponible et ajuste Croissance.</flux:description>
+                    <flux:description>La simulation s'incrémente de 5 en 5. Exemple : 25 employés rend Starter indisponible et ajuste Croissance.</flux:description>
                 </flux:field>
             </div>
         </div>
 
-        <div class="mt-10 grid gap-5 lg:grid-cols-3">
+        {{-- ══════════════════════════════════════════════
+             BANNIÈRE 1 — Essai gratuit / sans engagement
+        ══════════════════════════════════════════════ --}}
+        <div class="mt-10 overflow-hidden rounded-xl border border-emerald-200 bg-linear-to-r from-emerald-50 via-white to-emerald-50 dark:border-emerald-400/20 dark:from-emerald-400/10 dark:via-[#101827] dark:to-emerald-400/10">
+            <div class="flex flex-col items-center justify-between gap-4 px-6 py-5 sm:flex-row">
+                <div class="flex items-center gap-4">
+                    <span class="grid size-10 shrink-0 place-items-center rounded-full bg-emerald-100 dark:bg-emerald-400/20">
+                        <flux:icon.gift class="size-5 text-emerald-700 dark:text-emerald-300" />
+                    </span>
+                    <div>
+                        <p class="font-black text-slate-950 dark:text-white">
+                            Commencez gratuitement, sans carte de crédit.
+                        </p>
+                        <p class="mt-0.5 text-sm text-slate-600 dark:text-slate-300">
+                            Période d'essai complète incluse &nbsp;·&nbsp; Accès à toutes les fonctionnalités &nbsp;·&nbsp; Aucun engagement, résiliez quand vous voulez.
+                        </p>
+                    </div>
+                </div>
+                <div class="flex shrink-0 flex-wrap items-center gap-2">
+                    <span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-white px-3 py-1.5 text-xs font-bold text-emerald-700 dark:border-emerald-400/30 dark:bg-emerald-400/10 dark:text-emerald-300">
+                        <flux:icon.check class="size-3.5" /> Aucune carte requise
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-white px-3 py-1.5 text-xs font-bold text-emerald-700 dark:border-emerald-400/30 dark:bg-emerald-400/10 dark:text-emerald-300">
+                        <flux:icon.check class="size-3.5" /> Sans engagement
+                    </span>
+                    <span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-white px-3 py-1.5 text-xs font-bold text-emerald-700 dark:border-emerald-400/30 dark:bg-emerald-400/10 dark:text-emerald-300">
+                        <flux:icon.check class="size-3.5" /> Résiliation en 1 clic
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        {{-- ── Cards des offres ── --}}
+        <div class="mt-6 grid gap-5 lg:grid-cols-3">
             @foreach ($this->plans() as $plan)
                 @php($eligible = $this->isEligible($plan))
                 @php($isPopular = $plan['popular'] ?? false)
@@ -138,19 +171,15 @@ new class extends Component
                     </div>
 
                     <div class="mt-6">
-                        <p class="text-sm font-bold text-slate-500 dark:text-slate-400">Prix mensuel simule</p>
+                        <p class="text-sm font-bold text-slate-500 dark:text-slate-400">Prix mensuel simulé</p>
                         <p class="mt-2 text-3xl font-black text-slate-950 dark:text-[#f2f6fb]">{{ $eligible ? $this->formatPrice($this->priceFor($plan)) : 'Non disponible' }}</p>
-                        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Base {{ $plan['baseEmployees'] }} employes, plafond {{ $plan['maxEmployees'] }}.</p>
+                        <p class="mt-2 text-sm text-slate-500 dark:text-slate-400">Base {{ $plan['baseEmployees'] }} employés, plafond {{ $plan['maxEmployees'] }}.</p>
                     </div>
 
                     <div class="mt-6 grid gap-3 text-sm">
                         <div class="flex items-center gap-2 text-slate-600 dark:text-slate-300">
                             <flux:icon.plus-circle class="size-5 text-blue-600 dark:text-blue-300" />
-                            + {{ $this->formatPrice($plan['stepPrice']) }} / tranche de 5 employes
-                        </div>
-                        <div class="flex items-center gap-2 text-slate-600 dark:text-slate-300">
-                            <flux:icon.wrench-screwdriver class="size-5 text-blue-600 dark:text-blue-300" />
-                            Setup fee : {{ $plan['setupFee'] }}
+                            + {{ $this->formatPrice($plan['stepPrice']) }} / tranche de 5 employés
                         </div>
                         <div class="flex items-center gap-2 text-slate-600 dark:text-slate-300">
                             <flux:icon.lifebuoy class="size-5 text-blue-600 dark:text-blue-300" />
@@ -168,29 +197,55 @@ new class extends Component
                     </ul>
 
                     <flux:button href="#contact" variant="{{ $eligible ? 'primary' : 'ghost' }}" icon="chat-bubble-left-right" class="mt-6 w-full justify-center" :disabled="! $eligible">
-                        {{ $eligible ? 'Demander cette offre' : 'Choisir une offre superieure' }}
+                        {{ $eligible ? 'Demander cette offre' : 'Choisir une offre supérieure' }}
                     </flux:button>
                 </article>
             @endforeach
         </div>
 
+        {{-- ══════════════════════════════════════════════
+             BANNIÈRE 2 — Migration / Setup fee
+        ══════════════════════════════════════════════ --}}
+        <div class="mt-6 overflow-hidden rounded-xl border border-blue-200 bg-blue-50 dark:border-blue-400/20 dark:bg-blue-400/10">
+            <div class="flex flex-col gap-5 px-6 py-6 sm:flex-row sm:items-center sm:gap-6">
+                <span class="grid size-12 shrink-0 place-items-center rounded-xl bg-blue-100 dark:bg-blue-400/20">
+                    <flux:icon.truck class="size-6 text-blue-700 dark:text-blue-300" />
+                </span>
+                <div class="flex-1">
+                    <p class="font-black text-slate-950 dark:text-white">
+                        Migration depuis Excel incluse, nous reprenons tout pour vous.
+                    </p>
+                    <p class="mt-1.5 text-sm leading-7 text-slate-600 dark:text-slate-300">
+                        Sur toutes nos offres, nous configurons Squarhe avec vos données existantes : employés, historiques, variables de paie.
+                        Le tarif de migration est <strong class="text-slate-800 dark:text-slate-100">personnalisé selon votre situation</strong>, pas de grille fixe, pas de mauvaise surprise.
+                        Contactez-nous pour en discuter avant de vous engager.
+                    </p>
+                </div>
+                <flux:button href="#contact" variant="outline" icon="chat-bubble-left-right" class="shrink-0">
+                    Discuter de ma migration
+                </flux:button>
+            </div>
+        </div>
+
+        {{-- ── Tableau comparatif ── --}}
         <div class="mt-12">
             <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
                 <div>
                     <p class="text-sm font-black uppercase text-emerald-700 dark:text-emerald-300">Comparatif</p>
-                    <h3 class="mt-2 text-2xl font-black text-slate-950 dark:text-[#f2f6fb]">Les differences cles entre les offres</h3>
+                    <h3 class="mt-2 text-2xl font-black text-slate-950 dark:text-[#f2f6fb]">Les différences clés entre les offres</h3>
                 </div>
                 <p class="max-w-xl text-sm leading-6 text-slate-600 dark:text-slate-300">
-                    Base sur la grille tarifaire : Starter pour demarrer, Croissance pour structurer, Business pour piloter plusieurs besoins RH.
+                    Basé sur la grille tarifaire : Starter pour démarrer, Croissance pour structurer, Business pour piloter plusieurs besoins RH.
                 </p>
             </div>
 
-            <div class="mt-6 overflow-hidden rounded-lg border border-slate-200 bg-white dark:border-white/10 dark:bg-[#172033]">
+            {{-- Wrapper avec sticky thead via CSS --}}
+            <div class="relative mt-6 overflow-hidden rounded-lg border border-slate-200 bg-white dark:border-white/10 dark:bg-[#172033]">
                 <div class="overflow-x-auto">
-                    <table class="pricing-comparison-table w-full min-w-[760px] text-left text-sm">
-                        <thead class="bg-slate-950 text-white dark:bg-white dark:text-slate-950">
-                            <tr>
-                                <th scope="col" class="w-[28%] px-5 py-4 font-black">Critere</th>
+                    <table class="w-full min-w-[760px] text-left text-sm">
+                        <thead>
+                            <tr class="sticky top-[65px] z-20 bg-slate-950 text-white dark:bg-[#0d1520]">
+                                <th scope="col" class="w-[28%] px-5 py-4 font-black">Critère</th>
                                 @foreach ($this->plans() as $plan)
                                     <th scope="col" class="px-5 py-4 font-black">{{ $plan['name'] }}</th>
                                 @endforeach
@@ -198,11 +253,11 @@ new class extends Component
                         </thead>
                         <tbody class="divide-y divide-slate-200 dark:divide-white/10">
                             @foreach ($this->comparisonRows() as $rowIndex => $row)
-                                <tr wire:key="comparison-{{ $rowIndex }}" class="bg-white dark:bg-[#172033]">
+                                <tr wire:key="comparison-{{ $rowIndex }}" class="{{ $rowIndex % 2 === 0 ? 'bg-white dark:bg-[#172033]' : 'bg-slate-50/60 dark:bg-white/[0.02]' }}">
                                     <th scope="row" class="px-5 py-4 font-black text-slate-950 dark:text-[#f2f6fb]">{{ $row['label'] }}</th>
                                     @foreach ($row['values'] as $value)
                                         @php($includedValues = ['Inclus', 'Complet', 'Illimites', 'Basiques', 'Avances', 'La plus populaire'])
-                                        @php($limitedValues = ['Lecture seule', '3 modeles'])
+                                        @php($limitedValues = ['Lecture seule', '3 modeles', 'Sur devis'])
                                         @php($isUnavailable = in_array($value, ['Non inclus', 'Non incluse', '-'], true))
                                         @php($isIncluded = in_array($value, $includedValues, true) || str_starts_with($value, '1h') || str_starts_with($value, '1 journee'))
                                         @php($isLimited = in_array($value, $limitedValues, true))
@@ -216,7 +271,6 @@ new class extends Component
                                                 @elseif ($isLimited)
                                                     <flux:icon.information-circle class="size-5 shrink-0 text-amber-500 dark:text-amber-300" />
                                                 @endif
-
                                                 <span>{{ $value }}</span>
                                             </span>
                                         </td>
@@ -228,5 +282,6 @@ new class extends Component
                 </div>
             </div>
         </div>
+
     </div>
 </section>

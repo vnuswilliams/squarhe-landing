@@ -26,3 +26,11 @@ Route::get('/conditions-generales-cookies', function () {
         'markdown' => Str::markdown(file_get_contents(base_path('cookies.md'))),
     ]);
 })->name('legal.cookies');
+
+
+Route::get('/code-du-travail-cameroun-1992', function () {
+    return view('legal.show', [
+        'title' => 'Code du travail',
+        'markdown' => Str::markdown(file_get_contents(base_path('code-du-travail-cameroun-1992.md'))),
+    ]);
+})->name('legal.travail');

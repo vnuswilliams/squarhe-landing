@@ -19,12 +19,12 @@ new class extends Component
             this.language = value;
             localStorage.setItem('squarhe.language', value);
             document.documentElement.lang = value;
-            this.$flux.toast(value === 'en' ? 'English preference saved.' : 'Preference de langue enregistree.', { heading: 'Langue', variant: 'info' });
+            this.$flux.toast(value === 'en' ? 'English preference saved.' : 'Préférence de langue enregistrée.', { heading: 'Langue', variant: 'info' });
         },
         acceptCookies() {
             this.cookiesAccepted = true;
             localStorage.setItem('squarhe.cookies.accepted', 'true');
-            this.$flux.toast('Preferences de cookies enregistrees.', { heading: 'Cookies', variant: 'success' });
+            this.$flux.toast('Préférences de cookies enregistrées.', { heading: 'Cookies', variant: 'success' });
         }
     }"
 >
@@ -37,7 +37,7 @@ new class extends Component
         <flux:field>
             <flux:label>Langue</flux:label>
             <flux:select x-model="language" x-on:change="setLanguage($event.target.value)" class="min-w-32">
-                <flux:select.option value="fr">Francais</flux:select.option>
+                <flux:select.option value="fr">Français</flux:select.option>
                 <flux:select.option value="en">English</flux:select.option>
             </flux:select>
         </flux:field>
@@ -51,9 +51,9 @@ new class extends Component
     >
         <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <div>
-                <p class="font-black text-slate-950 dark:text-[#e6edf7]">Conditions generales et cookies</p>
+                <p class="font-black text-slate-950 dark:text-[#e6edf7]">Conditions générales et cookies</p>
                 <p class="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-300">
-                    En poursuivant votre navigation, vous acceptez l'utilisation de cookies necessaires au fonctionnement de la landing et la consultation de nos
+                    En poursuivant votre navigation, vous acceptez l'utilisation de cookies nécessaires au fonctionnement de la landing et la consultation de nos
                     <a href="{{ route('legal.cgu') }}" wire:navigate class="font-bold text-blue-700 dark:text-blue-300">CGU</a>.
                 </p>
             </div>

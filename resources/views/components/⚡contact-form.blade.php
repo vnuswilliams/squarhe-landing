@@ -108,13 +108,13 @@ new class extends Component
         </flux:field>
 
         <flux:field>
-            <flux:label>Telephone WhatsApp</flux:label>
+            <flux:label>Téléphone WhatsApp</flux:label>
             <flux:input wire:model="phone" icon="phone" />
             <flux:error name="phone" />
         </flux:field>
 
         <flux:field class="sm:col-span-2">
-            <flux:label>Nombre d employes</flux:label>
+            <flux:label>Nombre d'employés</flux:label>
             <flux:input type="number" min="5" max="10000" wire:model="employeesCount" icon="users" />
             <flux:error name="employeesCount" />
         </flux:field>
@@ -127,7 +127,7 @@ new class extends Component
     </div>
 
     <flux:field class="mt-5">
-        <flux:checkbox wire:model="consent" required label="J accepte que Squarhe utilise ces informations pour me recontacter au sujet de ma demande." />
+        <flux:checkbox wire:model="consent" required label="J'accepte que Squarhe utilise ces informations pour me recontacter au sujet de ma demande." />
         <flux:error name="consent" />
     </flux:field>
 
