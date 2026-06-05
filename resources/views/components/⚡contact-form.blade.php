@@ -85,7 +85,7 @@ new class extends Component
 };
 ?>
 
-<form wire:submit="storeContact" class="rounded-lg border border-slate-200 bg-white p-5 shadow-xl shadow-slate-950/5 dark:border-white/10 dark:bg-[#172033] sm:p-6 my-auto">
+<form wire:submit="storeContact" class="rounded-lg border border-slate-200 bg-white p-5 shadow-xl shadow-slate-950/5 dark:border-zinc-800 dark:bg-zinc-900 sm:p-6 my-auto">
     <x-honeypot livewire-model="extraFields" />
 
     <div class="grid gap-4 sm:grid-cols-2">

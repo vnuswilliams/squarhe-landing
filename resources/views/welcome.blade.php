@@ -47,7 +47,7 @@
 
     </head>
 
-    <body class="bg-[#f8fafc] font-sans text-slate-950 antialiased dark:bg-[#101827] dark:text-[#e6edf7]">
+    <body class="bg-[#f8fafc] font-sans text-slate-950 antialiased dark:bg-zinc-950 dark:text-zinc-400">
 
         @php
             // ─── Données articles ───────────────────────────────────────
@@ -129,19 +129,19 @@
         x-transition:leave="transition duration-250 ease-in"
         x-transition:leave-start="translate-y-0 opacity-100"
         x-transition:leave-end="-translate-y-full opacity-0"
-        class="fixed inset-x-0 top-0 z-50 flex min-h-screen flex-col bg-white dark:bg-[#101827] md:hidden"
+        class="fixed inset-x-0 top-0 z-50 flex min-h-screen flex-col bg-white dark:bg-zinc-950 md:hidden"
     >
         {{-- Header interne du menu --}}
-        <div class="flex items-center justify-between border-b border-slate-200/80 px-5 py-4 dark:border-white/10">
+        <div class="flex items-center justify-between border-b border-slate-200/80 px-5 py-4 dark:border-zinc-800">
             <a href="#top" x-on:click="menuOpen = false" class="flex items-center gap-2.5">
-                <span class="grid size-9 place-items-center rounded-lg bg-slate-950 text-white dark:bg-white dark:text-slate-950">
+                <span class="grid size-9 place-items-center rounded-lg bg-slate-950 text-white dark:bg-zinc-50 dark:text-zinc-950">
                     <x-app-logo-icon class="size-4" />
                 </span>
-                <span class="text-lg font-black text-slate-950 dark:text-[#e6edf7]">Squarhe</span>
+                <span class="text-lg font-black text-slate-950 dark:text-zinc-400">Squarhe</span>
             </a>
             <button
                 x-on:click="menuOpen = false"
-                class="grid size-9 place-items-center rounded-lg border border-slate-200 bg-slate-50 text-slate-700 dark:border-white/10 dark:bg-white/5 dark:text-slate-300"
+                class="grid size-9 place-items-center rounded-lg border border-slate-200 bg-slate-50 text-slate-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400"
                 aria-label="Fermer le menu"
             >
                 <flux:icon.x-mark class="size-5" />
@@ -168,20 +168,20 @@
                                     if (el) el.scrollIntoView({ behavior: 'smooth' });
                                 })
                             "
-                            class="group flex items-center gap-4 rounded-xl px-4 py-4 text-lg font-bold text-slate-700 transition hover:bg-slate-50 hover:text-slate-950 dark:text-slate-300 dark:hover:bg-white/5 dark:hover:text-white"
+                            class="group flex items-center gap-4 rounded-xl px-4 py-4 text-lg font-bold text-slate-700 transition hover:bg-slate-50 hover:text-slate-950 dark:text-zinc-400 dark:hover:bg-zinc-900 dark:hover:text-zinc-50"
                         >
-                            <span class="grid size-9 place-items-center rounded-lg bg-slate-100 text-slate-500 transition group-hover:bg-slate-200 group-hover:text-slate-950 dark:bg-white/5 dark:text-slate-400 dark:group-hover:bg-white/10 dark:group-hover:text-white">
+                            <span class="grid size-9 place-items-center rounded-lg bg-slate-100 text-slate-500 transition group-hover:bg-slate-200 group-hover:text-slate-950 dark:bg-zinc-900 dark:text-zinc-400 dark:group-hover:bg-zinc-800 dark:group-hover:text-zinc-50">
                                 <flux:icon :name="$link['icon']" class="size-5" />
                             </span>
                             {{ $link['label'] }}
-                            <flux:icon.arrow-right class="ml-auto size-4 text-slate-300 transition group-hover:translate-x-1 group-hover:text-slate-500 dark:text-slate-600" />
+                            <flux:icon.arrow-right class="ml-auto size-4 text-slate-300 transition group-hover:translate-x-1 group-hover:text-slate-500 dark:text-zinc-600" />
                         </a>
                     </li>
                 @endforeach
             </ul>
 
             {{-- Séparateur --}}
-            <div class="my-6 border-t border-slate-200 dark:border-white/10"></div>
+            <div class="my-6 border-t border-slate-200 dark:border-zinc-800"></div>
 
             {{-- CTA principal --}}
             <a
@@ -193,7 +193,7 @@
                         if (el) el.scrollIntoView({ behavior: 'smooth' });
                     })
                 "
-                class="flex items-center justify-center gap-2 rounded-xl bg-slate-950 px-6 py-4 text-base font-black text-white transition hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-100"
+                class="flex items-center justify-center gap-2 rounded-xl bg-slate-950 px-6 py-4 text-base font-black text-white transition hover:bg-slate-800 dark:bg-zinc-50 dark:text-zinc-950 dark:hover:bg-zinc-200"
             >
 
                 Demander une démo gratuite
@@ -205,7 +205,7 @@
         </nav>
 
         {{-- Pied du menu --}}
-        <div class="border-t border-slate-200 px-5 py-5 dark:border-white/10">
+        <div class="border-t border-slate-200 px-5 py-5 dark:border-zinc-800">
             <p class="text-center text-sm text-slate-400">contact@squarhe.com</p>
         </div>
     </div>
@@ -219,8 +219,8 @@
             aria-label="Navigation principale"
             class="transition-all duration-300 ease-in-out w-full"
             :class="scrolled
-                ? 'mx-4 max-w-2xl rounded-full border border-slate-200/80 bg-white/90 shadow-[0_8px_32px_-4px_rgba(0,0,0,0.12),0_0_0_1px_rgba(0,0,0,0.04)] backdrop-blur-md dark:border-white/10 dark:bg-[#101827]/90 dark:shadow-[0_8px_32px_-4px_rgba(0,0,0,0.4)] px-4 py-2'
-                : 'border-b border-slate-200/80 bg-white/90 backdrop-blur dark:border-white/10 dark:bg-[#101827]/90 px-5 py-4 lg:px-8'"
+                ? 'mx-4 max-w-2xl rounded-full border border-slate-200/80 bg-white/90 shadow-[0_8px_32px_-4px_rgba(0,0,0,0.12),0_0_0_1px_rgba(0,0,0,0.04)] backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-950/90 dark:shadow-[0_8px_32px_-4px_rgba(0,0,0,0.4)] px-4 py-2'
+                : 'border-b border-slate-200/80 bg-white/90 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/90 px-5 py-4 lg:px-8'"
         >
             <div
                 class="flex items-center justify-between transition-all duration-300"
@@ -230,27 +230,27 @@
                 {{-- Logo --}}
                 <a href="#top" class="flex items-center gap-2.5 shrink-0">
                     <span
-                        class="grid place-items-center rounded-lg bg-slate-950 text-white dark:bg-white dark:text-slate-950 transition-all duration-300"
+                        class="grid place-items-center rounded-lg bg-slate-950 text-white dark:bg-zinc-50 dark:text-zinc-950 transition-all duration-300"
                         :class="scrolled ? 'size-7' : 'size-9'"
                     >
                         <x-app-logo-icon class="size-4" />
                     </span>
                     <span
-                        class="font-black tracking-normal text-slate-950 dark:text-[#e6edf7] transition-all duration-300"
+                        class="font-black tracking-normal text-slate-950 dark:text-zinc-400 transition-all duration-300"
                         :class="scrolled ? 'text-base ' : 'text-lg'"
                     >Squarhe</span>
                 </a>
 
                 {{-- Liens desktop --}}
                 <div
-                    class="hidden items-center text-slate-600 dark:text-slate-300 md:flex transition-all duration-300"
+                    class="hidden items-center text-slate-600 dark:text-zinc-400 md:flex transition-all duration-300"
                     :class="scrolled ? 'gap-5 text-sm font-medium' : 'gap-7 text-sm font-semibold'"
                 >
-                    <a class="transition hover:text-slate-950 dark:hover:text-white" href="#solution">Solution</a>
-                    <a class="transition hover:text-slate-950 dark:hover:text-white" href="#offres">Tarifs</a>
-                    <a class="transition hover:text-slate-950 dark:hover:text-white" href="#avis">Avis</a>
-                    <a class="transition hover:text-slate-950 dark:hover:text-white" href="#faq">FAQ</a>
-                    <a class="transition hover:text-slate-950 dark:hover:text-white" href="#articles">Blog</a>
+                    <a class="transition hover:text-slate-950 dark:hover:text-zinc-50" href="#solution">Solution</a>
+                    <a class="transition hover:text-slate-950 dark:hover:text-zinc-50" href="#offres">Tarifs</a>
+                    <a class="transition hover:text-slate-950 dark:hover:text-zinc-50" href="#avis">Avis</a>
+                    <a class="transition hover:text-slate-950 dark:hover:text-zinc-50" href="#faq">FAQ</a>
+                    <a class="transition hover:text-slate-950 dark:hover:text-zinc-50" href="#articles">Blog</a>
                 </div>
 
                 {{-- CTA desktop + burger mobile --}}
@@ -259,7 +259,7 @@
                     {{-- CTA desktop uniquement --}}
                     <a
                         href="#contact"
-                        class="hidden md:inline-flex items-center gap-2 font-semibold text-white bg-slate-950 transition-all duration-300 hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-100"
+                        class="hidden md:inline-flex items-center gap-2 font-semibold text-white bg-slate-950 transition-all duration-300 hover:bg-slate-800 dark:bg-zinc-50 dark:text-zinc-950 dark:hover:bg-zinc-200"
                         :class="scrolled ? 'text-sm px-4 py-1.5 rounded-full' : 'text-sm px-4 py-2 rounded-lg'"
                     >
                         Demander une démo
@@ -268,7 +268,7 @@
                     {{-- Burger mobile uniquement --}}
                     <button
                         x-on:click="menuOpen = true"
-                        class="grid size-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-700 transition hover:bg-slate-50 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 md:hidden"
+                        class="grid size-9 place-items-center rounded-lg border border-slate-200 bg-white text-slate-700 transition hover:bg-slate-50 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400 md:hidden"
                         aria-label="Ouvrir le menu"
                     >
                         <flux:icon.bars-3 class="size-5" />
@@ -292,17 +292,18 @@
                {{-- ═══════════════════════════════════════════════════
      HERO layout centré + screenshot pleine largeur (style LobeHub)
 ═══════════════════════════════════════════════════ --}}
-<section class="relative border-b border-slate-200 bg-white dark:border-white/10 dark:bg-[#101827] overflow-hidden">
+<section class="relative border-b border-slate-200 bg-white dark:border-zinc-800 dark:bg-zinc-950 overflow-hidden">
 
     {{-- Orbs de fond --}}
     <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-        <div class="absolute -top-32 left-1/2 -translate-x-1/2 h-[520px] w-[900px] rounded-full bg-gradient-to-b from-blue-50/70 via-slate-100/40 to-transparent dark:from-blue-950/20 dark:via-transparent dark:to-transparent blur-3xl"></div>
+        <div class="absolute left-1/2 top-[-18rem] h-[42rem] w-[42rem] -translate-x-1/2 rounded-full bg-[conic-gradient(from_120deg_at_50%_50%,rgba(59,130,246,0.22),rgba(16,185,129,0.18),rgba(250,204,21,0.16),rgba(244,63,94,0.14),rgba(168,85,247,0.18),rgba(59,130,246,0.22))] opacity-80 blur-3xl dark:opacity-55"></div>
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 h-[520px] w-[900px] rounded-full bg-gradient-to-b from-blue-50/70 via-slate-100/40 to-transparent dark:from-zinc-900/60 dark:via-transparent dark:to-transparent blur-3xl"></div>
         <div class="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-emerald-50/60 blur-3xl dark:bg-emerald-950/20"></div>
         <div class="absolute bottom-0 right-0 h-64 w-64 rounded-full bg-blue-50/60 blur-3xl dark:bg-blue-950/20"></div>
     </div>
 
     {{-- ── Copy centré ── --}}
-    <div class="relative mx-auto max-w-4xl px-5 pt-14 pb-10 text-center lg:pt-20 lg:pb-12">
+    <div class="relative mx-auto max-w-4xl px-5 pt-14 pb-10 text-center lg:pt-20 lg:pb-12" data-scroll-reveal>
 
         {{-- Badge social proof --}}
         <div class="mb-6 inline-flex items-center gap-2 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm font-bold text-emerald-800 dark:border-emerald-400/30 dark:bg-emerald-400/10 dark:text-emerald-200">
@@ -311,12 +312,12 @@
         </div>
 
         {{-- Titre --}}
-        <h1 class="text-4xl font-black leading-tight tracking-normal text-slate-950 dark:text-[#e6edf7] sm:text-5xl lg:text-5xl xl:text-5xl">
+        <h1 class="text-4xl font-black leading-tight tracking-normal text-slate-950 dark:text-zinc-300 sm:text-5xl lg:text-5xl xl:text-5xl">
             Vous passez encore vos fins de&nbsp;mois sur&nbsp;Excel&nbsp;à corriger des erreurs de&nbsp;paie.
         </h1>
 
-        <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-            Squarhe calcule la paie, génère vos bulletins PDF et suit vos obligations CNPS automatiquement. <strong class="text-slate-950 dark:text-white">En moins de 10 minutes par mois.</strong> Conçu pour les réalités des PME camerounaises.
+        <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-zinc-400">
+            Squarhe calcule la paie, génère vos bulletins PDF et suit vos obligations CNPS automatiquement. <strong class="text-slate-950 dark:text-zinc-200">En moins de 10 minutes par mois.</strong> Conçu pour les réalités des PME camerounaises.
         </p>
 
         {{-- CTAs --}}
@@ -338,21 +339,21 @@
         ce qui donne l'effet LobeHub "l'app sort du hero".
         Mobile  : max-height + fade gradient en bas pour tronquer proprement.
     --}}
-    <div class="relative mx-auto max-w-6xl px-5 lg:px-10">
+    <div class="relative mx-auto max-w-6xl px-5 lg:px-10" data-scroll-reveal style="--scroll-reveal-delay: 140ms">
 
         {{-- Halo derrière le frame --}}
         <div class="pointer-events-none absolute inset-x-16 top-4 h-2/3 rounded-3xl bg-blue-100/50 blur-3xl dark:bg-blue-900/20" aria-hidden="true"></div>
 
         {{-- Window frame --}}
-        <div class="relative overflow-hidden rounded-t-2xl border border-b-0 border-slate-200/90 bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.04),0_24px_60px_-8px_rgba(0,0,0,0.18),0_0_0_1px_rgba(0,0,0,0.03)] dark:border-white/10 dark:bg-[#172033] dark:shadow-[0_24px_60px_-8px_rgba(0,0,0,0.55)]">
+        <div class="relative overflow-hidden rounded-t-2xl border border-b-0 border-slate-200/90 bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.04),0_24px_60px_-8px_rgba(0,0,0,0.18),0_0_0_1px_rgba(0,0,0,0.03)] dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-[0_24px_60px_-8px_rgba(0,0,0,0.55)]">
 
             {{-- Title bar --}}
-            <div class="flex h-9 shrink-0 items-center gap-2 border-b border-slate-200/80 bg-slate-50/90 px-4 backdrop-blur dark:border-white/10 dark:bg-[#1d2a40]/90">
+            <div class="flex h-9 shrink-0 items-center gap-2 border-b border-slate-200/80 bg-slate-50/90 px-4 backdrop-blur dark:border-zinc-800 dark:bg-zinc-800/90">
                 <span class="size-3 rounded-full bg-[#ff5f57]"></span>
                 <span class="size-3 rounded-full bg-[#febc2e]"></span>
                 <span class="size-3 rounded-full bg-[#28c840]"></span>
-                <div class="mx-auto flex h-5 w-52 items-center justify-center rounded-md bg-slate-200/80 px-3 dark:bg-white/10">
-                    <span class="truncate text-[11px] font-medium text-slate-500 dark:text-slate-400">app.squarhe.com/employes</span>
+                <div class="mx-auto flex h-5 w-52 items-center justify-center rounded-md bg-slate-200/80 px-3 dark:bg-zinc-800">
+                    <span class="truncate text-[11px] font-medium text-slate-500 dark:text-zinc-400">app.squarhe.com/employes</span>
                 </div>
             </div>
 
@@ -380,7 +381,7 @@
                     />
                 </div>
                 {{-- Fade-out bas sur mobile uniquement --}}
-                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent lg:hidden dark:from-[#101827]" aria-hidden="true"></div>
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-white to-transparent lg:hidden dark:from-zinc-950" aria-hidden="true"></div>
             </div>
         </div>
     </div>
@@ -389,13 +390,13 @@
                 {{-- ═══════════════════════════════════════════════════
                      PROBLÈMES miroir de la réalité vécue
                 ═══════════════════════════════════════════════════ --}}
-              <section class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+              <section class="mx-auto max-w-7xl px-5 py-16 lg:px-8" data-scroll-reveal>
 
     <div class="mb-10 max-w-2xl">
         <span class="inline-block rounded-full bg-amber-100 px-3 py-1 text-sm font-semibold text-amber-700 dark:bg-amber-400/20 dark:text-amber-300">
             Vous vous reconnaissez ?
         </span>
-        <h2 class="mt-4 text-3xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-4xl">
+        <h2 class="mt-4 text-3xl font-black leading-tight text-slate-950 dark:text-zinc-300 sm:text-4xl">
             Ce que vivent la plupart des PME.
         </h2>
     </div>
@@ -403,19 +404,19 @@
     <div class="grid gap-4 sm:grid-cols-2">
 
         {{-- Card 1 Variables WhatsApp --}}
-        <article class="flex flex-col gap-4 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:gap-5 dark:border-white/10 dark:bg-[#172033]">
+        <article class="flex flex-col gap-4 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:gap-5 dark:border-zinc-800 dark:bg-zinc-900">
             <div class="min-w-0 flex-1">
                 <p class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Collecte des variables</p>
-                <h3 class="mt-2 text-base font-black leading-snug text-slate-950 dark:text-[#e6edf7]">
+                <h3 class="mt-2 text-base font-black leading-snug text-slate-950 dark:text-zinc-300">
                     Variables reçues par WhatsApp la veille du virement.
                 </h3>
-                <p class="mt-2 text-xs leading-6 text-slate-500 dark:text-slate-400">
+                <p class="mt-2 text-xs leading-6 text-slate-500 dark:text-zinc-400">
                     Corrections de dernière minute, oublis fréquents, aucune source de vérité.
                 </p>
             </div>
 
             {{-- Mock WhatsApp --}}
-            <div class="w-full space-y-1.5 rounded-xl border border-slate-200/80 bg-slate-50 p-2.5 sm:w-44 sm:shrink-0 dark:border-white/10 dark:bg-[#1d2a40]">
+            <div class="w-full space-y-1.5 rounded-xl border border-slate-200/80 bg-slate-50 p-2.5 sm:w-44 sm:shrink-0 dark:border-zinc-800 dark:bg-zinc-800">
                 <div class="flex justify-end">
                     <span class="rounded-lg rounded-tr-none bg-emerald-500 px-2 py-1 text-[10px] font-medium text-white">Mballa = 420 000</span>
                 </div>
@@ -423,7 +424,7 @@
                     <span class="rounded-lg rounded-tr-none bg-emerald-500 px-2 py-1 text-[10px] font-medium text-white">Etoga prime 25k</span>
                 </div>
                 <div class="flex justify-start">
-                    <span class="rounded-lg rounded-tl-none bg-white px-2 py-1 text-[10px] text-slate-600 shadow-sm dark:bg-slate-700 dark:text-slate-300">Et Njoya ?</span>
+                    <span class="rounded-lg rounded-tl-none bg-white px-2 py-1 text-[10px] text-slate-600 shadow-sm dark:bg-zinc-700 dark:text-zinc-400">Et Njoya ?</span>
                 </div>
                 <div class="flex justify-end">
                     <span class="rounded-lg rounded-tr-none bg-emerald-500 px-2 py-1 text-[10px] font-medium text-white">Je cherche... 🤔</span>
@@ -433,20 +434,20 @@
         </article>
 
         {{-- Card 2 Traçabilité --}}
-        <article class="flex flex-col gap-4 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:gap-5 dark:border-white/10 dark:bg-[#172033]">
+        <article class="flex flex-col gap-4 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:gap-5 dark:border-zinc-800 dark:bg-zinc-900">
             <div class="min-w-0 flex-1">
                 <p class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Traçabilité</p>
-                <h3 class="mt-2 text-base font-black leading-snug text-slate-950 dark:text-[#e6edf7]">
+                <h3 class="mt-2 text-base font-black leading-snug text-slate-950 dark:text-zinc-300">
                     Impossible de savoir qui a validé quoi, ni quand.
                 </h3>
-                <p class="mt-2 text-xs leading-6 text-slate-500 dark:text-slate-400">
+                <p class="mt-2 text-xs leading-6 text-slate-500 dark:text-zinc-400">
                     Validations perdues dans les conversations, aucun historique fiable.
                 </p>
             </div>
 
             {{-- Mock tableau --}}
-            <div class="w-full overflow-hidden rounded-xl border border-slate-200/80 sm:w-44 sm:shrink-0 dark:border-white/10">
-                <div class="grid grid-cols-2 bg-slate-100 px-2 py-1.5 text-[9px] font-bold text-slate-500 dark:bg-white/10">
+            <div class="w-full overflow-hidden rounded-xl border border-slate-200/80 sm:w-44 sm:shrink-0 dark:border-zinc-800">
+                <div class="grid grid-cols-2 bg-slate-100 px-2 py-1.5 text-[9px] font-bold text-slate-500 dark:bg-zinc-800">
                     <span>Employé</span><span>Statut</span>
                 </div>
                 @foreach ([
@@ -455,8 +456,8 @@
                     ['S. Njoya', '?', 'text-amber-500'],
                     ['C. Biya', '???', 'text-rose-500'],
                 ] as $row)
-                <div class="grid grid-cols-2 border-t border-slate-100 px-2 py-1.5 text-[9px] dark:border-white/5">
-                    <span class="text-slate-600 dark:text-slate-300">{{ $row[0] }}</span>
+                <div class="grid grid-cols-2 border-t border-slate-100 px-2 py-1.5 text-[9px] dark:border-zinc-800/70">
+                    <span class="text-slate-600 dark:text-zinc-400">{{ $row[0] }}</span>
                     <span class="font-black {{ $row[2] }}">{{ $row[1] }}</span>
                 </div>
                 @endforeach
@@ -464,13 +465,13 @@
         </article>
 
         {{-- Card 3 CNPS --}}
-        <article class="flex flex-col gap-4 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:gap-5 dark:border-white/10 dark:bg-[#172033]">
+        <article class="flex flex-col gap-4 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:gap-5 dark:border-zinc-800 dark:bg-zinc-900">
             <div class="min-w-0 flex-1">
                 <p class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Conformité CNPS</p>
-                <h3 class="mt-2 text-base font-black leading-snug text-slate-950 dark:text-[#e6edf7]">
+                <h3 class="mt-2 text-base font-black leading-snug text-slate-950 dark:text-zinc-300">
                     Angoisse à chaque contrôle CNPS.
                 </h3>
-                <p class="mt-2 text-xs leading-6 text-slate-500 dark:text-slate-400">
+                <p class="mt-2 text-xs leading-6 text-slate-500 dark:text-zinc-400">
                     Historique incomplet, risque de redressement difficile à anticiper.
                 </p>
             </div>
@@ -485,27 +486,27 @@
                     <p class="text-[10px] font-black text-amber-700 dark:text-amber-300">📋 Contrôle 12 juin</p>
                     <p class="text-[9px] text-amber-500 dark:text-amber-400">Documents introuvables</p>
                 </div>
-                <div class="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-2 dark:border-white/10 dark:bg-white/5">
-                    <p class="text-[10px] font-black text-slate-700 dark:text-slate-200">💸 Redressement</p>
+                <div class="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-2 dark:border-zinc-800 dark:bg-zinc-900">
+                    <p class="text-[10px] font-black text-slate-700 dark:text-zinc-200">💸 Redressement</p>
                     <p class="text-[9px] text-slate-400">Pénalités non calculées</p>
                 </div>
             </div>
         </article>
 
         {{-- Card 4 Documents perdus --}}
-        <article class="flex flex-col gap-4 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:gap-5 dark:border-white/10 dark:bg-[#172033]">
+        <article class="flex flex-col gap-4 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:gap-5 dark:border-zinc-800 dark:bg-zinc-900">
             <div class="min-w-0 flex-1">
                 <p class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Gestion documentaire</p>
-                <h3 class="mt-2 text-base font-black leading-snug text-slate-950 dark:text-[#e6edf7]">
+                <h3 class="mt-2 text-base font-black leading-snug text-slate-950 dark:text-zinc-300">
                     Un contrat et un bulletin perdus l'an dernier.
                 </h3>
-                <p class="mt-2 text-xs leading-6 text-slate-500 dark:text-slate-400">
+                <p class="mt-2 text-xs leading-6 text-slate-500 dark:text-zinc-400">
                     Fichiers éparpillés, noms incohérents, introuvables au moment critique.
                 </p>
             </div>
 
             {{-- Mock explorateur --}}
-            <div class="w-full space-y-1 rounded-xl border border-slate-200/80 bg-slate-50 p-2.5 sm:w-44 sm:shrink-0 dark:border-white/10 dark:bg-[#1d2a40]">
+            <div class="w-full space-y-1 rounded-xl border border-slate-200/80 bg-slate-50 p-2.5 sm:w-44 sm:shrink-0 dark:border-zinc-800 dark:bg-zinc-800">
                 @foreach ([
                     ['📁', 'RH 2023 ancien', ''],
                     ['📁', 'RH FINAL v2 copie', 'text-rose-500 font-bold'],
@@ -515,7 +516,7 @@
                 ] as $file)
                 <div class="flex items-center gap-1.5 rounded px-1 py-1">
                     <span class="text-xs">{{ $file[0] }}</span>
-                    <span class="truncate text-[10px] {{ $file[2] ?: 'text-slate-600 dark:text-slate-300' }}">{{ $file[1] }}</span>
+                    <span class="truncate text-[10px] {{ $file[2] ?: 'text-slate-600 dark:text-zinc-400' }}">{{ $file[1] }}</span>
                 </div>
                 @endforeach
                 <p class="mt-0.5 text-[9px] italic text-rose-400">2 fichiers introuvables</p>
@@ -527,7 +528,7 @@
                 {{-- ═══════════════════════════════════════════════════
                      SOLUTION
                 ═══════════════════════════════════════════════════ --}}
-                <section id="solution" class="border-y border-slate-200 bg-white dark:border-white/10 dark:bg-[#101827]">
+                <section id="solution" class="border-y border-slate-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
                     <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
                         <div class="max-w-3xl">
                             <p class="text-sm font-black uppercase text-blue-700">Ce que Squarhe change</p>
@@ -543,10 +544,10 @@
                                 ['title' => 'Tous vos documents au même endroit', 'text' => 'Contrats, bulletins, attestations, pièces jointes archivés proprement, retrouvés en 10 secondes.', 'icon' => 'check-badge'],
                                 ['title' => 'Une équipe qui comprend votre quotidien', 'text' => 'Pas un support qui vous demande d\'ouvrir un ticket. Une équipe camerounaise qui connaît la CNPS, le Code du travail et vos contraintes réelles.', 'icon' => 'check-badge'],
                             ] as $feature)
-                                <article class="rounded-lg border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:bg-white hover:shadow-lg dark:border-white/10 dark:bg-[#172033] dark:hover:bg-[#1d2a40]">
+                                <article class="rounded-lg border border-slate-200 bg-slate-50 p-6 transition hover:-translate-y-1 hover:bg-white hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900 dark:hover:bg-zinc-800">
                                     <flux:icon.check-badge class="mb-4 size-6 text-blue-600 dark:text-blue-300" />
-                                    <h3 class="text-xl font-black text-slate-950 dark:text-[#e6edf7]">{{ $feature['title'] }}</h3>
-                                    <p class="mt-3 leading-7 text-slate-600 dark:text-slate-300">{{ $feature['text'] }}</p>
+                                    <h3 class="text-xl font-black text-slate-950 dark:text-zinc-300">{{ $feature['title'] }}</h3>
+                                    <p class="mt-3 leading-7 text-slate-600 dark:text-zinc-400">{{ $feature['text'] }}</p>
                                 </article>
                             @endforeach
                         </div>
@@ -562,27 +563,27 @@
                 {{-- ═══════════════════════════════════════════════════
                      COMMENT ÇA MARCHE section manquante ajoutée
                 ═══════════════════════════════════════════════════ --}}
-                <section class="bg-white">
+                <section class="bg-white dark:bg-zinc-950" data-scroll-reveal>
                     <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8 ">
                     <div class="mb-12 max-w-2xl">
-                        <p class="text-sm font-black uppercase text-blue-700">En pratique</p>
-                        <h2 class="mt-3 text-3xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-4xl">De votre Excel à Squarhe en 3 étapes.</h2>
-                        <p class="mt-4 text-lg leading-8 text-slate-600 dark:text-slate-300">Pas de migration compliquée. Notre équipe reprend vos données et vous êtes opérationnel pour votre prochain cycle de paie.</p>
+                        <p class="text-sm font-black uppercase text-blue-700 dark:text-blue-300">En pratique</p>
+                        <h2 class="mt-3 text-3xl font-black leading-tight text-slate-950 dark:text-zinc-300 sm:text-4xl">De votre Excel à Squarhe en 3 étapes.</h2>
+                        <p class="mt-4 text-lg leading-8 text-slate-600 dark:text-zinc-400">Pas de migration compliquée. Notre équipe reprend vos données et vous êtes opérationnel pour votre prochain cycle de paie.</p>
                     </div>
                     <div class="grid gap-8 lg:grid-cols-3">
                         @foreach ([
                             ['num' => '01', 'title' => 'On reprend vos données', 'text' => 'Vous nous partagez votre fichier Excel actuel. Notre équipe importe vos employés, vos historiques et vos variables. Vous ne recommencez pas de zéro.', 'color' => 'bg-blue-600'],
                             ['num' => '02', 'title' => 'On configure votre paie', 'text' => 'Nous paramétrons vos règles de calcul (primes, retenues, CNPS, IRPP) selon votre situation. Une session de validation ensemble pour s\'assurer que tout est juste.', 'color' => 'bg-emerald-600'],
-                            ['num' => '03', 'title' => 'Vous lancez votre première paie', 'text' => 'Saisissez vos variables, validez en un clic, vos bulletins sont générés. Notre équipe reste disponible sur WhatsApp pour vos premières semaines.', 'color' => 'bg-slate-950 dark:bg-white'],
+                            ['num' => '03', 'title' => 'Vous lancez votre première paie', 'text' => 'Saisissez vos variables, validez en un clic, vos bulletins sont générés. Notre équipe reste disponible sur WhatsApp pour vos premières semaines.', 'color' => 'bg-slate-950 dark:bg-zinc-50'],
                         ] as $step)
                             <div class="flex gap-5">
                                 <div class="flex flex-col items-center">
-                                    <span class="{{ $step['color'] }} grid size-12 shrink-0 place-items-center rounded-xl text-lg font-black text-white dark:text-slate-950">{{ $step['num'] }}</span>
-                                    <div class="mt-3 w-px flex-1 bg-slate-200 dark:bg-white/10"></div>
+                                    <span class="{{ $step['color'] }} grid size-12 shrink-0 place-items-center rounded-xl text-lg font-black text-white dark:text-zinc-950">{{ $step['num'] }}</span>
+                                    <div class="mt-3 w-px flex-1 bg-slate-200 dark:bg-zinc-800"></div>
                                 </div>
                                 <div class="pb-8">
-                                    <h3 class="text-xl font-black text-slate-950 dark:text-[#e6edf7]">{{ $step['title'] }}</h3>
-                                    <p class="mt-3 leading-7 text-slate-600 dark:text-slate-300">{{ $step['text'] }}</p>
+                                    <h3 class="text-xl font-black text-slate-950 dark:text-zinc-300">{{ $step['title'] }}</h3>
+                                    <p class="mt-3 leading-7 text-slate-600 dark:text-zinc-400">{{ $step['text'] }}</p>
                                 </div>
                             </div>
                         @endforeach
@@ -596,16 +597,16 @@
 ═══════════════════════════════════════════════════ --}}
 <section
     id="solution"
-    class="border-y border-slate-200 bg-white dark:border-white/10 dark:bg-[#101827]"
+    class="border-y border-slate-200 bg-white dark:border-zinc-800 dark:bg-zinc-950"
     x-data="featureShowcase()"
     x-init="init()"
 >
-    <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
+    <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8" data-scroll-reveal>
 
         {{-- ── En-tête ── --}}
         <div class="max-w-2xl">
             <p class="text-sm font-black uppercase text-blue-700 dark:text-blue-300">La plateforme en action</p>
-            <h2 class="mt-3 text-3xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-4xl">
+            <h2 class="mt-3 text-3xl font-black leading-tight text-slate-950 dark:text-zinc-300 sm:text-4xl">
                 Tout ce dont vous avez besoin, sans complexité.
             </h2>
 
@@ -683,8 +684,8 @@
                     x-on:click="goTo({{ $i }})"
                     class="relative flex items-center gap-2 overflow-hidden rounded-full border px-3 py-1.5 text-xs font-bold transition-all duration-200 sm:px-4 sm:py-2 sm:text-sm"
                     :class="{{ $i }} === active
-                        ? 'border-slate-950 bg-slate-950 text-white dark:border-white dark:bg-white dark:text-slate-950'
-                        : 'border-slate-200 bg-white text-slate-500 hover:border-slate-300 hover:text-slate-700 dark:border-white/10 dark:bg-transparent dark:text-slate-400 dark:hover:text-white'"
+                        ? 'border-slate-950 bg-slate-950 text-white dark:border-zinc-50 dark:bg-zinc-50 dark:text-zinc-950'
+                        : 'border-slate-200 bg-white text-slate-500 hover:border-slate-300 hover:text-slate-700 dark:border-zinc-800 dark:bg-transparent dark:text-zinc-400 dark:hover:text-zinc-50'"
                 >
                     {{ $f['tab'] }}
                     {{-- Barre de progression sur le tab actif --}}
@@ -699,17 +700,22 @@
         </div>
 
         {{-- ── Contenu principal ── --}}
-        <div class="mt-8">
+        <div
+            class="relative mt-8 overflow-hidden transition-[height] duration-300 ease-out"
+            :style="panelHeight ? `height: ${panelHeight}px` : null"
+            x-on:resize.window.debounce.150ms="measurePanel()"
+        >
             @foreach ($features as $i => $f)
                 <div
+                    data-feature-panel="{{ $i }}"
                     x-show="{{ $i }} === active"
-                    x-transition:enter="transition duration-400 ease-out"
-                    x-transition:enter-start="opacity-0 translate-y-3"
-                    x-transition:enter-end="opacity-100 translate-y-0"
-                    x-transition:leave="transition duration-200 ease-in"
+                    x-transition:enter="transition duration-300 ease-out"
+                    x-transition:enter-start="opacity-0"
+                    x-transition:enter-end="opacity-100"
+                    x-transition:leave="transition duration-150 ease-in"
                     x-transition:leave-start="opacity-100"
                     x-transition:leave-end="opacity-0"
-                    class="grid gap-8 lg:grid-cols-[1fr_1.6fr] lg:items-center"
+                    class="absolute inset-x-0 top-0 grid w-full gap-8 lg:grid-cols-[1fr_1.6fr] lg:items-center"
                 >
 
                     {{-- ── Texte (en bas mobile, à gauche desktop) ── --}}
@@ -720,17 +726,17 @@
                             <span class="text-xs font-bold text-blue-700 dark:text-blue-300">{{ $f['label'] }}</span>
                         </div>
 
-                        <h3 class="mt-4 text-2xl font-black leading-snug text-slate-950 dark:text-[#e6edf7] sm:text-3xl">
+                        <h3 class="mt-4 text-2xl font-black leading-snug text-slate-950 dark:text-zinc-300 sm:text-3xl">
                             {{ $f['title'] }}
                         </h3>
 
-                        <p class="mt-4 leading-8 text-slate-600 dark:text-slate-300">
+                        <p class="mt-4 leading-8 text-slate-600 dark:text-zinc-400">
                             {{ $f['text'] }}
                         </p>
 
                         <ul class="mt-6 space-y-2.5">
                             @foreach ($f['bullets'] as $bullet)
-                                <li class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+                                <li class="flex items-center gap-3 text-sm text-slate-700 dark:text-zinc-400">
                                     <span class="grid size-5 shrink-0 place-items-center rounded-full bg-emerald-100 dark:bg-emerald-400/20">
                                         <svg class="size-3 text-emerald-600 dark:text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
                                             <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd"/>
@@ -750,21 +756,21 @@
 
                     {{-- ── Screenshot (en haut mobile, à droite desktop) ── --}}
                     <div class="order-1 lg:order-2">
-                        <div class="overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-[0_20px_60px_-10px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.03)] dark:border-white/10 dark:bg-[#172033] dark:shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)]">
+                        <div class="overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-[0_20px_60px_-10px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.03)] dark:border-zinc-800 dark:bg-zinc-900 dark:shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)]">
 
                             {{-- Title bar --}}
-                            <div class="flex h-8 items-center gap-1.5 border-b border-slate-200/80 bg-slate-50/90 px-3 dark:border-white/10 dark:bg-[#1d2a40]/90">
+                            <div class="flex h-8 items-center gap-1.5 border-b border-slate-200/80 bg-slate-50/90 px-3 dark:border-zinc-800 dark:bg-zinc-800/90">
                                 <span class="size-2.5 rounded-full bg-[#ff5f57]"></span>
                                 <span class="size-2.5 rounded-full bg-[#febc2e]"></span>
                                 <span class="size-2.5 rounded-full bg-[#28c840]"></span>
-                                <div class="mx-auto flex h-4 w-40 items-center justify-center rounded bg-slate-200/80 dark:bg-white/10">
-                                    <span class="text-[10px] font-medium text-slate-400 dark:text-slate-500">app.squarhe.com</span>
+                                <div class="mx-auto flex h-4 w-40 items-center justify-center rounded bg-slate-200/80 dark:bg-zinc-800">
+                                    <span class="text-[10px] font-medium text-slate-400 dark:text-zinc-500">app.squarhe.com</span>
                                 </div>
                             </div>
 
 
                             {{-- Image  --}}
-                            <div class="aspect-16/10 w-full overflow-hidden bg-slate-100 dark:bg-[#1a2436]">
+                            <div class="aspect-16/10 w-full overflow-hidden bg-slate-100 dark:bg-zinc-900">
                                 <img
                                     src="{{ asset('images/' . $f['image'].'.png') }}"
                                     alt="{{ $f['alt'] }}"
@@ -805,8 +811,8 @@
                         x-on:click="goTo({{ $i }})"
                         class="rounded-full transition-all duration-300"
                         :class="{{ $i }} === active
-                            ? 'w-6 h-2 bg-slate-950 dark:bg-white'
-                            : 'size-2 bg-slate-300 hover:bg-slate-400 dark:bg-white/20 dark:hover:bg-white/40'"
+                            ? 'w-6 h-2 bg-slate-950 dark:bg-zinc-50'
+                            : 'size-2 bg-slate-300 hover:bg-slate-400 dark:bg-zinc-700/60 dark:hover:bg-zinc-600'"
                         aria-label="Fonctionnalité {{ $i + 1 }}"
                     ></button>
                 @endforeach
@@ -816,7 +822,7 @@
             <div class="flex items-center gap-2">
                 <button
                     x-on:click="prev()"
-                    class="grid size-9 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:bg-slate-50 hover:text-slate-950 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10"
+                    class="grid size-9 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:bg-slate-50 hover:text-slate-950 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800"
                     aria-label="Précédent"
                 >
                     <svg class="size-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd"/></svg>
@@ -824,7 +830,7 @@
 
                 <button
                     x-on:click="togglePause()"
-                    class="grid size-9 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:bg-slate-50 hover:text-slate-950 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10"
+                    class="grid size-9 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:bg-slate-50 hover:text-slate-950 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800"
                     :aria-label="paused ? 'Reprendre' : 'Pause'"
                 >
                     <svg x-show="!paused" class="size-4" viewBox="0 0 20 20" fill="currentColor"><path d="M5.75 3a.75.75 0 0 0-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 0 0 .75-.75V3.75A.75.75 0 0 0 7.25 3h-1.5ZM12.75 3a.75.75 0 0 0-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 0 0 .75-.75V3.75a.75.75 0 0 0-.75-.75h-1.5Z"/></svg>
@@ -833,7 +839,7 @@
 
                 <button
                     x-on:click="next()"
-                    class="grid size-9 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:bg-slate-50 hover:text-slate-950 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10"
+                    class="grid size-9 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:bg-slate-50 hover:text-slate-950 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800"
                     aria-label="Suivant"
                 >
                     <svg class="size-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
@@ -850,7 +856,7 @@
 ═══════════════════════════════════════════════════ --}}
 <section
     id="avis"
-    class="overflow-hidden bg-white py-16 dark:bg-[#101827] sm:py-20"
+    class="overflow-hidden bg-white py-16 dark:bg-zinc-950 sm:py-20"
     x-data="testimonialCarousel()"
     x-init="init()"
 >
@@ -863,25 +869,25 @@
                     <span class="size-1.5 rounded-full bg-emerald-500"></span>
                     Ils avancent avec Squarhe
                 </span>
-                <h2 class="mt-4 text-2xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-3xl lg:text-4xl">
+                <h2 class="mt-4 text-2xl font-black leading-tight text-slate-950 dark:text-zinc-300 sm:text-3xl lg:text-4xl">
                     Des PME camerounaises qui ont remplacé Excel.
                 </h2>
             </div>
 
             {{-- Contrôles masqués sur mobile (scroll natif suffit) --}}
             <div class="hidden items-center gap-2 sm:flex">
-                <button x-on:click="prev()" class="grid size-10 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 hover:text-slate-950 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10" aria-label="Précédent">
+                <button x-on:click="prev()" class="grid size-10 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 hover:text-slate-950 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800" aria-label="Précédent">
                     <svg class="size-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd"/></svg>
                 </button>
-                <button x-on:click="togglePause()" class="grid size-10 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 hover:text-slate-950 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10" :aria-label="paused ? 'Reprendre' : 'Pause'">
+                <button x-on:click="togglePause()" class="grid size-10 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 hover:text-slate-950 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800" :aria-label="paused ? 'Reprendre' : 'Pause'">
                     <svg x-show="!paused" class="size-4" viewBox="0 0 20 20" fill="currentColor"><path d="M5.75 3a.75.75 0 0 0-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 0 0 .75-.75V3.75A.75.75 0 0 0 7.25 3h-1.5ZM12.75 3a.75.75 0 0 0-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 0 0 .75-.75V3.75a.75.75 0 0 0-.75-.75h-1.5Z"/></svg>
                     <svg x-show="paused" class="size-4" viewBox="0 0 20 20" fill="currentColor"><path d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.344-5.891a1.5 1.5 0 0 0 0-2.538L6.3 2.84Z"/></svg>
                 </button>
-                <button x-on:click="next()" class="grid size-10 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 hover:text-slate-950 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10" aria-label="Suivant">
+                <button x-on:click="next()" class="grid size-10 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 hover:text-slate-950 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800" aria-label="Suivant">
                     <svg class="size-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
                 </button>
-                <span class="ml-1 text-sm font-bold tabular-nums text-slate-400 dark:text-slate-500">
-                    <span x-text="current + 1"></span><span class="text-slate-300 dark:text-slate-700">/</span><span x-text="total"></span>
+                <span class="ml-1 text-sm font-bold tabular-nums text-slate-400 dark:text-zinc-500">
+                    <span x-text="current + 1"></span><span class="text-slate-300 dark:text-zinc-700">/</span><span x-text="total"></span>
                 </span>
             </div>
         </div>
@@ -917,7 +923,7 @@
 
                 @foreach ($testimonials_data as $t)
                     <div
-                        class="flex w-[85vw] shrink-0 flex-col rounded-2xl border border-slate-200/80 bg-slate-50 p-5 dark:border-white/10 dark:bg-[#172033]"
+                        class="flex w-[85vw] shrink-0 flex-col rounded-2xl border border-slate-200/80 bg-slate-50 p-5 dark:border-zinc-800 dark:bg-zinc-900"
                         style="scroll-snap-align: center;"
                     >
                         <div class="flex items-center gap-0.5" aria-label="5 étoiles">
@@ -929,14 +935,14 @@
                             <svg class="mt-0.5 size-3.5 shrink-0 text-emerald-600 dark:text-emerald-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd"/></svg>
                             <p class="text-xs font-bold leading-5 text-emerald-800 dark:text-emerald-300">{{ $t['result'] }}</p>
                         </div>
-                        <p class="mt-4 flex-1 text-sm leading-7 text-slate-600 dark:text-slate-300">"{{ $t['quote'] }}"</p>
-                        <div class="mt-5 flex items-center gap-3 border-t border-slate-200/80 pt-4 dark:border-white/10">
-                            <div class="grid size-9 shrink-0 place-items-center rounded-full bg-slate-200 text-sm font-black text-slate-700 dark:bg-white/10 dark:text-slate-200">
+                        <p class="mt-4 flex-1 text-sm leading-7 text-slate-600 dark:text-zinc-400">"{{ $t['quote'] }}"</p>
+                        <div class="mt-5 flex items-center gap-3 border-t border-slate-200/80 pt-4 dark:border-zinc-800">
+                            <div class="grid size-9 shrink-0 place-items-center rounded-full bg-slate-200 text-sm font-black text-slate-700 dark:bg-zinc-800 dark:text-zinc-200">
                                 {{ mb_substr($t['name'], 0, 1) }}
                             </div>
                             <div class="min-w-0">
-                                <p class="truncate text-sm font-black text-slate-950 dark:text-[#e6edf7]">{{ $t['name'] }}</p>
-                                <p class="truncate text-xs text-slate-500 dark:text-slate-400">{{ $t['role'] }} · {{ $t['sector'] }}</p>
+                                <p class="truncate text-sm font-black text-slate-950 dark:text-zinc-400">{{ $t['name'] }}</p>
+                                <p class="truncate text-xs text-slate-500 dark:text-zinc-400">{{ $t['role'] }} · {{ $t['sector'] }}</p>
                             </div>
                             <span class="ml-auto shrink-0 text-xs text-slate-400">📍 {{ $t['location'] }}</span>
                         </div>
@@ -947,7 +953,7 @@
             </div>
 
             {{-- Indicateur swipe --}}
-            <p class="mt-3 text-center text-xs text-slate-400 dark:text-slate-500">← Glissez pour voir plus →</p>
+            <p class="mt-3 text-center text-xs text-slate-400 dark:text-zinc-500">← Glissez pour voir plus →</p>
         </div>
 
         {{-- ══════════════════════════════════════════
@@ -965,7 +971,7 @@
                         :style="`width: ${100 / visibleCount}%`"
                         style="width: 50%"
                     >
-                        <div class="flex h-full flex-col rounded-2xl border border-slate-200/80 bg-slate-50 p-6 dark:border-white/10 dark:bg-[#172033]">
+                        <div class="flex h-full flex-col rounded-2xl border border-slate-200/80 bg-slate-50 p-6 dark:border-zinc-800 dark:bg-zinc-900">
                             <div class="flex items-center gap-0.5" aria-label="5 étoiles">
                                 @for ($s = 0; $s < 5; $s++)
                                     <svg class="size-4 text-amber-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd"/></svg>
@@ -975,14 +981,14 @@
                                 <svg class="mt-0.5 size-3.5 shrink-0 text-emerald-600 dark:text-emerald-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd"/></svg>
                                 <p class="text-xs font-bold leading-5 text-emerald-800 dark:text-emerald-300">{{ $t['result'] }}</p>
                             </div>
-                            <p class="mt-4 flex-1 text-sm leading-7 text-slate-600 dark:text-slate-300">"{{ $t['quote'] }}"</p>
-                            <div class="mt-5 flex items-center gap-3 border-t border-slate-200/80 pt-4 dark:border-white/10">
-                                <div class="grid size-9 shrink-0 place-items-center rounded-full bg-slate-200 text-sm font-black text-slate-700 dark:bg-white/10 dark:text-slate-200">
+                            <p class="mt-4 flex-1 text-sm leading-7 text-slate-600 dark:text-zinc-400">"{{ $t['quote'] }}"</p>
+                            <div class="mt-5 flex items-center gap-3 border-t border-slate-200/80 pt-4 dark:border-zinc-800">
+                                <div class="grid size-9 shrink-0 place-items-center rounded-full bg-slate-200 text-sm font-black text-slate-700 dark:bg-zinc-800 dark:text-zinc-200">
                                     {{ mb_substr($t['name'], 0, 1) }}
                                 </div>
                                 <div class="min-w-0">
-                                    <p class="truncate text-sm font-black text-slate-950 dark:text-[#e6edf7]">{{ $t['name'] }}</p>
-                                    <p class="truncate text-xs text-slate-500 dark:text-slate-400">{{ $t['role'] }} · {{ $t['sector'] }}</p>
+                                    <p class="truncate text-sm font-black text-slate-950 dark:text-zinc-400">{{ $t['name'] }}</p>
+                                    <p class="truncate text-xs text-slate-500 dark:text-zinc-400">{{ $t['role'] }} · {{ $t['sector'] }}</p>
                                 </div>
                                 <span class="ml-auto shrink-0 text-xs text-slate-400">📍 {{ $t['location'] }}</span>
                             </div>
@@ -992,8 +998,8 @@
             </div>
 
             {{-- Fades latéraux --}}
-            <div class="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-white to-transparent dark:from-[#101827]"></div>
-            <div class="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-white to-transparent dark:from-[#101827]"></div>
+            <div class="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-white to-transparent dark:from-zinc-950"></div>
+            <div class="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-white to-transparent dark:from-zinc-950"></div>
         </div>
 
         {{-- Dots desktop --}}
@@ -1002,7 +1008,7 @@
                 <button
                     x-on:click="goTo({{ $i }})"
                     class="rounded-full transition-all duration-300"
-                    :class="{{ $i }} === current ? 'w-6 h-2 bg-slate-950 dark:bg-white' : 'size-2 bg-slate-300 hover:bg-slate-400 dark:bg-white/20'"
+                    :class="{{ $i }} === current ? 'w-6 h-2 bg-slate-950 dark:bg-zinc-50' : 'size-2 bg-slate-300 hover:bg-slate-400 dark:bg-zinc-700/60'"
                     aria-label="Témoignage {{ $i + 1 }}"
                 ></button>
             @endforeach
@@ -1021,10 +1027,10 @@
 
     <div class="mx-auto max-w-3xl text-left sm:text-center">
         <p class="text-sm font-black uppercase text-blue-700 dark:text-blue-300">Pourquoi pas un logiciel générique ?</p>
-        <h2 class="mt-3 text-2xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-4xl">
+        <h2 class="mt-3 text-2xl font-black leading-tight text-slate-950 dark:text-zinc-300 sm:text-4xl">
             Ce qui change quand le logiciel est conçu pour vous.
         </h2>
-        <p class="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg sm:leading-8">
+        <p class="mt-4 text-base leading-7 text-slate-600 dark:text-zinc-400 sm:text-lg sm:leading-8">
             Les logiciels RH occidentaux existent depuis des décennies. Mais ils n'ont pas été pensés pour la CNPS, le Code du travail camerounais, ni pour les PME de 5 à 150 personnes.
         </p>
     </div>
@@ -1079,12 +1085,12 @@
     ══════════════════════════════════════════ --}}
     <div class="mt-8 space-y-3 md:hidden">
         @foreach ($rows as $row)
-            <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white dark:border-white/10 dark:bg-[#172033]">
+            <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white dark:border-zinc-800 dark:bg-zinc-900">
                 {{-- Label critère --}}
-                <div class="border-b border-slate-100 bg-slate-50 px-4 py-3 dark:border-white/10 dark:bg-white/5">
-                    <p class="text-sm font-black text-slate-950 dark:text-[#e6edf7]">{{ $row['label'] }}</p>
+                <div class="border-b border-slate-100 bg-slate-50 px-4 py-3 dark:border-zinc-800 dark:bg-zinc-900">
+                    <p class="text-sm font-black text-slate-950 dark:text-zinc-400">{{ $row['label'] }}</p>
                 </div>
-                <div class="divide-y divide-slate-100 dark:divide-white/5">
+                <div class="divide-y divide-slate-100 dark:divide-zinc-800/70">
                     {{-- Générique --}}
                     <div class="flex items-start gap-3 px-4 py-3">
                         <span class="mt-0.5 shrink-0 rounded-full bg-rose-100 p-1 dark:bg-rose-400/20">
@@ -1094,7 +1100,7 @@
                         </span>
                         <div>
                             <p class="text-[10px] font-bold uppercase tracking-wider text-rose-500 dark:text-rose-400">Logiciel générique</p>
-                            <p class="mt-1 text-xs leading-6 text-slate-500 dark:text-slate-400">{{ $row['generic'] }}</p>
+                            <p class="mt-1 text-xs leading-6 text-slate-500 dark:text-zinc-400">{{ $row['generic'] }}</p>
                         </div>
                     </div>
                     {{-- Squarhe --}}
@@ -1106,7 +1112,7 @@
                         </span>
                         <div>
                             <p class="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Squarhe</p>
-                            <p class="mt-1 text-xs leading-6 text-slate-700 dark:text-slate-200">{{ $row['squarhe'] }}</p>
+                            <p class="mt-1 text-xs leading-6 text-slate-700 dark:text-zinc-200">{{ $row['squarhe'] }}</p>
                         </div>
                     </div>
                 </div>
@@ -1117,14 +1123,14 @@
     {{-- ══════════════════════════════════════════
          DESKTOP : tableau 3 colonnes (md+)
     ══════════════════════════════════════════ --}}
-    <div class="mt-10 hidden overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#172033] md:block">
+    <div class="mt-10 hidden overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-zinc-800 dark:bg-zinc-900 md:block">
 
         {{-- Header --}}
-        <div class="grid grid-cols-[1fr_1fr_1fr] border-b border-slate-200 dark:border-white/10">
-            <div class="border-r border-slate-200 px-5 py-4 dark:border-white/10">
+        <div class="grid grid-cols-[1fr_1fr_1fr] border-b border-slate-200 dark:border-zinc-800">
+            <div class="border-r border-slate-200 px-5 py-4 dark:border-zinc-800">
                 <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Critère</p>
             </div>
-            <div class="border-r border-slate-200 bg-rose-50 px-5 py-4 dark:border-white/10 dark:bg-rose-400/10">
+            <div class="border-r border-slate-200 bg-rose-50 px-5 py-4 dark:border-zinc-800 dark:bg-rose-400/10">
                 <p class="text-xs font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400">Logiciel générique</p>
                 <p class="mt-0.5 text-[11px] text-rose-500/70 dark:text-rose-400/60">SAP, Sage, Odoo, Paie+…</p>
             </div>
@@ -1139,18 +1145,18 @@
 
         {{-- Lignes --}}
         @foreach ($rows as $i => $row)
-            <div class="grid grid-cols-[1fr_1fr_1fr] border-b border-slate-100 last:border-0 dark:border-white/5 {{ $i % 2 !== 0 ? 'bg-slate-50/50 dark:bg-white/[0.015]' : '' }}">
-                <div class="border-r border-slate-100 px-5 py-4 dark:border-white/5">
-                    <p class="text-sm font-black text-slate-950 dark:text-[#e6edf7]">{{ $row['label'] }}</p>
+            <div class="grid grid-cols-[1fr_1fr_1fr] border-b border-slate-100 last:border-0 dark:border-zinc-800/70 {{ $i % 2 !== 0 ? 'bg-slate-50/50 dark:bg-zinc-900/40' : '' }}">
+                <div class="border-r border-slate-100 px-5 py-4 dark:border-zinc-800/70">
+                    <p class="text-sm font-black text-slate-950 dark:text-zinc-400">{{ $row['label'] }}</p>
                 </div>
-                <div class="border-r border-slate-100 px-5 py-4 dark:border-white/5">
+                <div class="border-r border-slate-100 px-5 py-4 dark:border-zinc-800/70">
                     <div class="flex items-start gap-2">
                         <span class="mt-0.5 shrink-0">
                             <svg class="size-4 text-rose-500" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd"/>
                             </svg>
                         </span>
-                        <p class="text-xs leading-6 text-slate-500 dark:text-slate-400">{{ $row['generic'] }}</p>
+                        <p class="text-xs leading-6 text-slate-500 dark:text-zinc-400">{{ $row['generic'] }}</p>
                     </div>
                 </div>
                 <div class="px-5 py-4">
@@ -1160,7 +1166,7 @@
                                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/>
                             </svg>
                         </span>
-                        <p class="text-xs leading-6 text-slate-700 dark:text-slate-200">{{ $row['squarhe'] }}</p>
+                        <p class="text-xs leading-6 text-slate-700 dark:text-zinc-200">{{ $row['squarhe'] }}</p>
                     </div>
                 </div>
             </div>
@@ -1175,12 +1181,12 @@
                 <flux:icon.scale class="size-5 text-blue-700 dark:text-blue-300" />
             </span>
             <div>
-                <p class="font-black text-slate-950 dark:text-white">
+                <p class="font-black text-slate-950 dark:text-zinc-200">
                     Un redressement CNPS ou fiscal peut coûter entre 150 000 et plusieurs millions de FCFA.
                 </p>
-                <p class="mt-1 text-sm leading-7 text-slate-600 dark:text-slate-300">
+                <p class="mt-1 text-sm leading-7 text-slate-600 dark:text-zinc-400">
                     Historique incomplet, déclarations erronées, oublis de cotisation les pénalités s'accumulent vite.
-                    Squarhe sécurise votre conformité à partir de <strong class="text-slate-900 dark:text-white">14 900 FCFA/mois</strong>.
+                    Squarhe sécurise votre conformité à partir de <strong class="text-slate-900 dark:text-zinc-200">14 900 FCFA/mois</strong>.
                     C'est le coût d'une erreur évitée.
                 </p>
             </div>
@@ -1195,7 +1201,7 @@
                 {{-- ═══════════════════════════════════════════════════
                      FAQ Réponses enrichies
                 ═══════════════════════════════════════════════════ --}}
-                <section id="faq" class="border-y border-slate-200 bg-white dark:border-white/10 dark:bg-[#101827]">
+                <section id="faq" class="border-y border-slate-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
                     <div class="mx-auto max-w-4xl px-5 py-12 sm:py-16 lg:px-8">
                         <div class="text-left sm:text-center">
                             <p class="text-sm font-black uppercase text-emerald-700">Foire aux questions</p>
@@ -1203,18 +1209,18 @@
                         </div>
                         <div class="mt-8 space-y-3 sm:mt-10">
                             @foreach ($faqs as $index => $faq)
-                                <details class="group rounded-lg border border-slate-200 bg-slate-50 p-4 open:bg-white open:shadow-lg dark:border-white/10 dark:bg-[#172033] dark:open:bg-[#1d2a40] sm:p-5" @if ($index === 0) open @endif>
-                                    <summary class="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 font-black text-slate-950 dark:text-[#e6edf7] sm:gap-5">
+                                <details class="group rounded-lg border border-slate-200 bg-slate-50 p-4 open:bg-white open:shadow-lg dark:border-zinc-800 dark:bg-zinc-900 dark:open:bg-zinc-800 sm:p-5" @if ($index === 0) open @endif>
+                                    <summary class="flex min-h-12 cursor-pointer list-none items-center justify-between gap-4 font-black text-slate-950 dark:text-zinc-400 sm:gap-5">
                                         <span>{{ $faq['question'] }}</span>
-                                        <span class="grid size-8 shrink-0 place-items-center rounded-lg bg-slate-200 text-slate-700 transition group-open:rotate-45 dark:bg-white/10 dark:text-slate-200"><flux:icon.plus class="size-4" /></span>
+                                        <span class="grid size-8 shrink-0 place-items-center rounded-lg bg-slate-200 text-slate-700 transition group-open:rotate-45 dark:bg-zinc-800 dark:text-zinc-200"><flux:icon.plus class="size-4" /></span>
                                     </summary>
-                                    <p class="mt-4 leading-8 text-slate-600 dark:text-slate-300">{{ $faq['answer'] }}</p>
+                                    <p class="mt-4 leading-8 text-slate-600 dark:text-zinc-400">{{ $faq['answer'] }}</p>
                                 </details>
                             @endforeach
                         </div>
 
-                        <div class="mt-8 rounded-lg border border-slate-200 bg-slate-50 p-5 text-center dark:border-white/10 dark:bg-[#172033]">
-                            <p class="font-bold text-slate-700 dark:text-slate-300">Vous avez une question spécifique à votre situation ?</p>
+                        <div class="mt-8 rounded-lg border border-slate-200 bg-slate-50 p-5 text-center dark:border-zinc-800 dark:bg-zinc-900">
+                            <p class="font-bold text-slate-700 dark:text-zinc-400">Vous avez une question spécifique à votre situation ?</p>
                             <flux:button href="#contact" variant="primary" class="mt-4">
                                 Parlez-nous de votre PME
                             </flux:button>
@@ -1229,8 +1235,8 @@
                     <div class="grid gap-8">
                         <div class="max-w-3xl">
                             <p class="text-sm font-black uppercase text-blue-700">Pourquoi Squarhe</p>
-                            <h2 class="mt-3 text-3xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-4xl">Conçu au Cameroun, pas adapté depuis l'étranger.</h2>
-                            <p class="mt-4 text-lg leading-8 text-slate-600 dark:text-slate-300">La plupart des logiciels RH vendus en Afrique sont des outils occidentaux mal adaptés. Squarhe part de vos contraintes réelles.</p>
+                            <h2 class="mt-3 text-3xl font-black leading-tight text-slate-950 dark:text-zinc-300 sm:text-4xl">Conçu au Cameroun, pas adapté depuis l'étranger.</h2>
+                            <p class="mt-4 text-lg leading-8 text-slate-600 dark:text-zinc-400">La plupart des logiciels RH vendus en Afrique sont des outils occidentaux mal adaptés. Squarhe part de vos contraintes réelles.</p>
                         </div>
                        <div class="grid gap-4 lg:grid-cols-3">
                             @foreach ([
@@ -1238,14 +1244,14 @@
                                 ['title' => 'Interface pensée pour les non-experts', 'text' => 'Vous n\'avez pas besoin d\'un diplôme en RH pour utiliser Squarhe. Les parcours sont courts, clairs et guidés.'],
                                 ['title' => 'Tarifs accessibles aux PME de 5 à 150 personnes', 'text' => 'Pas d\'abonnement annuel imposé, pas de module caché. Vous payez pour votre effectif réel, mois par mois.'],
                             ] as $item)
-                                <div class="rounded-lg border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-[#172033]">
+                                <div class="rounded-lg border border-slate-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900">
                                     <flux:icon.map-pin class="mb-3 size-5 text-blue-600 dark:text-blue-300" />
 
-                                    <h3 class="font-black text-slate-950 dark:text-[#e6edf7]">
+                                    <h3 class="font-black text-slate-950 dark:text-zinc-300">
                                         {{ $item['title'] }}
                                     </h3>
 
-                                    <p class="mt-2 leading-7 text-slate-600 dark:text-slate-300">
+                                    <p class="mt-2 leading-7 text-slate-600 dark:text-zinc-400">
                                         {{ $item['text'] }}
                                     </p>
                                 </div>
@@ -1257,13 +1263,13 @@
                 {{-- ═══════════════════════════════════════════════════
                      BLOG
                 ═══════════════════════════════════════════════════ --}}
-                <section id="articles" class="border-y border-slate-200 bg-white dark:border-white/10 dark:bg-[#101827]">
+                <section id="articles" class="border-y border-slate-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
                     <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
                         <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
                             <div>
                                 <p class="text-sm font-black uppercase text-emerald-700">Ressources RH</p>
-                                <h2 class="mt-3 text-3xl font-black text-slate-950 dark:text-[#e6edf7] sm:text-4xl">Comprendre pour mieux gérer.</h2>
-                                <p class="mt-2 max-w-lg leading-7 text-slate-600 dark:text-slate-300">Des guides concrets sur la paie, le droit du travail et la conformité sociale au Cameroun écrits pour les dirigeants, pas pour les juristes.</p>
+                                <h2 class="mt-3 text-3xl font-black text-slate-950 dark:text-zinc-300 sm:text-4xl">Comprendre pour mieux gérer.</h2>
+                                <p class="mt-2 max-w-lg leading-7 text-slate-600 dark:text-zinc-400">Des guides concrets sur la paie, le droit du travail et la conformité sociale au Cameroun écrits pour les dirigeants, pas pour les juristes.</p>
                             </div>
                             <a href="https://blog.squarhe.com" target="_blank" rel="noopener noreferrer" class="inline-flex shrink-0 items-center gap-2 text-sm font-black text-blue-700 dark:text-blue-300">
                                 Voir tous les articles <flux:icon.arrow-top-right-on-square class="size-4" />
@@ -1271,13 +1277,13 @@
                         </div>
                         <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
                             @foreach ($articles as $article)
-                                <article class="flex min-h-64 flex-col rounded-lg border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-1 hover:bg-white hover:shadow-lg dark:border-white/10 dark:bg-[#172033] dark:hover:bg-[#1d2a40]">
+                                <article class="flex min-h-64 flex-col rounded-lg border border-slate-200 bg-slate-50 p-5 transition hover:-translate-y-1 hover:bg-white hover:shadow-lg dark:border-zinc-800 dark:bg-zinc-900 dark:hover:bg-zinc-800">
                                     <div class="flex items-center justify-between gap-3">
                                         <span class="rounded-lg bg-blue-100 px-3 py-1 text-xs font-black text-blue-700">{{ $article['category'] }}</span>
                                         <span class="text-xs font-bold text-slate-500">{{ $article['read_time'] }}</span>
                                     </div>
-                                    <h3 class="mt-5 text-base font-black leading-snug text-slate-950 dark:text-[#e6edf7]">{{ $article['title'] }}</h3>
-                                    <p class="mt-3 flex-1 text-sm leading-7 text-slate-600 dark:text-slate-300">{{ $article['excerpt'] }}</p>
+                                    <h3 class="mt-5 text-base font-black leading-snug text-slate-950 dark:text-zinc-300">{{ $article['title'] }}</h3>
+                                    <p class="mt-3 flex-1 text-sm leading-7 text-slate-600 dark:text-zinc-400">{{ $article['excerpt'] }}</p>
                                     <a href="#newsletter" class="mt-5 inline-flex items-center gap-2 text-sm font-black text-blue-700 dark:text-blue-300">
                                         <flux:icon.arrow-right class="size-4" />
                                         Recevoir ce type de contenu
@@ -1294,7 +1300,7 @@
                 <section id="contact" class="mx-auto grid max-w-7xl gap-8 px-5 py-16 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
                     <div>
                         <p class="text-sm font-black uppercase text-blue-700">Parlons de votre PME</p>
-                        <h2 class="mt-3 text-2xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-2xl">
+                        <h2 class="mt-3 text-2xl font-black leading-tight text-slate-950 dark:text-zinc-300 sm:text-2xl">
                             Dites-nous ce qui vous prend le plus de temps. Nous vous montrons comment Squarhe résout ça.
                         </h2>
 
@@ -1305,18 +1311,18 @@
                                 ['icon' => 'shield-check', 'title' => 'Sans engagement', 'text' => 'Vous décidez après la démo. Aucune carte de crédit requise pour commencer.'],
                                 ['icon' => 'envelope', 'title' => 'contact@squarhe.com', 'text' => 'Contact direct.'],
                             ] as $item)
-                                <div class="flex items-center gap-4 rounded-lg border border-slate-200 bg-white p-4 dark:border-white/10 dark:bg-[#172033]">
+                                <div class="flex items-center gap-4 rounded-lg border border-slate-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-900">
 
                                     <div class="grid size-10 shrink-0 place-items-center rounded-lg bg-blue-100 dark:bg-blue-400/10">
                                         <flux:icon :name="$item['icon']" class="size-5 text-blue-600 dark:text-blue-300" />
                                     </div>
 
                                     <div>
-                                        <p class="font-black text-slate-950 dark:text-white">
+                                        <p class="font-black text-slate-950 dark:text-zinc-200">
                                             {{ $item['title'] }}
                                         </p>
 
-                                        <p class="mt-0.5 text-sm text-slate-600 dark:text-slate-300">
+                                        <p class="mt-0.5 text-sm text-slate-600 dark:text-zinc-400">
                                             {{ $item['text'] }}
                                         </p>
                                     </div>
@@ -1332,10 +1338,10 @@
                 {{-- ═══════════════════════════════════════════════════
                      CTA FINAL avant newsletter
                 ═══════════════════════════════════════════════════ --}}
-                <section class="bg-slate-100">
+                <section class="bg-slate-100 dark:bg-zinc-900">
                     <div class="mx-auto max-w-7xl px-5 py-16 text-center lg:px-8">
-                        <h2 class="text-3xl font-black sm:text-4xl">Prêt à boucler votre paie en moins de 10 minutes ?</h2>
-                        <p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-slate-800">Rejoignez les PME de Douala, Yaoundé, Bafoussam et Kribi qui ont remplacé Excel par une solution fiable et locale.</p>
+                        <h2 class="text-3xl font-black text-slate-950 dark:text-zinc-300 sm:text-4xl">Prêt à boucler votre paie en moins de 10 minutes ?</h2>
+                        <p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-slate-800 dark:text-zinc-400">Rejoignez les PME de Douala, Yaoundé, Bafoussam et Kribi qui ont remplacé Excel par une solution fiable et locale.</p>
                         <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                             <flux:button href="#contact" variant="primary" class="text-base">
                                 Demander ma démo gratuite
@@ -1344,18 +1350,18 @@
                                 Voir les tarifs
                             </flux:button>
                         </div>
-                        <p class="mt-4 text-sm text-slate-400">✓ Sans engagement &nbsp;·&nbsp; ✓ Réponse sous 24h &nbsp;·&nbsp; ✓ Onboarding accompagné</p>
+                        <p class="mt-4 text-sm text-slate-400 dark:text-zinc-500">✓ Sans engagement &nbsp;·&nbsp; ✓ Réponse sous 24h &nbsp;·&nbsp; ✓ Onboarding accompagné</p>
                     </div>
                 </section>
 
                 {{-- ═══════════════════════════════════════════════════
                      NEWSLETTER
                 ═══════════════════════════════════════════════════ --}}
-                <section id="newsletter" class="border-y border-slate-200 bg-white dark:border-white/10 dark:bg-[#101827]">
+                <section id="newsletter" class="border-y border-slate-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
                     <div class="mx-auto grid max-w-7xl gap-8 px-5 py-16 lg:grid-cols-[1fr_1fr] lg:px-8">
                         <div class="flex flex-col items-center justify-center text-left md:text-right">
                             <p class="text-sm font-black uppercase text-emerald-700 self-start md:self-end">Conseils RH gratuits</p>
-                            <h2 class="mt-3 text-3xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-3xl">Un conseil RH camerounais par mois, directement dans votre boîte mail.</h2>
+                            <h2 class="mt-3 text-3xl font-black leading-tight text-slate-950 dark:text-zinc-300 sm:text-3xl">Un conseil RH camerounais par mois, directement dans votre boîte mail.</h2>
                         </div>
                         <livewire:newsletter-form />
                     </div>
@@ -1368,7 +1374,7 @@
            {{-- ═══════════════════════════════════════════════════
                 FOOTER style LobeHub
             ═══════════════════════════════════════════════════ --}}
-            <footer class="border-t border-slate-200 bg-white dark:border-white/10 dark:bg-[#101827]">
+            <footer class="border-t border-slate-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
                 <div class="mx-auto max-w-7xl px-5 lg:px-8">
 
                     {{-- ── Colonnes de liens ── --}}
@@ -1376,7 +1382,7 @@
 
                         {{-- Produit --}}
                         <div>
-                            <p class="text-sm font-black text-slate-950 dark:text-white">Produit</p>
+                            <p class="text-sm font-black text-slate-950 dark:text-zinc-200">Produit</p>
                             <ul class="mt-4 space-y-3">
                                 @foreach ([
                                     ['label' => 'Tarifs',        'href' => '#offres'],
@@ -1385,7 +1391,7 @@
                                     ['label' => 'Sécurité',      'href' => '#securite'],
                                 ] as $link)
                                     <li>
-                                        <a href="{{ $link['href'] }}" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
+                                        <a href="{{ $link['href'] }}" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-zinc-400 dark:hover:text-zinc-50">
                                             {{ $link['label'] }}
                                         </a>
                                     </li>
@@ -1395,7 +1401,7 @@
 
                         {{-- Ressources --}}
                         <div>
-                            <p class="text-sm font-black text-slate-950 dark:text-white">Ressources</p>
+                            <p class="text-sm font-black text-slate-950 dark:text-zinc-200">Ressources</p>
                             <ul class="mt-4 space-y-3">
                                 @foreach ([
                                     ['label' => 'Blog RH',       'href' => '#articles'],
@@ -1404,7 +1410,7 @@
                                     ['label' => 'Guide migration','href' => '#contact'],
                                 ] as $link)
                                     <li>
-                                        <a href="{{ $link['href'] }}" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
+                                        <a href="{{ $link['href'] }}" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-zinc-400 dark:hover:text-zinc-50">
                                             {{ $link['label'] }}
                                         </a>
                                     </li>
@@ -1414,7 +1420,7 @@
 
                         {{-- Légal --}}
                         <div>
-                            <p class="text-sm font-black text-slate-950 dark:text-white">Légal</p>
+                            <p class="text-sm font-black text-slate-950 dark:text-zinc-200">Légal</p>
                             <ul class="mt-4 space-y-3">
                                 @foreach ([
                                     ['label' => 'CGU',               'route' => 'legal.cgu'],
@@ -1423,7 +1429,7 @@
                                     ['label' => 'Politique de cookies','route' => 'legal.cookies'],
                                 ] as $link)
                                     <li>
-                                        <a href="{{ route($link['route']) }}" wire:navigate class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
+                                        <a href="{{ route($link['route']) }}" wire:navigate class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-zinc-400 dark:hover:text-zinc-50">
                                             {{ $link['label'] }}
                                         </a>
                                     </li>
@@ -1433,20 +1439,20 @@
 
                         {{-- Contact --}}
                         <div>
-                            <p class="text-sm font-black text-slate-950 dark:text-white">Contact</p>
+                            <p class="text-sm font-black text-slate-950 dark:text-zinc-200">Contact</p>
                             <ul class="mt-4 space-y-3">
                                 <li>
-                                    <a href="#contact" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
+                                    <a href="#contact" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-zinc-400 dark:hover:text-zinc-50">
                                         Demander une démo
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="mailto:contact@squarhe.com" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
+                                    <a href="mailto:contact@squarhe.com" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-zinc-400 dark:hover:text-zinc-50">
                                         contact@squarhe.com
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#newsletter" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-slate-400 dark:hover:text-white">
+                                    <a href="#newsletter" class="text-sm text-slate-500 transition hover:text-slate-950 dark:text-zinc-400 dark:hover:text-zinc-50">
                                         Newsletter RH
                                     </a>
                                 </li>
@@ -1455,24 +1461,24 @@
                     </div>
 
                     {{-- ── Barre inférieure : logo + copyright + réseaux ── --}}
-                    <div class="border-t border-slate-200 py-6 dark:border-white/10">
+                    <div class="border-t border-slate-200 py-6 dark:border-zinc-800">
 
                         {{-- Ligne logo + statut --}}
                         <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
 
                             {{-- Logo --}}
                             <a href="#top" class="flex items-center gap-3">
-                                <span class="grid size-8 place-items-center rounded-lg bg-slate-950 text-white dark:bg-white dark:text-slate-950">
+                                <span class="grid size-8 place-items-center rounded-lg bg-slate-950 text-white dark:bg-zinc-50 dark:text-zinc-950">
                                     <x-app-logo-icon class="size-4" />
                                 </span>
-                                <span class="text-base font-black text-slate-950 dark:text-white">Squarhe</span>
+                                <span class="text-base font-black text-slate-950 dark:text-zinc-200">Squarhe</span>
                             </a>
 
                             {{-- Statut opérationnel --}}
                             <div class="">
                             <div class="flex items-center gap-2">
                                 <span class="size-2 rounded-full bg-emerald-500"></span>
-                                <span class="text-sm font-semibold text-slate-500 dark:text-slate-400">Tous les services sont opérationnels</span>
+                                <span class="text-sm font-semibold text-slate-500 dark:text-zinc-400">Tous les services sont opérationnels</span>
                                 <livewire:site-preferences />
                             </div>
                             </div>
@@ -1480,28 +1486,28 @@
                         </div>
 
                         {{-- Ligne copyright + réseaux sociaux --}}
-                        <div class="mt-5 flex flex-col gap-4 border-t border-slate-200/70 pt-5 dark:border-white/10 sm:flex-row sm:items-center sm:justify-between">
+                        <div class="mt-5 flex flex-col gap-4 border-t border-slate-200/70 pt-5 dark:border-zinc-800 sm:flex-row sm:items-center sm:justify-between">
 
-                            <p class="text-sm text-slate-400 dark:text-slate-500">
+                            <p class="text-sm text-slate-400 dark:text-zinc-500">
                                 © {{ date('Y') }} Squarhe. Tous droits réservés. Conçu pour les PME camerounaises.
                             </p>
 
                             {{-- Icônes réseaux sociaux --}}
                             <div class="flex items-center gap-4">
                                 {{-- LinkedIn --}}
-                                <a href="https://www.linkedin.com/company/squarhe" aria-label="Squarhe sur LinkedIn" class="text-slate-400 transition hover:text-slate-950 dark:hover:text-white">
+                                <a href="https://www.linkedin.com/company/squarhe" aria-label="Squarhe sur LinkedIn" class="text-slate-400 transition hover:text-slate-950 dark:hover:text-zinc-50">
                                     <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                         <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57A1.46 1.46 0 0 1 14.38 12.11A1.46 1.46 0 0 1 15.84 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88A1.68 1.68 0 0 0 6.88 5.2A1.68 1.68 0 0 0 5.2 6.88A1.68 1.68 0 0 0 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/>
                                     </svg>
                                 </a>
                                 {{-- X / Twitter--}}
-                                <a href="https://youtube.com/@squarhe?si=1l9db4ZVM2HCUPxT" aria-label="Squarhe sur X" class="text-slate-400 transition hover:text-slate-950 dark:hover:text-white">
+                                <a href="https://youtube.com/@squarhe?si=1l9db4ZVM2HCUPxT" aria-label="Squarhe sur X" class="text-slate-400 transition hover:text-slate-950 dark:hover:text-zinc-50">
                                 <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                     <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
                                 </svg>
                                 </a>
                                 {{-- WhatsApp --}}
-                                <a href="https://wa.me/237659005679" aria-label="Squarhe sur WhatsApp" class="text-slate-400 transition hover:text-slate-950 dark:hover:text-white">
+                                <a href="https://wa.me/237659005679" aria-label="Squarhe sur WhatsApp" class="text-slate-400 transition hover:text-slate-950 dark:hover:text-zinc-50">
                                     <svg class="size-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                         <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
                                     </svg>
