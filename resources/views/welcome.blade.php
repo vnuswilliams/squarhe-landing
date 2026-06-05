@@ -363,7 +363,16 @@
                     <img
                         src="{{ asset('images/app-preview.png') }}"
                         alt="Interface Squarhe liste des employés avec KPIs, filtres et statuts de contrat"
-                        class="w-full object-cover object-top"
+                        class="w-full object-cover object-top block dark:hidden"
+                        loading="eager"
+                        decoding="async"
+                        width="1280"
+                        height="768"
+                    />
+                       <img
+                        src="{{ asset('images/app-preview-dark.png') }}"
+                        alt="Interface Squarhe liste des employés avec KPIs, filtres et statuts de contrat"
+                        class="w-full object-cover object-top hidden dark:block"
                         loading="eager"
                         decoding="async"
                         width="1280"
@@ -599,9 +608,7 @@
             <h2 class="mt-3 text-3xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-4xl">
                 Tout ce dont vous avez besoin, sans complexité.
             </h2>
-            <p class="mt-4 text-lg leading-8 text-slate-600 dark:text-slate-300">
-                Voici ce que vous verrez dès votre première connexion.
-            </p>
+
         </div>
 
         {{-- ── Tabs navigation ── --}}
@@ -615,7 +622,7 @@
                     'title'   => 'Votre paie sous contrôle en un coup d\'œil.',
                     'text'    => 'Dès la connexion, vous voyez l\'état de votre cycle de paie en cours : effectif, masse salariale, anomalies à corriger et bulletins à valider.',
                     'bullets' => ['Masse salariale du mois en temps réel', 'Anomalies détectées automatiquement', 'Workflow paie : étape par étape', 'Conformité CNPS statut visible'],
-                    'image'   => 'dashboard.png',
+                    'image'   => 'app-preview',
                     'alt'     => 'Tableau de bord paie Squarhe',
                 ],
                 [
@@ -625,7 +632,7 @@
                     'title'   => 'Les demandes traitées en 1 clic, sans WhatsApp.',
                     'text'    => 'Les employés soumettent leurs demandes depuis leur espace. Les managers voient tout en temps réel, valident ou refusent directement. Les soldes se mettent à jour automatiquement.',
                     'bullets' => ['Demandes soumises par les employés', 'Validation en un clic pour les managers', 'Soldes de congés mis à jour en temps réel', 'Historique complet des absences'],
-                    'image'   => 'conges.png',
+                    'image'   => 'absences',
                     'alt'     => 'Gestion des congés Squarhe',
                 ],
                 [
@@ -635,7 +642,7 @@
                     'title'   => 'Bulletins générés et distribués automatiquement.',
                     'text'    => 'Une fois la paie validée, chaque bulletin est généré en PDF et déposé dans l\'espace personnel de l\'employé. Fini les envois manuels par email ou WhatsApp.',
                     'bullets' => ['Génération PDF en un clic', 'Accessible à chaque employé depuis son espace', 'Historique des bulletins conservé', 'Conformes aux standards camerounais'],
-                    'image'   => 'bulletins.png',
+                    'image'   => 'payslip',
                     'alt'     => 'Bulletins PDF Squarhe',
                 ],
                 [
@@ -645,7 +652,7 @@
                     'title'   => 'Chaque utilisateur voit uniquement ce qui le concerne.',
                     'text'    => 'Trois niveaux d\'accès : administrateur, gestionnaire, employé. Chacun dispose d\'un espace dédié, sans jamais voir les données confidentielles des autres.',
                     'bullets' => ['Administrateur : accès total', 'Gestionnaire : paie et validation', 'Employé : bulletins et congés uniquement', 'Traçabilité de chaque action'],
-                    'image'   => 'roles.png',
+                    'image'   => 'role-admin',
                     'alt'     => 'Accès par rôle Squarhe',
                 ],
                 [
@@ -655,7 +662,7 @@
                     'title'   => 'Tous vos documents RH au même endroit.',
                     'text'    => 'Contrats, avenants, attestations de travail, pièces d\'identité tout est centralisé dans un espace structuré. Retrouvez n\'importe quel document en moins de 10 secondes.',
                     'bullets' => ['Contrats et avenants archivés', 'Attestations générées à la demande', 'Pièces jointes employés centralisées', 'Recherche rapide par nom ou type'],
-                    'image'   => 'documents.png',
+                    'image'   => 'document',
                     'alt'     => 'Documents RH Squarhe',
                 ],
                 [
@@ -665,7 +672,7 @@
                     'title'   => 'Déclarations CNPS prêtes sans calcul manuel.',
                     'text'    => 'Les taux CNPS et IRPP sont intégrés nativement et mis à jour automatiquement. Vos exports de déclaration sont générés en quelques secondes, prêts à soumettre.',
                     'bullets' => ['Calculs CNPS et IRPP automatiques', 'Exports déclaration prêts à soumettre', 'Historique des cotisations', 'Alertes en cas d\'anomalie'],
-                    'image'   => 'cnps.png',
+                    'image'   => 'cnps',
                     'alt'     => 'Conformité CNPS Squarhe',
                 ],
             ];
@@ -756,14 +763,29 @@
                             </div>
 
 
-                            {{-- Image  src="{{ asset('images/' . $f['image']) }}"--}}
-                            <div class="aspect-[16/10] w-full overflow-hidden bg-slate-100 dark:bg-[#1a2436]">
+                            {{-- Image  --}}
+                            <div class="aspect-16/10 w-full overflow-hidden bg-slate-100 dark:bg-[#1a2436]">
                                 <img
-                                    src="{{ asset('images/app-preview.png') }}"
+                                    src="{{ asset('images/' . $f['image'].'.png') }}"
                                     alt="{{ $f['alt'] }}"
-                                    class="h-full w-full object-cover object-top"
+                                    class="h-full w-full object-cover object-top dark:hidden"
                                     loading="lazy"
                                     decoding="async"
+
+                        width="1280"
+                        height="768"
+                                />
+
+                                
+                                <img
+                                    src="{{ asset('images/' . $f['image'] .'-dark.png') }}"
+                                    alt="{{ $f['alt'] }}"
+                                    class="h-full w-full object-cover object-top hidden dark:block"
+                                    loading="lazy"
+                                    decoding="async"
+
+                        width="1280"
+                        height="768"
                                 />
                             </div>
                         </div>
