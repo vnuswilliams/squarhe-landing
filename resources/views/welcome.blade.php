@@ -99,7 +99,7 @@
         <div class="min-h-screen overflow-hidden">
 
             {{-- ═══════════════════════════════════════════════════
-     HEADER — navbar flottante + menu mobile plein écran
+     HEADER navbar flottante + menu mobile plein écran
 ═══════════════════════════════════════════════════ --}}
 <div
     x-data="{ scrolled: false, menuOpen: false }"
@@ -195,7 +195,7 @@
                 "
                 class="flex items-center justify-center gap-2 rounded-xl bg-slate-950 px-6 py-4 text-base font-black text-white transition hover:bg-slate-800 dark:bg-white dark:text-slate-950 dark:hover:bg-slate-100"
             >
-                <flux:icon.calendar-days class="size-5" />
+
                 Demander une démo gratuite
             </a>
 
@@ -290,7 +290,7 @@
                      HERO
                 ═══════════════════════════════════════════════════ --}}
                {{-- ═══════════════════════════════════════════════════
-     HERO — layout centré + screenshot pleine largeur (style LobeHub)
+     HERO layout centré + screenshot pleine largeur (style LobeHub)
 ═══════════════════════════════════════════════════ --}}
 <section class="relative border-b border-slate-200 bg-white dark:border-white/10 dark:bg-[#101827] overflow-hidden">
 
@@ -321,37 +321,15 @@
 
         {{-- CTAs --}}
         <div class="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <flux:button href="#contact" variant="primary" icon="calendar-days" class="text-base px-6">
+            <flux:button href="#contact" variant="primary" class="text-base px-6">
                 Demander ma démo gratuite
             </flux:button>
-            <flux:button href="#offres" variant="outline" icon="calculator" class="px-6">
+            <flux:button href="#offres" variant="outline" class="px-6">
                 Simuler mon tarif
             </flux:button>
         </div>
 
-        {{-- Réassurances
-        <p class="mt-4 text-sm text-slate-500 dark:text-slate-400">
-            ✓ Sans engagement &nbsp;·&nbsp; ✓ Onboarding accompagné &nbsp;·&nbsp; ✓ Support WhatsApp inclus
-        </p>
 
-
-        <dl class="mx-auto mt-10 grid max-w-lg grid-cols-3 gap-3">
-            <div class="rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-[#172033]">
-                <dt class="text-xs font-bold uppercase text-slate-500">Équipes gérées</dt>
-                <dd class="mt-1 text-2xl font-black text-slate-950 dark:text-white">5–150</dd>
-                <dd class="mt-0.5 text-xs text-slate-500">employés</dd>
-            </div>
-            <div class="rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-[#172033]">
-                <dt class="text-xs font-bold uppercase text-slate-500">Paie bouclée</dt>
-                <dd class="mt-1 text-2xl font-black text-slate-950 dark:text-white">&lt; 10 min</dd>
-                <dd class="mt-0.5 text-xs text-slate-500">par mois</dd>
-            </div>
-            <div class="rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-white/10 dark:bg-[#172033]">
-                <dt class="text-xs font-bold uppercase text-slate-500">Conformité</dt>
-                <dd class="mt-1 text-2xl font-black text-slate-950 dark:text-white">CNPS</dd>
-                <dd class="mt-0.5 text-xs text-slate-500">intégrée</dd>
-            </div>
-        </dl> --}}
     </div>
 
     {{-- ── Screenshot pleine largeur en bas du hero ── --}}
@@ -384,7 +362,7 @@
                 <div class="max-h-[55vw] overflow-hidden lg:max-h-none">
                     <img
                         src="{{ asset('images/app-preview.png') }}"
-                        alt="Interface Squarhe — liste des employés avec KPIs, filtres et statuts de contrat"
+                        alt="Interface Squarhe liste des employés avec KPIs, filtres et statuts de contrat"
                         class="w-full object-cover object-top"
                         loading="eager"
                         decoding="async"
@@ -415,7 +393,7 @@
 
     <div class="grid gap-4 sm:grid-cols-2">
 
-        {{-- Card 1 — Variables WhatsApp --}}
+        {{-- Card 1 Variables WhatsApp --}}
         <article class="flex flex-col gap-4 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:gap-5 dark:border-white/10 dark:bg-[#172033]">
             <div class="min-w-0 flex-1">
                 <p class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Collecte des variables</p>
@@ -445,7 +423,7 @@
             </div>
         </article>
 
-        {{-- Card 2 — Traçabilité --}}
+        {{-- Card 2 Traçabilité --}}
         <article class="flex flex-col gap-4 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:gap-5 dark:border-white/10 dark:bg-[#172033]">
             <div class="min-w-0 flex-1">
                 <p class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Traçabilité</p>
@@ -476,7 +454,7 @@
             </div>
         </article>
 
-        {{-- Card 3 — CNPS --}}
+        {{-- Card 3 CNPS --}}
         <article class="flex flex-col gap-4 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:gap-5 dark:border-white/10 dark:bg-[#172033]">
             <div class="min-w-0 flex-1">
                 <p class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Conformité CNPS</p>
@@ -495,7 +473,7 @@
                     <p class="text-[9px] text-rose-500 dark:text-rose-400">4 salariés manquants</p>
                 </div>
                 <div class="rounded-lg border border-amber-200 bg-amber-50 px-2.5 py-2 dark:border-amber-400/20 dark:bg-amber-400/10">
-                    <p class="text-[10px] font-black text-amber-700 dark:text-amber-300">📋 Contrôle — 12 juin</p>
+                    <p class="text-[10px] font-black text-amber-700 dark:text-amber-300">📋 Contrôle 12 juin</p>
                     <p class="text-[9px] text-amber-500 dark:text-amber-400">Documents introuvables</p>
                 </div>
                 <div class="rounded-lg border border-slate-200 bg-slate-50 px-2.5 py-2 dark:border-white/10 dark:bg-white/5">
@@ -505,7 +483,7 @@
             </div>
         </article>
 
-        {{-- Card 4 — Documents perdus --}}
+        {{-- Card 4 Documents perdus --}}
         <article class="flex flex-col gap-4 overflow-hidden rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:flex-row sm:items-center sm:gap-5 dark:border-white/10 dark:bg-[#172033]">
             <div class="min-w-0 flex-1">
                 <p class="text-[11px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400">Gestion documentaire</p>
@@ -602,248 +580,596 @@
                     </div>
                     </div>
                 </section>
-                {{-- ═══════════════════════════════════════════════════
-                     FONCTIONNALITÉS CLÉS
-                ═══════════════════════════════════════════════════ --}}
-                <section class="mx-auto grid max-w-7xl gap-8 px-5 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-8">
-                    <div>
-                        <p class="text-sm font-black uppercase text-emerald-700">Fonctionnalités clés</p>
-                        <h2 class="mt-3 text-3xl font-black leading-tight text-slate-950 sm:text-4xl">Tout ce qu'il faut pour reprendre le contrôle, sans complexité.</h2>
-                        <p class="mt-4 text-lg leading-8 text-slate-600">La plateforme couvre les processus essentiels. Vous commencez simple, vous évoluez à votre rythme.</p>
-                        <flux:button href="#contact" variant="primary" icon="calendar-days" class="mt-8">
-                            Voir une démo
-                        </flux:button>
-                    </div>
-                   <div class="grid gap-4 sm:grid-cols-2">
-                        @foreach ([
-                            ['title' => 'Documents RH centralisés', 'text' => 'Contrats, bulletins, attestations et pièces employés archivés proprement. Retrouvés en 10 secondes.'],
-                            ['title' => 'Paie automatisée', 'text' => 'Calcul des salaires avec absences, primes, avances et frais. Zéro formule Excel à maintenir.'],
-                            ['title' => 'Gestion des congés', 'text' => 'Demandes, validations et soldes accessibles sans feuille Excel. Tout le monde voit le même état.'],
-                            ['title' => 'Onboarding employé', 'text' => 'Informations personnelles, pièces jointes et contrat intégrés en quelques clics. Dossier complet dès le premier jour.'],
-                        ] as $item)
-                            <div class="rounded-lg border border-slate-200 bg-white p-5 dark:border-white/10 dark:bg-[#172033]">
+               {{-- ═══════════════════════════════════════════════════
+     FONCTIONNALITÉS EN ACTION showcase slider
+     1 feature à la fois, progress bar auto, prev/pause/next
+     Mobile-first : image en haut, texte en bas
+═══════════════════════════════════════════════════ --}}
+<section
+    id="solution"
+    class="border-y border-slate-200 bg-white dark:border-white/10 dark:bg-[#101827]"
+    x-data="featureShowcase()"
+    x-init="init()"
+>
+    <div class="mx-auto max-w-7xl px-5 py-16 lg:px-8">
 
-                                <h3 class="font-black text-slate-950 dark:text-[#e6edf7]">
-                                    {{ $item['title'] }}
-                                </h3>
+        {{-- ── En-tête ── --}}
+        <div class="max-w-2xl">
+            <p class="text-sm font-black uppercase text-blue-700 dark:text-blue-300">La plateforme en action</p>
+            <h2 class="mt-3 text-3xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-4xl">
+                Tout ce dont vous avez besoin, sans complexité.
+            </h2>
+            <p class="mt-4 text-lg leading-8 text-slate-600 dark:text-slate-300">
+                Voici ce que vous verrez dès votre première connexion.
+            </p>
+        </div>
 
-                                <p class="mt-2 leading-7 text-slate-600 dark:text-slate-300">
-                                    {{ $item['text'] }}
-                                </p>
-                            </div>
-                        @endforeach
-                    </div>
-                </section>
+        {{-- ── Tabs navigation ── --}}
+        <div class="mt-10 flex flex-wrap gap-2 sm:gap-3">
+            @php
+            $features = [
+                [
+                    'tab'     => 'Tableau de bord',
+                    'icon'    => 'chart-bar',
+                    'label'   => 'Vue d\'ensemble',
+                    'title'   => 'Votre paie sous contrôle en un coup d\'œil.',
+                    'text'    => 'Dès la connexion, vous voyez l\'état de votre cycle de paie en cours : effectif, masse salariale, anomalies à corriger et bulletins à valider.',
+                    'bullets' => ['Masse salariale du mois en temps réel', 'Anomalies détectées automatiquement', 'Workflow paie : étape par étape', 'Conformité CNPS statut visible'],
+                    'image'   => 'dashboard.png',
+                    'alt'     => 'Tableau de bord paie Squarhe',
+                ],
+                [
+                    'tab'     => 'Gestion des congés',
+                    'icon'    => 'calendar-days',
+                    'label'   => 'Congés & absences',
+                    'title'   => 'Les demandes traitées en 1 clic, sans WhatsApp.',
+                    'text'    => 'Les employés soumettent leurs demandes depuis leur espace. Les managers voient tout en temps réel, valident ou refusent directement. Les soldes se mettent à jour automatiquement.',
+                    'bullets' => ['Demandes soumises par les employés', 'Validation en un clic pour les managers', 'Soldes de congés mis à jour en temps réel', 'Historique complet des absences'],
+                    'image'   => 'conges.png',
+                    'alt'     => 'Gestion des congés Squarhe',
+                ],
+                [
+                    'tab'     => 'Bulletins PDF',
+                    'icon'    => 'document-text',
+                    'label'   => 'Bulletins de paie',
+                    'title'   => 'Bulletins générés et distribués automatiquement.',
+                    'text'    => 'Une fois la paie validée, chaque bulletin est généré en PDF et déposé dans l\'espace personnel de l\'employé. Fini les envois manuels par email ou WhatsApp.',
+                    'bullets' => ['Génération PDF en un clic', 'Accessible à chaque employé depuis son espace', 'Historique des bulletins conservé', 'Conformes aux standards camerounais'],
+                    'image'   => 'bulletins.png',
+                    'alt'     => 'Bulletins PDF Squarhe',
+                ],
+                [
+                    'tab'     => 'Accès par rôle',
+                    'icon'    => 'shield-check',
+                    'label'   => 'Sécurité & rôles',
+                    'title'   => 'Chaque utilisateur voit uniquement ce qui le concerne.',
+                    'text'    => 'Trois niveaux d\'accès : administrateur, gestionnaire, employé. Chacun dispose d\'un espace dédié, sans jamais voir les données confidentielles des autres.',
+                    'bullets' => ['Administrateur : accès total', 'Gestionnaire : paie et validation', 'Employé : bulletins et congés uniquement', 'Traçabilité de chaque action'],
+                    'image'   => 'roles.png',
+                    'alt'     => 'Accès par rôle Squarhe',
+                ],
+                [
+                    'tab'     => 'Documents RH',
+                    'icon'    => 'folder-open',
+                    'label'   => 'GED documentaire',
+                    'title'   => 'Tous vos documents RH au même endroit.',
+                    'text'    => 'Contrats, avenants, attestations de travail, pièces d\'identité tout est centralisé dans un espace structuré. Retrouvez n\'importe quel document en moins de 10 secondes.',
+                    'bullets' => ['Contrats et avenants archivés', 'Attestations générées à la demande', 'Pièces jointes employés centralisées', 'Recherche rapide par nom ou type'],
+                    'image'   => 'documents.png',
+                    'alt'     => 'Documents RH Squarhe',
+                ],
+                [
+                    'tab'     => 'Conformité CNPS',
+                    'icon'    => 'check-badge',
+                    'label'   => 'CNPS & IRPP',
+                    'title'   => 'Déclarations CNPS prêtes sans calcul manuel.',
+                    'text'    => 'Les taux CNPS et IRPP sont intégrés nativement et mis à jour automatiquement. Vos exports de déclaration sont générés en quelques secondes, prêts à soumettre.',
+                    'bullets' => ['Calculs CNPS et IRPP automatiques', 'Exports déclaration prêts à soumettre', 'Historique des cotisations', 'Alertes en cas d\'anomalie'],
+                    'image'   => 'cnps.png',
+                    'alt'     => 'Conformité CNPS Squarhe',
+                ],
+            ];
+            @endphp
 
-                {{-- ═══════════════════════════════════════════════════
-                     SÉCURITÉ
-                ═══════════════════════════════════════════════════ --}}
-                <section id="securite" class="bg-slate-950 text-white">
-                    <div class="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-[0.85fr_1.15fr] lg:px-8">
-                        <div>
-                            <p class="text-sm font-black uppercase text-emerald-300">Confiance & sécurité</p>
-                            <h2 class="mt-3 text-3xl font-black leading-tight sm:text-4xl">Vos données RH méritent une base sérieuse.</h2>
-                            <p class="mt-4 text-lg leading-8 text-slate-300">Squarhe est pensé pour protéger les informations sensibles, organiser les accès et garder une trace claire de chaque action.</p>
+            @foreach ($features as $i => $f)
+                <button
+                    x-on:click="goTo({{ $i }})"
+                    class="relative flex items-center gap-2 overflow-hidden rounded-full border px-3 py-1.5 text-xs font-bold transition-all duration-200 sm:px-4 sm:py-2 sm:text-sm"
+                    :class="{{ $i }} === active
+                        ? 'border-slate-950 bg-slate-950 text-white dark:border-white dark:bg-white dark:text-slate-950'
+                        : 'border-slate-200 bg-white text-slate-500 hover:border-slate-300 hover:text-slate-700 dark:border-white/10 dark:bg-transparent dark:text-slate-400 dark:hover:text-white'"
+                >
+                    {{ $f['tab'] }}
+                    {{-- Barre de progression sur le tab actif --}}
+                    <span
+                        x-show="{{ $i }} === active"
+                        class="absolute bottom-0 left-0 h-0.5 bg-blue-500 dark:bg-blue-400"
+                        :style="`width: ${{ $i }} === active ? progress : 0}%`"
+                        style="transition: width 100ms linear;"
+                    ></span>
+                </button>
+            @endforeach
+        </div>
+
+        {{-- ── Contenu principal ── --}}
+        <div class="mt-8">
+            @foreach ($features as $i => $f)
+                <div
+                    x-show="{{ $i }} === active"
+                    x-transition:enter="transition duration-400 ease-out"
+                    x-transition:enter-start="opacity-0 translate-y-3"
+                    x-transition:enter-end="opacity-100 translate-y-0"
+                    x-transition:leave="transition duration-200 ease-in"
+                    x-transition:leave-start="opacity-100"
+                    x-transition:leave-end="opacity-0"
+                    class="grid gap-8 lg:grid-cols-[1fr_1.6fr] lg:items-center"
+                >
+
+                    {{-- ── Texte (en bas mobile, à gauche desktop) ── --}}
+                    {{-- Sur mobile l'image vient en premier grâce à order --}}
+                    <div class="order-2 lg:order-1">
+                        <div class="inline-flex items-center gap-2 rounded-full bg-blue-50 px-3 py-1 dark:bg-blue-400/10">
+                            <flux:icon :name="$f['icon']" class="size-4 text-blue-600 dark:text-blue-300" />
+                            <span class="text-xs font-bold text-blue-700 dark:text-blue-300">{{ $f['label'] }}</span>
                         </div>
-                      <div class="grid gap-4 sm:grid-cols-2">
-                        @foreach ([
-                            ['title' => 'Accès contrôlés par rôle', 'text' => 'Administrateur, gestionnaire, employé chacun voit uniquement ce qui le concerne. Aucune donnée confidentielle exposée.'],
-                            ['title' => 'Sauvegardes automatiques', 'text' => 'Vos données sont sauvegardées automatiquement. Vous ne perdez jamais un document ou un historique.'],
-                            ['title' => 'Traçabilité complète', 'text' => 'Chaque modification de variable, chaque validation de paie est enregistrée. Vous savez qui a fait quoi et quand.'],
-                            ['title' => 'Archivage sécurisé', 'text' => 'Bulletins, contrats et justificatifs conservés dans un espace structuré, accessible à tout moment.'],
-                        ] as $item)
-                            <article class="rounded-lg border border-white/10 bg-white/5 p-5">
-                                <flux:icon.shield-check class="mb-4 size-6 text-emerald-300" />
 
-                                <h3 class="font-black">
-                                    {{ $item['title'] }}
-                                </h3>
+                        <h3 class="mt-4 text-2xl font-black leading-snug text-slate-950 dark:text-[#e6edf7] sm:text-3xl">
+                            {{ $f['title'] }}
+                        </h3>
 
-                                <p class="mt-2 leading-7 text-slate-300">
-                                    {{ $item['text'] }}
-                                </p>
-                            </article>
-                        @endforeach
-                    </div>
-                    </div>
-                </section>
+                        <p class="mt-4 leading-8 text-slate-600 dark:text-slate-300">
+                            {{ $f['text'] }}
+                        </p>
 
-                {{-- ═══════════════════════════════════════════════════
-                     TÉMOIGNAGES enrichis avec résultat + localisation
-                ═══════════════════════════════════════════════════ --}}
-                <section id="avis" class="border-y border-slate-200 bg-white py-12 dark:border-white/10 dark:bg-[#101827] sm:py-16">
-                    <div class="mx-auto max-w-7xl px-5 lg:px-8">
-                        <div class="flex flex-col justify-between gap-4 lg:flex-row lg:items-end">
-                            <div class="max-w-3xl">
-                                <p class="text-sm font-black uppercase text-emerald-700">Ils avancent avec Squarhe</p>
-                                <h2 class="mt-3 text-2xl font-black leading-tight text-slate-950 sm:text-4xl">Des PME camerounaises qui ont remplacé Excel par une solution fiable.</h2>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="testimonial-rail mt-8 overflow-x-auto pb-4 md:mt-10 md:overflow-hidden md:pb-0">
-                        <div class="testimonial-marquee flex w-max snap-x snap-mandatory gap-4 px-5 md:gap-5 lg:px-8">
-                            @foreach (array_merge($testimonials, $testimonials) as $index => $t)
-                                <article class="group w-[82vw] max-w-sm shrink-0 snap-center rounded-lg border border-slate-200 bg-white p-4 opacity-100 transition duration-300 hover:-translate-y-1 hover:shadow-xl md:w-80 md:bg-slate-50/70 md:p-5 md:opacity-55 md:grayscale md:hover:bg-white md:hover:opacity-100 md:hover:grayscale-0 dark:border-white/10 dark:bg-[#172033] dark:md:bg-[#172033]/70 dark:hover:bg-[#1d2a40] @if ($index >= count($testimonials)) hidden md:block @endif">
-                                    <div class="flex items-center gap-1 text-amber-400" aria-label="5 étoiles">
-                                        @for ($s = 0; $s < 5; $s++)<flux:icon.star class="size-4 fill-current" />@endfor
-                                    </div>
-
-                                    {{-- Résultat concret mis en avant --}}
-                                    <p class="mt-3 rounded-md bg-emerald-50 px-3 py-2 text-xs font-bold text-emerald-800 dark:bg-emerald-400/10 dark:text-emerald-300">
-                                        ✓ {{ $t['result'] }}
-                                    </p>
-
-                                    <p class="mt-3 min-h-24 text-sm leading-7 text-slate-600 transition group-hover:text-slate-800 dark:text-slate-300 dark:group-hover:text-slate-100">"{{ $t['quote'] }}"</p>
-
-                                    <div class="mt-4 border-t border-slate-200 pt-4 dark:border-white/10">
-                                        <p class="font-black text-slate-950 dark:text-[#e6edf7]">{{ $t['name'] }}</p>
-                                        <p class="mt-0.5 text-sm font-semibold text-blue-700 dark:text-blue-300">{{ $t['role'] }} · {{ $t['sector'] }}</p>
-                                        <p class="mt-0.5 text-xs text-slate-400">📍 {{ $t['location'] }}</p>
-                                    </div>
-                                </article>
+                        <ul class="mt-6 space-y-2.5">
+                            @foreach ($f['bullets'] as $bullet)
+                                <li class="flex items-center gap-3 text-sm text-slate-700 dark:text-slate-300">
+                                    <span class="grid size-5 shrink-0 place-items-center rounded-full bg-emerald-100 dark:bg-emerald-400/20">
+                                        <svg class="size-3 text-emerald-600 dark:text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 0 1 .143 1.052l-8 10.5a.75.75 0 0 1-1.127.075l-4.5-4.5a.75.75 0 0 1 1.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 0 1 1.05-.143Z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </span>
+                                    {{ $bullet }}
+                                </li>
                             @endforeach
+                        </ul>
+
+                        <div class="mt-8">
+                            <flux:button href="#contact" variant="primary" >
+                                Voir cette fonctionnalité en démo
+                            </flux:button>
                         </div>
                     </div>
-                </section>
+
+                    {{-- ── Screenshot (en haut mobile, à droite desktop) ── --}}
+                    <div class="order-1 lg:order-2">
+                        <div class="overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-[0_20px_60px_-10px_rgba(0,0,0,0.15),0_0_0_1px_rgba(0,0,0,0.03)] dark:border-white/10 dark:bg-[#172033] dark:shadow-[0_20px_60px_-10px_rgba(0,0,0,0.5)]">
+
+                            {{-- Title bar --}}
+                            <div class="flex h-8 items-center gap-1.5 border-b border-slate-200/80 bg-slate-50/90 px-3 dark:border-white/10 dark:bg-[#1d2a40]/90">
+                                <span class="size-2.5 rounded-full bg-[#ff5f57]"></span>
+                                <span class="size-2.5 rounded-full bg-[#febc2e]"></span>
+                                <span class="size-2.5 rounded-full bg-[#28c840]"></span>
+                                <div class="mx-auto flex h-4 w-40 items-center justify-center rounded bg-slate-200/80 dark:bg-white/10">
+                                    <span class="text-[10px] font-medium text-slate-400 dark:text-slate-500">app.squarhe.com</span>
+                                </div>
+                            </div>
+
+
+                            {{-- Image  src="{{ asset('images/' . $f['image']) }}"--}}
+                            <div class="aspect-[16/10] w-full overflow-hidden bg-slate-100 dark:bg-[#1a2436]">
+                                <img
+                                    src="{{ asset('images/app-preview.png') }}"
+                                    alt="{{ $f['alt'] }}"
+                                    class="h-full w-full object-cover object-top"
+                                    loading="lazy"
+                                    decoding="async"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            @endforeach
+        </div>
+
+        {{-- ── Contrôles bas de page ── --}}
+        <div class="mt-10 flex items-center justify-between gap-4">
+
+            {{-- Dots --}}
+            <div class="flex items-center gap-2">
+                @foreach ($features as $i => $f)
+                    <button
+                        x-on:click="goTo({{ $i }})"
+                        class="rounded-full transition-all duration-300"
+                        :class="{{ $i }} === active
+                            ? 'w-6 h-2 bg-slate-950 dark:bg-white'
+                            : 'size-2 bg-slate-300 hover:bg-slate-400 dark:bg-white/20 dark:hover:bg-white/40'"
+                        aria-label="Fonctionnalité {{ $i + 1 }}"
+                    ></button>
+                @endforeach
+            </div>
+
+            {{-- Prev / Pause / Next --}}
+            <div class="flex items-center gap-2">
+                <button
+                    x-on:click="prev()"
+                    class="grid size-9 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:bg-slate-50 hover:text-slate-950 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10"
+                    aria-label="Précédent"
+                >
+                    <svg class="size-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd"/></svg>
+                </button>
+
+                <button
+                    x-on:click="togglePause()"
+                    class="grid size-9 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:bg-slate-50 hover:text-slate-950 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10"
+                    :aria-label="paused ? 'Reprendre' : 'Pause'"
+                >
+                    <svg x-show="!paused" class="size-4" viewBox="0 0 20 20" fill="currentColor"><path d="M5.75 3a.75.75 0 0 0-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 0 0 .75-.75V3.75A.75.75 0 0 0 7.25 3h-1.5ZM12.75 3a.75.75 0 0 0-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 0 0 .75-.75V3.75a.75.75 0 0 0-.75-.75h-1.5Z"/></svg>
+                    <svg x-show="paused" class="size-4" viewBox="0 0 20 20" fill="currentColor"><path d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.344-5.891a1.5 1.5 0 0 0 0-2.538L6.3 2.84Z"/></svg>
+                </button>
+
+                <button
+                    x-on:click="next()"
+                    class="grid size-9 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:bg-slate-50 hover:text-slate-950 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10"
+                    aria-label="Suivant"
+                >
+                    <svg class="size-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{{-- ═══════════════════════════════════════════════════
+     TÉMOIGNAGES scroll-snap mobile / carousel JS desktop
+═══════════════════════════════════════════════════ --}}
+<section
+    id="avis"
+    class="overflow-hidden bg-white py-16 dark:bg-[#101827] sm:py-20"
+    x-data="testimonialCarousel()"
+    x-init="init()"
+>
+    <div class="mx-auto max-w-7xl px-5 lg:px-8">
+
+        {{-- ── En-tête ── --}}
+        <div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div class="max-w-xl">
+                <span class="inline-flex items-center gap-2 rounded-full bg-emerald-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-emerald-700 dark:bg-emerald-400/20 dark:text-emerald-300">
+                    <span class="size-1.5 rounded-full bg-emerald-500"></span>
+                    Ils avancent avec Squarhe
+                </span>
+                <h2 class="mt-4 text-2xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-3xl lg:text-4xl">
+                    Des PME camerounaises qui ont remplacé Excel.
+                </h2>
+            </div>
+
+            {{-- Contrôles masqués sur mobile (scroll natif suffit) --}}
+            <div class="hidden items-center gap-2 sm:flex">
+                <button x-on:click="prev()" class="grid size-10 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 hover:text-slate-950 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10" aria-label="Précédent">
+                    <svg class="size-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M11.78 5.22a.75.75 0 0 1 0 1.06L8.06 10l3.72 3.72a.75.75 0 1 1-1.06 1.06l-4.25-4.25a.75.75 0 0 1 0-1.06l4.25-4.25a.75.75 0 0 1 1.06 0Z" clip-rule="evenodd"/></svg>
+                </button>
+                <button x-on:click="togglePause()" class="grid size-10 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 hover:text-slate-950 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10" :aria-label="paused ? 'Reprendre' : 'Pause'">
+                    <svg x-show="!paused" class="size-4" viewBox="0 0 20 20" fill="currentColor"><path d="M5.75 3a.75.75 0 0 0-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 0 0 .75-.75V3.75A.75.75 0 0 0 7.25 3h-1.5ZM12.75 3a.75.75 0 0 0-.75.75v12.5c0 .414.336.75.75.75h1.5a.75.75 0 0 0 .75-.75V3.75a.75.75 0 0 0-.75-.75h-1.5Z"/></svg>
+                    <svg x-show="paused" class="size-4" viewBox="0 0 20 20" fill="currentColor"><path d="M6.3 2.84A1.5 1.5 0 0 0 4 4.11v11.78a1.5 1.5 0 0 0 2.3 1.27l9.344-5.891a1.5 1.5 0 0 0 0-2.538L6.3 2.84Z"/></svg>
+                </button>
+                <button x-on:click="next()" class="grid size-10 place-items-center rounded-full border border-slate-200 bg-white text-slate-600 shadow-sm transition hover:border-slate-300 hover:bg-slate-50 hover:text-slate-950 dark:border-white/10 dark:bg-white/5 dark:text-slate-300 dark:hover:bg-white/10" aria-label="Suivant">
+                    <svg class="size-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd"/></svg>
+                </button>
+                <span class="ml-1 text-sm font-bold tabular-nums text-slate-400 dark:text-slate-500">
+                    <span x-text="current + 1"></span><span class="text-slate-300 dark:text-slate-700">/</span><span x-text="total"></span>
+                </span>
+            </div>
+        </div>
+
+        {{-- ══════════════════════════════════════════
+             MOBILE : scroll snap natif (< sm)
+        ══════════════════════════════════════════ --}}
+        <div class="mt-8 sm:hidden">
+            <div
+                class="flex gap-3 overflow-x-auto pb-2"
+                style="scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none;"
+                x-ref="mobileTrack"
+            >
+                @php
+                $testimonials_data = [
+                    ['name' => 'Ariane M.', 'role' => 'Directrice administrative', 'location' => 'Douala', 'sector' => 'Cabinet d\'architecture', 'result' => 'La validation de paie prend maintenant 20 minutes, contre 2 jours avant.', 'quote' => 'Squarhe nous donne une vision claire de la paie avant validation. Les équipes gagnent du temps sans perdre le contrôle.'],
+                    ['name' => 'Patrick N.', 'role' => 'Fondateur', 'location' => 'Yaoundé', 'sector' => 'PME services', 'result' => 'Zéro oubli de variable depuis que nous utilisons Squarhe.', 'quote' => 'La plateforme a transformé nos fins de mois. Les variables sont suivies, les oublis diminuent et les bulletins partent plus vite.'],
+                    ['name' => 'Nadia E.', 'role' => 'Responsable RH', 'location' => 'Douala', 'sector' => 'Distribution', 'result' => 'Les demandes de congés sont traitées en 1 clic au lieu de passer par WhatsApp.', 'quote' => 'J\'aime la simplicité de Squarhe. Les collaborateurs comprennent leurs espaces et les managers suivent les demandes sans relance.'],
+                    ['name' => 'Brice T.', 'role' => 'Gérant', 'location' => 'Bafoussam', 'sector' => 'Commerce', 'result' => 'Un historique CNPS propre et accessible en quelques secondes.', 'quote' => 'On a remplacé les fichiers dispersés par une base fiable. Les contrôles sont plus rapides et les décisions plus sereines.'],
+                    ['name' => 'Mireille K.', 'role' => 'Office Manager', 'location' => 'Douala', 'sector' => 'BTP', 'result' => 'Notre équipe de 30 personnes gérée sans service RH dédié.', 'quote' => 'Squarhe nous aide à rester organisés même avec une petite équipe RH. Tout est lisible et accessible au bon moment.'],
+                    ['name' => 'Samuel F.', 'role' => 'CEO', 'location' => 'Yaoundé', 'sector' => 'Agence digitale', 'result' => 'La paie automatisée sans perdre la main sur les validations importantes.', 'quote' => 'La vision produit est excellente : automatiser la paie tout en gardant l\'humain au centre des validations importantes.'],
+                    ['name' => 'Clarisse B.', 'role' => 'Comptable', 'location' => 'Douala', 'sector' => 'Services financiers', 'result' => 'Je vois en temps réel l\'impact de chaque variable sur la masse salariale.', 'quote' => 'Les impacts en temps réel sur la paie sont rassurants. Je vois tout de suite ce qui change et pourquoi.'],
+                    ['name' => 'Eric D.', 'role' => 'Directeur Général', 'location' => 'Douala', 'sector' => 'Industrie légère', 'result' => 'Une discipline RH qu\'on n\'arrivait pas à installer avec Excel.', 'quote' => 'Squarhe apporte une discipline RH qui manquait à notre croissance. C\'est simple, structuré et très concret.'],
+                    ['name' => 'Joëlle S.', 'role' => 'Chargée d\'administration', 'location' => 'Limbé', 'sector' => 'ONG', 'result' => 'Retrouver un contrat ou un bulletin prend 10 secondes, pas 10 minutes.', 'quote' => 'Les documents RH sont enfin centralisés. Nous retrouvons les contrats et bulletins sans fouiller dans plusieurs dossiers.'],
+                    ['name' => 'Marc L.', 'role' => 'DAF', 'location' => 'Douala', 'sector' => 'Import-Export', 'result' => 'Zéro retard sur nos déclarations CNPS cette année.', 'quote' => 'La conformité est mieux suivie et les mises à jour rassurent la direction. C\'est un vrai gain de fiabilité.'],
+                    ['name' => 'Kevin O.', 'role' => 'Entrepreneur', 'location' => 'Kribi', 'sector' => 'Hôtellerie', 'result' => 'La paie de 45 saisonniers gérée sans stress ni erreur.', 'quote' => 'Squarhe rend la paie moins stressante. Les processus sont guidés et les erreurs deviennent beaucoup plus faciles à détecter.'],
+                    ['name' => 'Oscar W.', 'role' => 'Fondateur', 'location' => 'Douala', 'sector' => 'Cabinet conseil', 'result' => 'Un outil qui connaît la CNPS, le Code du travail camerounais et nos réalités.', 'quote' => 'Squarhe comprend les réalités locales. Ce n\'est pas un outil générique plaqué sur nos contraintes.'],
+                ];
+                @endphp
+
+                {{-- Padding left pour que la première card soit bien centrée --}}
+                <div class="w-5 shrink-0"></div>
+
+                @foreach ($testimonials_data as $t)
+                    <div
+                        class="flex w-[85vw] shrink-0 flex-col rounded-2xl border border-slate-200/80 bg-slate-50 p-5 dark:border-white/10 dark:bg-[#172033]"
+                        style="scroll-snap-align: center;"
+                    >
+                        <div class="flex items-center gap-0.5" aria-label="5 étoiles">
+                            @for ($s = 0; $s < 5; $s++)
+                                <svg class="size-4 text-amber-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd"/></svg>
+                            @endfor
+                        </div>
+                        <div class="mt-4 inline-flex items-start gap-2 rounded-lg bg-emerald-100/80 px-3 py-2 dark:bg-emerald-400/10">
+                            <svg class="mt-0.5 size-3.5 shrink-0 text-emerald-600 dark:text-emerald-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd"/></svg>
+                            <p class="text-xs font-bold leading-5 text-emerald-800 dark:text-emerald-300">{{ $t['result'] }}</p>
+                        </div>
+                        <p class="mt-4 flex-1 text-sm leading-7 text-slate-600 dark:text-slate-300">"{{ $t['quote'] }}"</p>
+                        <div class="mt-5 flex items-center gap-3 border-t border-slate-200/80 pt-4 dark:border-white/10">
+                            <div class="grid size-9 shrink-0 place-items-center rounded-full bg-slate-200 text-sm font-black text-slate-700 dark:bg-white/10 dark:text-slate-200">
+                                {{ mb_substr($t['name'], 0, 1) }}
+                            </div>
+                            <div class="min-w-0">
+                                <p class="truncate text-sm font-black text-slate-950 dark:text-[#e6edf7]">{{ $t['name'] }}</p>
+                                <p class="truncate text-xs text-slate-500 dark:text-slate-400">{{ $t['role'] }} · {{ $t['sector'] }}</p>
+                            </div>
+                            <span class="ml-auto shrink-0 text-xs text-slate-400">📍 {{ $t['location'] }}</span>
+                        </div>
+                    </div>
+                @endforeach
+
+                <div class="w-5 shrink-0"></div>
+            </div>
+
+            {{-- Indicateur swipe --}}
+            <p class="mt-3 text-center text-xs text-slate-400 dark:text-slate-500">← Glissez pour voir plus →</p>
+        </div>
+
+        {{-- ══════════════════════════════════════════
+             DESKTOP : carousel JS (sm+)
+        ══════════════════════════════════════════ --}}
+        <div class="relative mt-10 hidden overflow-hidden sm:block">
+            <div
+            data-carousel-track
+                class="flex transition-transform duration-700 ease-in-out will-change-transform"
+                :style="`transform: translateX(-${current * (100 / visibleCount)}%)`"
+            >
+                @foreach ($testimonials_data as $t)
+                    <div
+                        class="shrink-0 px-2"
+                        :style="`width: ${100 / visibleCount}%`"
+                        style="width: 50%"
+                    >
+                        <div class="flex h-full flex-col rounded-2xl border border-slate-200/80 bg-slate-50 p-6 dark:border-white/10 dark:bg-[#172033]">
+                            <div class="flex items-center gap-0.5" aria-label="5 étoiles">
+                                @for ($s = 0; $s < 5; $s++)
+                                    <svg class="size-4 text-amber-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401Z" clip-rule="evenodd"/></svg>
+                                @endfor
+                            </div>
+                            <div class="mt-4 inline-flex items-start gap-2 rounded-lg bg-emerald-100/80 px-3 py-2 dark:bg-emerald-400/10">
+                                <svg class="mt-0.5 size-3.5 shrink-0 text-emerald-600 dark:text-emerald-400" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 1 0 0-16 8 8 0 0 0 0 16Zm3.857-9.809a.75.75 0 0 0-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 1 0-1.06 1.061l2.5 2.5a.75.75 0 0 0 1.137-.089l4-5.5Z" clip-rule="evenodd"/></svg>
+                                <p class="text-xs font-bold leading-5 text-emerald-800 dark:text-emerald-300">{{ $t['result'] }}</p>
+                            </div>
+                            <p class="mt-4 flex-1 text-sm leading-7 text-slate-600 dark:text-slate-300">"{{ $t['quote'] }}"</p>
+                            <div class="mt-5 flex items-center gap-3 border-t border-slate-200/80 pt-4 dark:border-white/10">
+                                <div class="grid size-9 shrink-0 place-items-center rounded-full bg-slate-200 text-sm font-black text-slate-700 dark:bg-white/10 dark:text-slate-200">
+                                    {{ mb_substr($t['name'], 0, 1) }}
+                                </div>
+                                <div class="min-w-0">
+                                    <p class="truncate text-sm font-black text-slate-950 dark:text-[#e6edf7]">{{ $t['name'] }}</p>
+                                    <p class="truncate text-xs text-slate-500 dark:text-slate-400">{{ $t['role'] }} · {{ $t['sector'] }}</p>
+                                </div>
+                                <span class="ml-auto shrink-0 text-xs text-slate-400">📍 {{ $t['location'] }}</span>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+
+            {{-- Fades latéraux --}}
+            <div class="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-white to-transparent dark:from-[#101827]"></div>
+            <div class="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-white to-transparent dark:from-[#101827]"></div>
+        </div>
+
+        {{-- Dots desktop --}}
+        <div class="mt-6 hidden items-center justify-center gap-1.5 sm:flex">
+            @foreach ($testimonials_data as $i => $t)
+                <button
+                    x-on:click="goTo({{ $i }})"
+                    class="rounded-full transition-all duration-300"
+                    :class="{{ $i }} === current ? 'w-6 h-2 bg-slate-950 dark:bg-white' : 'size-2 bg-slate-300 hover:bg-slate-400 dark:bg-white/20'"
+                    aria-label="Témoignage {{ $i + 1 }}"
+                ></button>
+            @endforeach
+        </div>
+
+    </div>
+</section>
+
+
+
 
                 {{-- ═══════════════════════════════════════════════════
                      COMPARATIF Avec / Sans
                 ═══════════════════════════════════════════════════ --}}
                 <section id="comparaison" class="mx-auto max-w-7xl px-5 py-12 sm:py-16 lg:px-8">
 
-                    <div class="mx-auto max-w-3xl text-left sm:text-center">
-                        <p class="text-sm font-black uppercase text-blue-700 dark:text-blue-300">Pourquoi pas un logiciel générique ?</p>
-                        <h2 class="mt-3 text-2xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-4xl">
-                            Ce qui change quand le logiciel est conçu pour vous.
-                        </h2>
-                        <p class="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg sm:leading-8">
-                            Les logiciels RH occidentaux existent depuis des décennies. Mais ils n'ont pas été pensés pour la CNPS, le Code du travail camerounais, ni pour les PME de 5 à 150 personnes.
-                        </p>
-                    </div>
+    <div class="mx-auto max-w-3xl text-left sm:text-center">
+        <p class="text-sm font-black uppercase text-blue-700 dark:text-blue-300">Pourquoi pas un logiciel générique ?</p>
+        <h2 class="mt-3 text-2xl font-black leading-tight text-slate-950 dark:text-[#e6edf7] sm:text-4xl">
+            Ce qui change quand le logiciel est conçu pour vous.
+        </h2>
+        <p class="mt-4 text-base leading-7 text-slate-600 dark:text-slate-300 sm:text-lg sm:leading-8">
+            Les logiciels RH occidentaux existent depuis des décennies. Mais ils n'ont pas été pensés pour la CNPS, le Code du travail camerounais, ni pour les PME de 5 à 150 personnes.
+        </p>
+    </div>
 
-                    {{-- ── Tableau comparatif ── --}}
-                    <div class="mt-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#172033]">
+    @php
+    $rows = [
+        [
+            'label' => 'Calculs CNPS & IRPP',
+            'generic' => 'À configurer manuellement taux, tranches, plafonds à saisir soi-même. Risque d\'erreur à chaque mise à jour réglementaire.',
+            'squarhe' => 'Intégrés nativement. Mis à jour automatiquement à chaque changement réglementaire.',
+        ],
+        [
+            'label' => 'Conformité droit du travail',
+            'generic' => 'Basé sur le droit français ou américain. Nécessite des paramétrages longs pour approcher le Code du travail camerounais sans garantie.',
+            'squarhe' => 'Construit sur le Code du travail camerounais : ancienneté, préavis, indemnités, congés légaux.',
+        ],
+        [
+            'label' => 'Heures supp & congés',
+            'generic' => 'Module souvent absent ou mal adapté. La majorité des PME gèrent ça en parallèle sur Excel deux outils, deux sources d\'erreurs.',
+            'squarhe' => 'Suivi des congés et absences intégré dans le même outil. Les validations alimentent directement le calcul de paie.',
+        ],
+        [
+            'label' => 'Coût & maintenance',
+            'generic' => 'Licences annuelles, modules payants séparément, consultants nécessaires pour les mises à jour. Factures imprévisibles.',
+            'squarhe' => 'Abonnement mensuel transparent, sans engagement. Mises à jour incluses, aucun coût caché.',
+        ],
+        [
+            'label' => 'Devise & format',
+            'generic' => 'Affichage en euros ou dollars, formats de dates et de nombres non adaptés. Exports difficiles à lire pour vos équipes.',
+            'squarhe' => 'Tout en FCFA, formats camerounais, bulletins conformes aux usages locaux.',
+        ],
+        [
+            'label' => 'Prise en main',
+            'generic' => 'Formations payantes de plusieurs jours. Interface pensée pour des experts RH ou des consultants. Non adapté aux petites équipes.',
+            'squarhe' => 'Opérationnel en moins d\'une journée. Interface guidée, aucune expertise RH requise.',
+        ],
+        [
+            'label' => 'Support local',
+            'generic' => 'Support basé en Europe ou en Asie. Décalage horaire, incompréhension des contraintes locales, tickets qui traînent.',
+            'squarhe' => 'Équipe camerounaise, disponible sur WhatsApp. Réponse sous 48h par des gens qui connaissent votre contexte.',
+        ],
+        [
+            'label' => 'Espace collaborateur',
+            'generic' => 'Module optionnel, souvent payant. Rarement adapté aux usages mobiles des employés camerounais.',
+            'squarhe' => 'Inclus dans chaque offre. Chaque employé accède à ses bulletins, soldes de congés et documents depuis son téléphone.',
+        ],
+    ];
+    @endphp
 
-                        {{-- Header colonnes --}}
-                        <div class="grid grid-cols-[1fr_1fr_1fr] border-b border-slate-200 dark:border-white/10">
-                            <div class="border-r border-slate-200 px-5 py-4 dark:border-white/10">
-                                <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Critère</p>
-                            </div>
-                            <div class="border-r border-slate-200 bg-rose-50 px-5 py-4 dark:border-white/10 dark:bg-rose-400/10">
-                                <p class="text-xs font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400">Logiciel générique</p>
-                                <p class="mt-0.5 text-[11px] text-rose-500/70 dark:text-rose-400/60">SAP, Sage, Odoo, Paie+…</p>
-                            </div>
-                            <div class="bg-emerald-50 px-5 py-4 dark:bg-emerald-400/10">
-                                <div class="flex items-center gap-2">
-                                    <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300">Squarhe</p>
-                                    <span class="rounded-full bg-emerald-600 px-2 py-0.5 text-[10px] font-black text-white">Cameroun</span>
-                                </div>
-                                <p class="mt-0.5 text-[11px] text-emerald-600/70 dark:text-emerald-400/60">Conçu pour vous, dès le premier jour</p>
-                            </div>
-                        </div>
-
-                        {{-- Lignes --}}
-                        @php
-                        $rows = [
-                            [
-                                'label' => 'Calculs CNPS & IRPP',
-                                'generic' => ['text' => 'À configurer manuellement — taux, tranches, plafonds à saisir soi-même. Risque d\'erreur à chaque mise à jour réglementaire.', 'bad' => true],
-                                'squarhe' => ['text' => 'Intégrés nativement. Mis à jour automatiquement à chaque changement réglementaire.', 'bad' => false],
-                            ],
-                            [
-                                'label' => 'Conformité droit du travail',
-                                'generic' => ['text' => 'Basé sur le droit français ou américain. Nécessite des paramétrages longs pour approcher le Code du travail camerounais — sans garantie.', 'bad' => true],
-                                'squarhe' => ['text' => 'Construit sur le Code du travail camerounais : ancienneté, préavis, indemnités, congés légaux.', 'bad' => false],
-                            ],
-                            [
-                                'label' => 'Heures supp & congés',
-                                'generic' => ['text' => 'Module souvent absent ou mal adapté. La majorité des PME gèrent ça en parallèle sur Excel — deux outils, deux sources d\'erreurs.', 'bad' => true],
-                                'squarhe' => ['text' => 'Suivi des congés et absences intégré dans le même outil. Les validations alimentent directement le calcul de paie.', 'bad' => false],
-                            ],
-                            [
-                                'label' => 'Coût & maintenance',
-                                'generic' => ['text' => 'Licences annuelles, modules payants séparément, consultants nécessaires pour les mises à jour. Factures imprévisibles.', 'bad' => true],
-                                'squarhe' => ['text' => 'Abonnement mensuel transparent, sans engagement. Mises à jour incluses, aucun coût caché.', 'bad' => false],
-                            ],
-                            [
-                                'label' => 'Devise & format',
-                                'generic' => ['text' => 'Affichage en euros ou dollars, formats de dates et de nombres non adaptés. Exports difficiles à lire pour vos équipes.', 'bad' => true],
-                                'squarhe' => ['text' => 'Tout en FCFA, formats camerounais, bulletins conformes aux usages locaux.', 'bad' => false],
-                            ],
-                            [
-                                'label' => 'Prise en main',
-                                'generic' => ['text' => 'Formations payantes de plusieurs jours. Interface pensée pour des experts RH ou des consultants. Non adapté aux petites équipes.', 'bad' => true],
-                                'squarhe' => ['text' => 'Opérationnel en moins d\'une journée. Interface guidée, aucune expertise RH requise.', 'bad' => false],
-                            ],
-                            [
-                                'label' => 'Support local',
-                                'generic' => ['text' => 'Support basé en Europe ou en Asie. Décalage horaire, incompréhension des contraintes locales, tickets qui traînent.', 'bad' => true],
-                                'squarhe' => ['text' => 'Équipe camerounaise, disponible sur WhatsApp. Réponse sous 48h par des gens qui connaissent votre contexte.', 'bad' => false],
-                            ],
-                            [
-                                'label' => 'Espace collaborateur',
-                                'generic' => ['text' => 'Module optionnel, souvent payant. Rarement adapté aux usages mobiles des employés camerounais.', 'bad' => true],
-                                'squarhe' => ['text' => 'Inclus dans chaque offre. Chaque employé accède à ses bulletins, soldes de congés et documents depuis son téléphone.', 'bad' => false],
-                            ],
-                        ];
-                        @endphp
-
-                        @foreach ($rows as $i => $row)
-                            <div class="grid grid-cols-[1fr_1fr_1fr] border-b border-slate-100 last:border-0 dark:border-white/5 {{ $i % 2 !== 0 ? 'bg-slate-50/50 dark:bg-white/[0.015]' : '' }}">
-
-                                {{-- Critère --}}
-                                <div class="border-r border-slate-100 px-5 py-4 dark:border-white/5">
-                                    <p class="text-sm font-black text-slate-950 dark:text-[#e6edf7]">{{ $row['label'] }}</p>
-                                </div>
-
-                                {{-- Logiciel générique --}}
-                                <div class="border-r border-slate-100 px-5 py-4 dark:border-white/5">
-                                    <div class="flex items-start gap-2">
-                                        <span class="mt-0.5 shrink-0">
-                                            <svg class="size-4 text-rose-500" viewBox="0 0 20 20" fill="currentColor">
-                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd"/>
-                                            </svg>
-                                        </span>
-                                        <p class="text-xs leading-6 text-slate-500 dark:text-slate-400">{{ $row['generic']['text'] }}</p>
-                                    </div>
-                                </div>
-
-                                {{-- Squarhe --}}
-                                <div class="px-5 py-4">
-                                    <div class="flex items-start gap-2">
-                                        <span class="mt-0.5 shrink-0">
-                                            <svg class="size-4 text-emerald-600 dark:text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
-                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/>
-                                            </svg>
-                                        </span>
-                                        <p class="text-xs leading-6 text-slate-700 dark:text-slate-200">{{ $row['squarhe']['text'] }}</p>
-                                    </div>
-                                </div>
-
-                            </div>
-                        @endforeach
-                    </div>
-
-                    {{-- ── Ancrage tarifaire ── --}}
-                    <div class="mt-6 rounded-xl border border-blue-200 bg-blue-50 p-5 dark:border-blue-400/20 dark:bg-blue-400/10 sm:p-6">
-                        <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                            <div>
-                                <p class="font-black text-slate-950 dark:text-white">
-                                    💡 Un redressement CNPS ou fiscale peut coûter entre 150 000 et des millions de Francs CFA.
-                                </p>
-                                <p class="mt-1 text-sm text-slate-600 dark:text-slate-300">
-                                    Squarhe vous évite d'en arriver là à partir de <strong class="text-slate-900 dark:text-white">14 900 FCFA/mois</strong>. Vous gardez le contrôle, il gère l'essentiel.
-                                </p>
-                            </div>
-                            <flux:button href="#offres" variant="primary" icon="calculator" class="shrink-0">
-                                Simuler mon tarif
-                            </flux:button>
+    {{-- ══════════════════════════════════════════
+         MOBILE : cards empilées (< md)
+    ══════════════════════════════════════════ --}}
+    <div class="mt-8 space-y-3 md:hidden">
+        @foreach ($rows as $row)
+            <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white dark:border-white/10 dark:bg-[#172033]">
+                {{-- Label critère --}}
+                <div class="border-b border-slate-100 bg-slate-50 px-4 py-3 dark:border-white/10 dark:bg-white/5">
+                    <p class="text-sm font-black text-slate-950 dark:text-[#e6edf7]">{{ $row['label'] }}</p>
+                </div>
+                <div class="divide-y divide-slate-100 dark:divide-white/5">
+                    {{-- Générique --}}
+                    <div class="flex items-start gap-3 px-4 py-3">
+                        <span class="mt-0.5 shrink-0 rounded-full bg-rose-100 p-1 dark:bg-rose-400/20">
+                            <svg class="size-3 text-rose-600 dark:text-rose-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd"/>
+                            </svg>
+                        </span>
+                        <div>
+                            <p class="text-[10px] font-bold uppercase tracking-wider text-rose-500 dark:text-rose-400">Logiciel générique</p>
+                            <p class="mt-1 text-xs leading-6 text-slate-500 dark:text-slate-400">{{ $row['generic'] }}</p>
                         </div>
                     </div>
+                    {{-- Squarhe --}}
+                    <div class="flex items-start gap-3 bg-emerald-50/50 px-4 py-3 dark:bg-emerald-400/5">
+                        <span class="mt-0.5 shrink-0 rounded-full bg-emerald-100 p-1 dark:bg-emerald-400/20">
+                            <svg class="size-3 text-emerald-600 dark:text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/>
+                            </svg>
+                        </span>
+                        <div>
+                            <p class="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">Squarhe</p>
+                            <p class="mt-1 text-xs leading-6 text-slate-700 dark:text-slate-200">{{ $row['squarhe'] }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
 
-                </section>
+    {{-- ══════════════════════════════════════════
+         DESKTOP : tableau 3 colonnes (md+)
+    ══════════════════════════════════════════ --}}
+    <div class="mt-10 hidden overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-white/10 dark:bg-[#172033] md:block">
+
+        {{-- Header --}}
+        <div class="grid grid-cols-[1fr_1fr_1fr] border-b border-slate-200 dark:border-white/10">
+            <div class="border-r border-slate-200 px-5 py-4 dark:border-white/10">
+                <p class="text-xs font-bold uppercase tracking-wider text-slate-400">Critère</p>
+            </div>
+            <div class="border-r border-slate-200 bg-rose-50 px-5 py-4 dark:border-white/10 dark:bg-rose-400/10">
+                <p class="text-xs font-bold uppercase tracking-wider text-rose-600 dark:text-rose-400">Logiciel générique</p>
+                <p class="mt-0.5 text-[11px] text-rose-500/70 dark:text-rose-400/60">SAP, Sage, Odoo, Paie+…</p>
+            </div>
+            <div class="bg-emerald-50 px-5 py-4 dark:bg-emerald-400/10">
+                <div class="flex items-center gap-2">
+                    <p class="text-xs font-bold uppercase tracking-wider text-emerald-700 dark:text-emerald-300">Squarhe</p>
+                    <span class="rounded-full bg-emerald-600 px-2 py-0.5 text-[10px] font-black text-white">Cameroun</span>
+                </div>
+                <p class="mt-0.5 text-[11px] text-emerald-600/70 dark:text-emerald-400/60">Conçu pour vous, dès le premier jour</p>
+            </div>
+        </div>
+
+        {{-- Lignes --}}
+        @foreach ($rows as $i => $row)
+            <div class="grid grid-cols-[1fr_1fr_1fr] border-b border-slate-100 last:border-0 dark:border-white/5 {{ $i % 2 !== 0 ? 'bg-slate-50/50 dark:bg-white/[0.015]' : '' }}">
+                <div class="border-r border-slate-100 px-5 py-4 dark:border-white/5">
+                    <p class="text-sm font-black text-slate-950 dark:text-[#e6edf7]">{{ $row['label'] }}</p>
+                </div>
+                <div class="border-r border-slate-100 px-5 py-4 dark:border-white/5">
+                    <div class="flex items-start gap-2">
+                        <span class="mt-0.5 shrink-0">
+                            <svg class="size-4 text-rose-500" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.28 7.22a.75.75 0 00-1.06 1.06L8.94 10l-1.72 1.72a.75.75 0 101.06 1.06L10 11.06l1.72 1.72a.75.75 0 101.06-1.06L11.06 10l1.72-1.72a.75.75 0 00-1.06-1.06L10 8.94 8.28 7.22z" clip-rule="evenodd"/>
+                            </svg>
+                        </span>
+                        <p class="text-xs leading-6 text-slate-500 dark:text-slate-400">{{ $row['generic'] }}</p>
+                    </div>
+                </div>
+                <div class="px-5 py-4">
+                    <div class="flex items-start gap-2">
+                        <span class="mt-0.5 shrink-0">
+                            <svg class="size-4 text-emerald-600 dark:text-emerald-400" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd"/>
+                            </svg>
+                        </span>
+                        <p class="text-xs leading-6 text-slate-700 dark:text-slate-200">{{ $row['squarhe'] }}</p>
+                    </div>
+                </div>
+            </div>
+        @endforeach
+    </div>
+
+    {{-- ── Ancrage tarifaire ── --}}
+   <div class="mt-6 overflow-hidden rounded-xl border border-blue-200 bg-blue-50 dark:border-blue-400/20 dark:bg-blue-400/10">
+    <div class="flex flex-col gap-5 px-5 py-5 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+        <div class="flex items-start gap-4">
+            <span class="grid size-10 shrink-0 place-items-center rounded-xl bg-blue-100 dark:bg-blue-400/20">
+                <flux:icon.scale class="size-5 text-blue-700 dark:text-blue-300" />
+            </span>
+            <div>
+                <p class="font-black text-slate-950 dark:text-white">
+                    Un redressement CNPS ou fiscal peut coûter entre 150 000 et plusieurs millions de FCFA.
+                </p>
+                <p class="mt-1 text-sm leading-7 text-slate-600 dark:text-slate-300">
+                    Historique incomplet, déclarations erronées, oublis de cotisation les pénalités s'accumulent vite.
+                    Squarhe sécurise votre conformité à partir de <strong class="text-slate-900 dark:text-white">14 900 FCFA/mois</strong>.
+                    C'est le coût d'une erreur évitée.
+                </p>
+            </div>
+        </div>
+        <flux:button href="#offres" variant="primary" class="shrink-0">
+            Simuler mon tarif
+        </flux:button>
+    </div>
+</div>
+
+</section>
                 {{-- ═══════════════════════════════════════════════════
                      FAQ Réponses enrichies
                 ═══════════════════════════════════════════════════ --}}
@@ -867,7 +1193,7 @@
 
                         <div class="mt-8 rounded-lg border border-slate-200 bg-slate-50 p-5 text-center dark:border-white/10 dark:bg-[#172033]">
                             <p class="font-bold text-slate-700 dark:text-slate-300">Vous avez une question spécifique à votre situation ?</p>
-                            <flux:button href="#contact" variant="primary" icon="chat-bubble-left-right" class="mt-4">
+                            <flux:button href="#contact" variant="primary" class="mt-4">
                                 Parlez-nous de votre PME
                             </flux:button>
                         </div>
@@ -989,7 +1315,7 @@
                         <h2 class="text-3xl font-black sm:text-4xl">Prêt à boucler votre paie en moins de 10 minutes ?</h2>
                         <p class="mx-auto mt-4 max-w-2xl text-lg leading-8 text-slate-800">Rejoignez les PME de Douala, Yaoundé, Bafoussam et Kribi qui ont remplacé Excel par une solution fiable et locale.</p>
                         <div class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-                            <flux:button href="#contact" variant="primary" icon="calendar-days" class="text-base">
+                            <flux:button href="#contact" variant="primary" class="text-base">
                                 Demander ma démo gratuite
                             </flux:button>
                             <flux:button href="#offres" >
@@ -1018,7 +1344,7 @@
                  FOOTER
             ═══════════════════════════════════════════════════ --}}
            {{-- ═══════════════════════════════════════════════════
-                FOOTER — style LobeHub
+                FOOTER style LobeHub
             ═══════════════════════════════════════════════════ --}}
             <footer class="border-t border-slate-200 bg-white dark:border-white/10 dark:bg-[#101827]">
                 <div class="mx-auto max-w-7xl px-5 lg:px-8">

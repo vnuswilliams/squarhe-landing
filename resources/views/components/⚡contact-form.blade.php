@@ -25,7 +25,7 @@ new class extends Component
 
     public string $message = '';
 
-    public bool $consent = false;
+    public bool $consent = true;
 
     public ?string $successMessage = null;
 
@@ -131,7 +131,7 @@ new class extends Component
         <flux:error name="consent" />
     </flux:field>
 
-    <flux:button type="submit" variant="primary" icon="paper-airplane" wire:loading.attr="disabled" wire:target="storeContact" class="mt-6 w-full">
+    <flux:button type="submit" variant="primary" wire:loading.attr="disabled" wire:target="storeContact" class="mt-6 w-full">
         <span wire:loading.remove wire:target="storeContact">Envoyer ma demande</span>
         <span wire:loading wire:target="storeContact">Envoi en cours...</span>
     </flux:button>

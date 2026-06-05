@@ -70,7 +70,7 @@ new class extends Component
         <flux:label>Email professionnel</flux:label>
         <div class="flex flex-col gap-3 sm:flex-row">
             <flux:input type="email" wire:model="email" icon="envelope" required class="min-w-0 flex-1" />
-            <flux:button wire:loading.attr="disabled" wire:target="subscribe" variant="primary" icon="inbox-arrow-down" type="submit">
+            <flux:button wire:loading.attr="disabled" wire:target="subscribe" variant="primary" type="submit">
                 <span wire:loading.remove wire:target="subscribe">Souscrire</span>
                 <span wire:loading wire:target="subscribe">Envoi...</span>
             </flux:button>

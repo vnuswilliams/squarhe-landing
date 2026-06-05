@@ -191,7 +191,7 @@ new class extends Component
                         @endforeach
                     </ul>
 
-                    <flux:button href="#contact" variant="{{ $eligible ? 'primary' : 'ghost' }}" icon="chat-bubble-left-right" class="mt-6 w-full justify-center" :disabled="! $eligible">
+                    <flux:button href="#contact" variant="{{ $eligible ? 'primary' : 'ghost' }}" class="mt-6 w-full justify-center" :disabled="! $eligible">
                         {{ $eligible ? 'Demander cette offre' : 'Choisir une offre supérieure' }}
                     </flux:button>
                 </article>
@@ -216,7 +216,7 @@ new class extends Component
                         Contactez-nous pour en discuter avant de vous engager.
                     </p>
                 </div>
-                <flux:button href="#contact" variant="outline" icon="chat-bubble-left-right" class="shrink-0">
+                <flux:button href="#contact" variant="outline" class="shrink-0">
                     Discuter de ma migration
                 </flux:button>
             </div>
